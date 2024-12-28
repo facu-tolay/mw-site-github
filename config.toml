@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "/"
+baseURL = "https://facu-tolay.github.io/mw-site-github/"
 title = "Mikroways"
 theme = "bizcraft-hugo"
 # post pagination
