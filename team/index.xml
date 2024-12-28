@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The team on Mikroways</title>
-    <link>/team/</link>
+    <link>https://facu-tolay.github.io/mw-site-github/team/</link>
     <description>Recent content in The team on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/team/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/mw-site-github/team/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

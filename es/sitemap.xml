@@ -2,1089 +2,1089 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/es/blog/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/blog/"
+                href="https://facu-tolay.github.io/mw-site-github/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/blog/"
+                href="https://facu-tolay.github.io/mw-site-github/es/blog/"
                 />
   </url><url>
-    <loc>/es/categories/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/categories/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/categories/"
+                href="https://facu-tolay.github.io/mw-site-github/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/categories/"
+                href="https://facu-tolay.github.io/mw-site-github/es/categories/"
                 />
   </url><url>
-    <loc>/es/tags/cloud/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/cloud/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/innovacion/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/innovacion/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/jornadas/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/jornadas/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/"
+                href="https://facu-tolay.github.io/mw-site-github/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/"
+                href="https://facu-tolay.github.io/mw-site-github/es/"
                 />
   </url><url>
-    <loc>/es/tags/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/"
                 />
   </url><url>
-    <loc>/es/categories/transformacion-digital/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/categories/transformacion-digital/</loc>
     <lastmod>2024-05-08T12:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/ansible/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/ansible/</loc>
     <lastmod>2023-10-26T10:20:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/ansible/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/ansible/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/ansible/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/ansible/"
                 />
   </url><url>
-    <loc>/es/categories/devsecops/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/categories/devsecops/</loc>
     <lastmod>2023-10-26T10:20:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/categories/devsecops/"
+                href="https://facu-tolay.github.io/mw-site-github/categories/devsecops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/categories/devsecops/"
+                href="https://facu-tolay.github.io/mw-site-github/es/categories/devsecops/"
                 />
   </url><url>
-    <loc>/es/blog/2023-10-27-instalando-ansible/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2023-10-27-instalando-ansible/</loc>
     <lastmod>2023-10-26T10:20:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/python/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/python/</loc>
     <lastmod>2023-10-26T10:20:00-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2023-09-22-windows-containers/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2023-09-22-windows-containers/</loc>
     <lastmod>2023-09-22T16:30:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/docker/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/docker/</loc>
     <lastmod>2023-09-22T16:30:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/infrastructure/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/infrastructure/</loc>
     <lastmod>2023-09-22T16:30:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/infrastructure/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/infrastructure/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/infrastructure/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/infrastructure/"
                 />
   </url><url>
-    <loc>/es/tags/windows/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/windows/</loc>
     <lastmod>2023-09-22T16:30:00-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2023-08-30-terraform-con-sops/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2023-08-30-terraform-con-sops/</loc>
     <lastmod>2023-08-30T20:30:55-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/encryption/</loc>
-    <lastmod>2023-08-30T20:30:55-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/tags/encryption/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ar"
-                href="/es/tags/encryption/"
-                />
-  </url><url>
-    <loc>/es/tags/git/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/encryption/</loc>
     <lastmod>2023-08-30T20:30:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/git/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/encryption/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/git/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/encryption/"
                 />
   </url><url>
-    <loc>/es/tags/sops/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/git/</loc>
     <lastmod>2023-08-30T20:30:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/sops/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/git/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/sops/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/git/"
                 />
   </url><url>
-    <loc>/es/tags/terraform/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/sops/</loc>
     <lastmod>2023-08-30T20:30:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/terraform/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/sops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/terraform/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/sops/"
                 />
   </url><url>
-    <loc>/es/tags/version/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/terraform/</loc>
     <lastmod>2023-08-30T20:30:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/version/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/terraform/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/version/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/terraform/"
                 />
   </url><url>
-    <loc>/es/tags/cache/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/version/</loc>
+    <lastmod>2023-08-30T20:30:55-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://facu-tolay.github.io/mw-site-github/tags/version/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ar"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/version/"
+                />
+  </url><url>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/cache/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/cache/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/cache/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/cache/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/cache/"
                 />
   </url><url>
-    <loc>/es/tags/crio/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/crio/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/crio/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/crio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/crio/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/crio/"
                 />
   </url><url>
-    <loc>/es/tags/harbor/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/harbor/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/harbor/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/harbor/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/harbor/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/harbor/"
                 />
   </url><url>
-    <loc>/es/blog/2023-08-25-harbor-en-okd/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2023-08-25-harbor-en-okd/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/okd/</loc>
-    <lastmod>2023-08-25T01:37:55-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/tags/okd/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ar"
-                href="/es/tags/okd/"
-                />
-  </url><url>
-    <loc>/es/tags/openshift/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/okd/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/openshift/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/okd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/openshift/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/okd/"
                 />
   </url><url>
-    <loc>/es/tags/redhat/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/openshift/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/redhat/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/openshift/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/redhat/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/openshift/"
                 />
   </url><url>
-    <loc>/es/tags/registry-mirror/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/redhat/</loc>
     <lastmod>2023-08-25T01:37:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/registry-mirror/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/redhat/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/registry-mirror/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/redhat/"
                 />
   </url><url>
-    <loc>/es/tags/cgroups/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/registry-mirror/</loc>
+    <lastmod>2023-08-25T01:37:55-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://facu-tolay.github.io/mw-site-github/tags/registry-mirror/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ar"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/registry-mirror/"
+                />
+  </url><url>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/cgroups/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/java/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/java/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2023-05-10-java-cgroups/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2023-05-10-java-cgroups/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/limits/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/limits/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/categories/mikroways/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/categories/mikroways/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/categories/mikroways/"
+                href="https://facu-tolay.github.io/mw-site-github/categories/mikroways/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/categories/mikroways/"
+                href="https://facu-tolay.github.io/mw-site-github/es/categories/mikroways/"
                 />
   </url><url>
-    <loc>/es/tags/openjdk/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/openjdk/</loc>
     <lastmod>2023-05-10T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-10-05-vm-setup/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-10-05-vm-setup/</loc>
     <lastmod>2022-10-03T10:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/playbook/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/playbook/</loc>
     <lastmod>2022-10-03T10:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/workstation/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/workstation/</loc>
     <lastmod>2022-10-03T10:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/backups/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/backups/</loc>
     <lastmod>2022-09-21T12:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/devsecops/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/devsecops/</loc>
     <lastmod>2022-09-21T12:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</loc>
     <lastmod>2022-09-21T12:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/restic/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/restic/</loc>
     <lastmod>2022-09-21T12:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/velero/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/velero/</loc>
     <lastmod>2022-09-21T12:13:23-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/automatizacion/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/automatizacion/</loc>
     <lastmod>2022-09-15T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/autoscaling/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/autoscaling/</loc>
     <lastmod>2022-09-15T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-09-15-escalado-automatico-de-aplicaciones/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-09-15-escalado-automatico-de-aplicaciones/</loc>
     <lastmod>2022-09-15T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/monitoreo/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/monitoreo/</loc>
     <lastmod>2022-09-15T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-09-09-aplicacion-apta-nube/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-09-09-aplicacion-apta-nube/</loc>
     <lastmod>2022-09-09T15:37:12-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/12factor/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/12factor/</loc>
     <lastmod>2022-09-09T15:37:12-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/development/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/development/</loc>
     <lastmod>2022-09-09T15:37:12-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-08-23-a-la-nube-con-escalas/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-08-23-a-la-nube-con-escalas/</loc>
     <lastmod>2022-08-23T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/noticias/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/noticias/</loc>
     <lastmod>2022-08-23T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-08-22-certificamos-great-place-to-work/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-08-22-certificamos-great-place-to-work/</loc>
     <lastmod>2022-08-22T10:26:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/iac/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/iac/</loc>
     <lastmod>2022-06-24T10:06:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-06-24-windows-iac/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-06-24-windows-iac/</loc>
     <lastmod>2022-06-24T10:06:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/chatbots/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/chatbots/</loc>
     <lastmod>2022-06-01T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/chatops/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/chatops/</loc>
     <lastmod>2022-06-01T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-06-01-chatbots/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-06-01-chatbots/</loc>
     <lastmod>2022-06-01T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/errbot/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/errbot/</loc>
     <lastmod>2022-06-01T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-05-11-permisions-vsphere/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-05-11-permisions-vsphere/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/kubernetes/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/kubernetes/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/kubernetes/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/kubernetes/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/kubernetes/"
                 />
   </url><url>
-    <loc>/es/tags/packer/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/packer/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/permisos/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/permisos/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/vmware/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/vmware/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/vmware/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/vmware/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/vmware/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/vmware/"
                 />
   </url><url>
-    <loc>/es/tags/vsphere/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/vsphere/</loc>
     <lastmod>2022-05-11T10:00:00-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/vsphere/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/vsphere/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/vsphere/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/vsphere/"
                 />
   </url><url>
-    <loc>/es/tags/backup/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/backup/</loc>
     <lastmod>2022-02-23T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-02-23-flujo-de-trabajo-con-velero/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-02-23-flujo-de-trabajo-con-velero/</loc>
     <lastmod>2022-02-23T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/restore/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/restore/</loc>
     <lastmod>2022-02-23T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-02-11-automatizar-despliegues-con-capistrano-y-gitlab-ci/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-02-11-automatizar-despliegues-con-capistrano-y-gitlab-ci/</loc>
     <lastmod>2022-02-11T09:52:58-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/capistrano/</loc>
-    <lastmod>2022-02-11T09:52:58-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/tags/capistrano/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ar"
-                href="/es/tags/capistrano/"
-                />
-  </url><url>
-    <loc>/es/tags/gitlab-ci/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/capistrano/</loc>
     <lastmod>2022-02-11T09:52:58-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/gitlab-ci/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/capistrano/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/gitlab-ci/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/capistrano/"
                 />
   </url><url>
-    <loc>/es/blog/2022-02-04-instalando-velero-en-cluster-k8s/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/gitlab-ci/</loc>
+    <lastmod>2022-02-11T09:52:58-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://facu-tolay.github.io/mw-site-github/tags/gitlab-ci/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ar"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/gitlab-ci/"
+                />
+  </url><url>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-02-04-instalando-velero-en-cluster-k8s/</loc>
     <lastmod>2022-02-04T11:56:58-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2022-01-28-automatizacion-de-tareas-con-capistrano/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2022-01-28-automatizacion-de-tareas-con-capistrano/</loc>
     <lastmod>2022-01-28T11:06:24-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/containerd/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/containerd/</loc>
     <lastmod>2021-12-30T11:47:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/containerd/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/containerd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/containerd/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/containerd/"
                 />
   </url><url>
-    <loc>/es/blog/2021-12-30-containerd-con-harbor/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-12-30-containerd-con-harbor/</loc>
     <lastmod>2021-12-30T11:47:55-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/images/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/images/</loc>
     <lastmod>2021-12-30T11:47:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/images/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/images/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/images/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/images/"
                 />
   </url><url>
-    <loc>/es/blog/2021-12-29-crio-con-harbor/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-12-29-crio-con-harbor/</loc>
     <lastmod>2021-12-29T11:47:55-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/dex/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/dex/</loc>
     <lastmod>2021-12-23T11:47:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/dex/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/dex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/dex/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/dex/"
                 />
   </url><url>
-    <loc>/es/tags/docker-compose/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/docker-compose/</loc>
     <lastmod>2021-12-23T11:47:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/docker-compose/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/docker-compose/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/docker-compose/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/docker-compose/"
                 />
   </url><url>
-    <loc>/es/tags/traefik/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/traefik/</loc>
     <lastmod>2021-12-23T11:47:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/traefik/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/traefik/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/traefik/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/traefik/"
                 />
   </url><url>
-    <loc>/es/blog/2021-12-23-utilizar-harbor-como-cache-de-imagenes/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-12-23-utilizar-harbor-como-cache-de-imagenes/</loc>
     <lastmod>2021-12-23T11:47:55-03:00</lastmod>
   </url><url>
-    <loc>/es/blog/2021-11-09-devops-como-respuesta-a-la-velocidad-que-imponen-los-cambios/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-11-09-devops-como-respuesta-a-la-velocidad-que-imponen-los-cambios/</loc>
     <lastmod>2021-11-17T12:14:34-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/clusterapi/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/clusterapi/</loc>
     <lastmod>2021-11-01T12:14:34-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/clusterapi/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/clusterapi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/clusterapi/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/clusterapi/"
                 />
   </url><url>
-    <loc>/es/blog/2021-11-03-kubernetes-con-clusterapi/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-11-03-kubernetes-con-clusterapi/</loc>
     <lastmod>2021-11-01T12:14:34-03:00</lastmod>
   </url><url>
-    <loc>/es/tags/aws/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/tags/aws/</loc>
     <lastmod>2021-10-04T12:14:34-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/tags/aws/"
+                href="https://facu-tolay.github.io/mw-site-github/tags/aws/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/tags/aws/"
+                href="https://facu-tolay.github.io/mw-site-github/es/tags/aws/"
                 />
   </url><url>
-    <loc>/es/blog/2021-10-04-consulting-partner-select-aws/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/blog/2021-10-04-consulting-partner-select-aws/</loc>
     <lastmod>2021-10-04T12:14:34-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/blog/2021-10-04-consulting-partner-select-aws/"
+                href="https://facu-tolay.github.io/mw-site-github/blog/2021-10-04-consulting-partner-select-aws/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/blog/2021-10-04-consulting-partner-select-aws/"
+                href="https://facu-tolay.github.io/mw-site-github/es/blog/2021-10-04-consulting-partner-select-aws/"
                 />
   </url><url>
-    <loc>/es/portfolio/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/</loc>
     <lastmod>1970-01-01T00:00:06+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/"
                 />
   </url><url>
-    <loc>/es/portfolio/banco-columbia/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/banco-columbia/</loc>
     <lastmod>1970-01-01T00:00:06+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/banco-columbia/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/banco-columbia/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/banco-columbia/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/banco-columbia/"
                 />
   </url><url>
-    <loc>/es/portfolio/balanz/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/balanz/</loc>
     <lastmod>1970-01-01T00:00:05+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/balanz/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/balanz/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/balanz/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/balanz/"
                 />
   </url><url>
-    <loc>/es/portfolio/automatizacion-vt/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/automatizacion-vt/</loc>
     <lastmod>1970-01-01T00:00:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/automatizacion-vt/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/automatizacion-vt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/automatizacion-vt/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/automatizacion-vt/"
                 />
   </url><url>
-    <loc>/es/portfolio/monitoreo-senasa/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/monitoreo-senasa/</loc>
     <lastmod>1970-01-01T00:00:03+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/monitoreo-senasa/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/monitoreo-senasa/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/monitoreo-senasa/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/monitoreo-senasa/"
                 />
   </url><url>
-    <loc>/es/portfolio/circular-lab-costos/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/circular-lab-costos/</loc>
     <lastmod>1970-01-01T00:00:02+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/circular-lab-costos/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/circular-lab-costos/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/circular-lab-costos/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/circular-lab-costos/"
                 />
   </url><url>
-    <loc>/es/contact/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/contact/</loc>
     <lastmod>1970-01-01T00:00:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/contact/"
+                href="https://facu-tolay.github.io/mw-site-github/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/contact/"
+                href="https://facu-tolay.github.io/mw-site-github/es/contact/"
                 />
   </url><url>
-    <loc>/es/portfolio/bluedraft-cicd/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/portfolio/bluedraft-cicd/</loc>
     <lastmod>1970-01-01T00:00:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/portfolio/bluedraft-cicd/"
+                href="https://facu-tolay.github.io/mw-site-github/portfolio/bluedraft-cicd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/portfolio/bluedraft-cicd/"
+                href="https://facu-tolay.github.io/mw-site-github/es/portfolio/bluedraft-cicd/"
                 />
   </url><url>
-    <loc>/es/ebooks/ebook2024/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/ebooks/ebook2024/</loc>
     <lastmod>1970-01-01T00:00:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/ebooks/ebook2024/"
+                href="https://facu-tolay.github.io/mw-site-github/ebooks/ebook2024/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/ebooks/ebook2024/"
+                href="https://facu-tolay.github.io/mw-site-github/es/ebooks/ebook2024/"
                 />
   </url><url>
-    <loc>/es/ebooks/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/ebooks/</loc>
     <lastmod>1970-01-01T00:00:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/ebooks/"
+                href="https://facu-tolay.github.io/mw-site-github/ebooks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/ebooks/"
+                href="https://facu-tolay.github.io/mw-site-github/es/ebooks/"
                 />
   </url><url>
-    <loc>/es/contact/succesful/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/contact/succesful/</loc>
     <lastmod>1970-01-01T00:00:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/contact/succesful/"
+                href="https://facu-tolay.github.io/mw-site-github/contact/succesful/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/contact/succesful/"
+                href="https://facu-tolay.github.io/mw-site-github/es/contact/succesful/"
                 />
   </url><url>
-    <loc>/es/work-with-us/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/work-with-us/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/work-with-us/"
+                href="https://facu-tolay.github.io/mw-site-github/work-with-us/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/work-with-us/"
+                href="https://facu-tolay.github.io/mw-site-github/es/work-with-us/"
                 />
   </url><url>
-    <loc>/es/apply/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/apply/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/apply/"
+                href="https://facu-tolay.github.io/mw-site-github/apply/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/apply/"
+                href="https://facu-tolay.github.io/mw-site-github/es/apply/"
                 />
   </url><url>
-    <loc>/es/infrastructure-provisioning/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/infrastructure-provisioning/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/infrastructure-provisioning/"
+                href="https://facu-tolay.github.io/mw-site-github/infrastructure-provisioning/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/infrastructure-provisioning/"
+                href="https://facu-tolay.github.io/mw-site-github/es/infrastructure-provisioning/"
                 />
   </url><url>
-    <loc>/es/author/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/author/"
+                href="https://facu-tolay.github.io/mw-site-github/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/author/"
+                href="https://facu-tolay.github.io/mw-site-github/es/author/"
                 />
   </url><url>
-    <loc>/es/training/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/training/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/training/"
+                href="https://facu-tolay.github.io/mw-site-github/training/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/training/"
+                href="https://facu-tolay.github.io/mw-site-github/es/training/"
                 />
   </url><url>
-    <loc>/es/career/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/career/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/career/"
+                href="https://facu-tolay.github.io/mw-site-github/career/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/career/"
+                href="https://facu-tolay.github.io/mw-site-github/es/career/"
                 />
   </url><url>
-    <loc>/es/cloud-native-architecture/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/cloud-native-architecture/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/cloud-native-architecture/"
+                href="https://facu-tolay.github.io/mw-site-github/cloud-native-architecture/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/cloud-native-architecture/"
+                href="https://facu-tolay.github.io/mw-site-github/es/cloud-native-architecture/"
                 />
   </url><url>
-    <loc>/es/containerization-and-orchestration/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/containerization-and-orchestration/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/containerization-and-orchestration/"
+                href="https://facu-tolay.github.io/mw-site-github/containerization-and-orchestration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/containerization-and-orchestration/"
+                href="https://facu-tolay.github.io/mw-site-github/es/containerization-and-orchestration/"
                 />
   </url><url>
-    <loc>/es/business-continuity/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/business-continuity/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/business-continuity/"
+                href="https://facu-tolay.github.io/mw-site-github/business-continuity/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/business-continuity/"
+                href="https://facu-tolay.github.io/mw-site-github/es/business-continuity/"
                 />
   </url><url>
-    <loc>/es/cybersecurity/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/cybersecurity/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/cybersecurity/"
+                href="https://facu-tolay.github.io/mw-site-github/cybersecurity/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/cybersecurity/"
+                href="https://facu-tolay.github.io/mw-site-github/es/cybersecurity/"
                 />
   </url><url>
-    <loc>/es/work-with-us/devops-engineer-junior/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-junior/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/work-with-us/devops-engineer-junior/"
+                href="https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-junior/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/work-with-us/devops-engineer-junior/"
+                href="https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-junior/"
                 />
   </url><url>
-    <loc>/es/work-with-us/devops-engineer-ssr/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-ssr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/work-with-us/devops-engineer-ssr/"
+                href="https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-ssr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/work-with-us/devops-engineer-ssr/"
+                href="https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-ssr/"
                 />
   </url><url>
-    <loc>/es/work-with-us/devops-engineer-trainee/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-trainee/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/work-with-us/devops-engineer-trainee/"
+                href="https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-trainee/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/work-with-us/devops-engineer-trainee/"
+                href="https://facu-tolay.github.io/mw-site-github/es/work-with-us/devops-engineer-trainee/"
                 />
   </url><url>
-    <loc>/es/digital-transformation/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/digital-transformation/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/digital-transformation/"
+                href="https://facu-tolay.github.io/mw-site-github/digital-transformation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/digital-transformation/"
+                href="https://facu-tolay.github.io/mw-site-github/es/digital-transformation/"
                 />
   </url><url>
-    <loc>/es/team/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/team/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/team/"
+                href="https://facu-tolay.github.io/mw-site-github/team/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/team/"
+                href="https://facu-tolay.github.io/mw-site-github/es/team/"
                 />
   </url><url>
-    <loc>/es/faq/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/faq/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/faq/"
+                href="https://facu-tolay.github.io/mw-site-github/faq/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/faq/"
+                href="https://facu-tolay.github.io/mw-site-github/es/faq/"
                 />
   </url><url>
-    <loc>/es/training/docker/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/training/docker/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/training/docker/"
+                href="https://facu-tolay.github.io/mw-site-github/training/docker/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/training/docker/"
+                href="https://facu-tolay.github.io/mw-site-github/es/training/docker/"
                 />
   </url><url>
-    <loc>/es/training/kubernetes/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/training/kubernetes/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/training/kubernetes/"
+                href="https://facu-tolay.github.io/mw-site-github/training/kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/training/kubernetes/"
+                href="https://facu-tolay.github.io/mw-site-github/es/training/kubernetes/"
                 />
   </url><url>
-    <loc>/es/continuous-integration-and-deployment/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/continuous-integration-and-deployment/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/continuous-integration-and-deployment/"
+                href="https://facu-tolay.github.io/mw-site-github/continuous-integration-and-deployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/continuous-integration-and-deployment/"
+                href="https://facu-tolay.github.io/mw-site-github/es/continuous-integration-and-deployment/"
                 />
   </url><url>
-    <loc>/es/author/john-doe/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/author/john-doe/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/author/john-doe/"
+                href="https://facu-tolay.github.io/mw-site-github/author/john-doe/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/author/john-doe/"
+                href="https://facu-tolay.github.io/mw-site-github/es/author/john-doe/"
                 />
   </url><url>
-    <loc>/es/about/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/about/"
+                href="https://facu-tolay.github.io/mw-site-github/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/about/"
+                href="https://facu-tolay.github.io/mw-site-github/es/about/"
                 />
   </url><url>
-    <loc>/es/monitoring-and-observability/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/monitoring-and-observability/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/monitoring-and-observability/"
+                href="https://facu-tolay.github.io/mw-site-github/monitoring-and-observability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/monitoring-and-observability/"
+                href="https://facu-tolay.github.io/mw-site-github/es/monitoring-and-observability/"
                 />
   </url><url>
-    <loc>/es/clients/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/clients/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/clients/"
+                href="https://facu-tolay.github.io/mw-site-github/clients/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/clients/"
+                href="https://facu-tolay.github.io/mw-site-github/es/clients/"
                 />
   </url><url>
-    <loc>/es/our-culture/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/our-culture/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/our-culture/"
+                href="https://facu-tolay.github.io/mw-site-github/our-culture/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/our-culture/"
+                href="https://facu-tolay.github.io/mw-site-github/es/our-culture/"
                 />
   </url><url>
-    <loc>/es/platform-engineering/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/platform-engineering/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/platform-engineering/"
+                href="https://facu-tolay.github.io/mw-site-github/platform-engineering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/platform-engineering/"
+                href="https://facu-tolay.github.io/mw-site-github/es/platform-engineering/"
                 />
   </url><url>
-    <loc>/es/privacy-policy/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/privacy-policy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/privacy-policy/"
+                href="https://facu-tolay.github.io/mw-site-github/privacy-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/privacy-policy/"
+                href="https://facu-tolay.github.io/mw-site-github/es/privacy-policy/"
                 />
   </url><url>
-    <loc>/es/pricing/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/pricing/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/pricing/"
+                href="https://facu-tolay.github.io/mw-site-github/pricing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/pricing/"
+                href="https://facu-tolay.github.io/mw-site-github/es/pricing/"
                 />
   </url><url>
-    <loc>/es/professional-services/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/professional-services/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/professional-services/"
+                href="https://facu-tolay.github.io/mw-site-github/professional-services/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/professional-services/"
+                href="https://facu-tolay.github.io/mw-site-github/es/professional-services/"
                 />
   </url><url>
-    <loc>/es/training/wfc/</loc>
+    <loc>https://facu-tolay.github.io/mw-site-github/es/training/wfc/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/training/wfc/"
+                href="https://facu-tolay.github.io/mw-site-github/training/wfc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ar"
-                href="/es/training/wfc/"
+                href="https://facu-tolay.github.io/mw-site-github/es/training/wfc/"
                 />
   </url>
 </urlset>

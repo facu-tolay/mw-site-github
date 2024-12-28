@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Application form on Mikroways</title>
-    <link>/apply/</link>
+    <link>https://facu-tolay.github.io/mw-site-github/apply/</link>
     <description>Recent content in Application form on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/apply/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/mw-site-github/apply/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
