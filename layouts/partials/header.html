@@ -1,0 +1,93 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<div class="body-inner">
+
+<!-- Header start -->
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="{{ .Site.BaseURL }}{{i18n `home_url`}}">
+      <img id="logo" class="align-middle" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="{{ .Site.BaseURL }}{{i18n `home_url`}}">
+        <img id="logo" class="align-middle" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          {{ with $data.menu.menu }}
+          {{ range $index,$elements:= .menu_items }}
+          {{ if .has_children }}
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .name }}</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="{{ .id }}">
+                  {{ range $c_index,$c_element := .children }}
+                  <a class="dropdown-item {{if eq $c_index 0}}active{{end}}" id="{{$c_element.id}}" href="{{ $c_element.url | relLangURL }}" aria-selected="true">
+                    <span>
+                      <h5>{{ $c_element.name }}</h5>
+                      <p>{{ $c_element.short }}</p>
+                    </span>
+                  </a>
+                  {{ end }}
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="{{ .id }}">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  {{ range $c_index,$c_element := .children }}
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft {{if eq $c_index 0}}show active{{end}}" id="item-{{ $c_element.id }}" role="tabpanel">
+                    {{ if $c_element.image }}
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="{{ $c_element.image | absURL }}">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>{{ $c_element.name }}</h3>
+                        <p>{{ $c_element.full | markdownify }}</p>
+                      </div>
+                    </div>
+                    {{ else }}
+                    <h3>{{ $c_element.name }}</h3>
+                    <p>{{ $c_element.full | markdownify }}</p>
+                    {{ end }}
+                  </div>
+                  {{end}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          {{ else }}
+          <li class="nav-item"><a class="nav-link" href="{{ .url | relLangURL }}">{{ .name }}</a></li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </ul>
+          {{ if .IsTranslated }}
+          <i class="fa fa-globe" id="world-icon"></i><select class="m-2 border-0" id="select-language" onchange="location = this.value;">
+            {{ $siteLanguages := site.Languages}}
+            {{ $pageLang := .Page.Lang}}
+            {{ range .Page.AllTranslations }}
+            {{ $translation := .}}
+            {{ range $siteLanguages }}
+            {{ if eq $translation.Lang .Lang }}
+            {{ $selected := false }}
+            {{ if eq $pageLang .Lang}}
+            <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}" selected>{{ .LanguageName }}
+            </option>
+            {{ else }}
+            <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}">{{ .LanguageName }}</option>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ end }}
+          </select>
+          {{ end }}
+      </div>
+    </nav>
+  </div>
+</header>

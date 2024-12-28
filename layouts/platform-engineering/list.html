@@ -1,0 +1,148 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+{{ with $data.service.services.platform }}
+{{ partial "service-page-header.html" . }}
+
+<section id="service">
+  <div class="container-fluid cont-service-desc">
+    <div class="row d-flex align-items-center">
+      <div class="col-sm-12 col-md-6 service-desc">
+        <p>{{ .description }}</p>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="container service-grid">
+          <div class="row">
+            {{ $counter := 1 }} 
+            {{ range $index,$element := .components }}
+            <div class="col-sm service-box service-box-{{ $counter }}">
+              <a href="#{{ $element.id }}">{{ $element.name }}</a>
+            </div>
+            {{ if eq $counter 3 }}
+          </div>
+          <div class="row">
+            {{ end }}
+            {{ $counter = add $counter 1 }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center cont-service-benefits">
+    <h2>{{ i18n `benefits`}}</h2>
+    <div class="row text-left">
+      {{ range .benefits }}
+      <div class="col-sm-6 col-md-4 d-flex align-items-center pt-4">
+        <img src="/images/tilde-2.svg">
+        <p>{{ .benefit }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Technology stack -->
+  <section id="tech" class="tech d-none d-xl-flex border-top border-bottom">
+    <div class="container-fluid">
+      <div class="row tech">
+        {{ range .technologies }}
+        <div class="col-sm-1 text-center d-flex align-items-center">
+          <img src="{{ .logo | absURL }}" class="tech-logo" alt="{{ .name }}" style="width: 100%; max-height: 190px;">
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" class="tech d-xs-flex d-xl-none border-top border-bottom">
+      <div class="container">
+        <div class="row">
+        </div><!-- Title row end -->
+        <div class="row wow fadeInLeft">
+          <div id="client-carousel" class="col-sm-12 owl-carousel owl-theme text-center client-carousel">
+            {{ range .technologies }}
+              <img src="{{ .logo | absURL }}" class="client-logo" alt="{{ .name }}">
+            {{ end }}
+          </div><!-- Owl carousel end -->
+        </div><!-- Main row end -->
+      </div>
+      <!--/ Container end -->
+  </section>
+  <!-- End Technoloy stack -->
+
+  <div class="pt-5 pb-5">
+    {{ $index := 0 }}
+    {{ range .components }}
+    <div id="{{ .id }}" class="container pt-5">
+      <div class="row">
+        <div class="col-sm-6 align-self-center service-alt-grid">
+          {{ if eq (math.Mod $index 2) 0 }}
+          <h2>{{ .name }}</h2>
+          <p>{{ .description }}</p>
+          {{ if .button }}
+          <div class="col-sm-12 btn-service">
+            <a href="{{ .id | relLangURL }}" class="btn-service">
+              <span>{{ .button }}</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          {{ end }}
+          {{ else }}
+          <img src="{{ .bg_image }}">
+          {{ end }}
+        </div>
+        <div class="col-sm-6 align-self-center service-alt-grid">
+          {{ if eq (math.Mod $index 2) 0 }}
+          <img src="{{ .bg_image }}">
+          {{ else }}
+          <h2>{{ .name }}</h2>
+          <p>{{ .description }}</p>
+          {{ if .button }}
+          <div class="col-sm-12 btn-service">
+            <a href="{{ .id | relLangURL }}" class="btn-service">
+              <span>{{ .button }}</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ $index = math.Add $index 1 }}
+    {{ end }}
+  </div>
+</section>
+
+<section class="success-stories-strip">
+  <div class="container">
+    <div class="text-center success-stories-strip">
+      <h2>{{ i18n `success_stories` }}</h2>
+    </div>
+    <div class="row">
+      {{ range (where site.RegularPages "Section" "portfolio") }}
+      {{ if in .Params.featured "platform" }}
+      <div class="col-sm-12 col-md-6">
+        <a href="{{ .RelPermalink}}">
+        <div class="ss-box">
+          <h4 class="card-title">{{ .Title | markdownify }}</h5>
+          <h5 class="card-subtitle mb-3">{{ .Params.customer.name | markdownify }}</h6>
+          <p class="card-text">{{ .Params.description }}</p>
+        </div>
+        </a>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .cta }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+{{ end }}
+{{ end }}

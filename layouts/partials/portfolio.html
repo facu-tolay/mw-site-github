@@ -1,0 +1,56 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    {{ with $data.homepage.portfolio }}
+    <div class="row">
+      <div class="col-md-12 heading">
+        {{ with .title_icon }} <span class="title-icon float-left"><i class="fa {{ . }}"></i></span> {{ end }}
+        <h2 class="title">{{ .title | markdownify }} <span class="title-desc">{{ .subtitle | markdownify }}</span></h2>
+      </div>
+    </div> <!-- Title row end -->
+    {{ end }}
+  </div>
+
+  <div class="container text-center">
+    <!--Isotope filter start -->
+    <div class="row text-center">
+      <div class="col-md-12">
+        <div class="isotope-nav filter" data-isotope-nav="isotope">
+          <ul>
+            <li><a href="#" class="active" data-filter="*">{{i18n `all`}}</a></li>
+            {{ $categories := slice }}
+            {{ range (where .Site.RegularPages "Section" "portfolio") }}
+            {{ range .Params.types }}
+            {{ $categories = $categories | append . }}
+            {{ end }}
+            {{ end }}
+            {{ range ( $categories | uniq ) }}
+            <li><a href="#" data-filter=".{{ . | urlize }}">{{ . | humanize }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div><!-- Isotope filter end -->
+  </div>
+
+  <div class="container-fluid portfolio">
+    <div class="row isotope" id="isotope">
+      {{ range (where .Site.RegularPages "Section" "portfolio") }}
+      <div class="col-sm-3 {{range .Params.types }}{{ . | urlize}} {{ end }} isotope-item">
+        <div class="grid">
+          <a href="{{ .RelPermalink }}">
+            <figure class="m-0 effect-oscar">
+              {{ range first 1 .Params.images }}
+              <img src="{{ . | absURL }}" alt="portfolio image">
+              {{ end }}
+              <figcaption>
+                <h3>{{ .Title | markdownify }}</h3>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+      </div><!-- Isotope item end -->
+      {{ end }}
+    </div><!-- Content row end -->
+  </div><!-- Container end -->
+</section>

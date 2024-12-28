@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="training-item">
+  <div class="container">
+    <!-- Portfolio item row start -->
+    <div class="row justify-content-md-center">
+      <!-- Main content -->
+      <div class="col-md-8 col-xs-12">
+        <h3 class="training-title">{{ .Title | markdownify }}</h3>
+        <p>{{ .Params.description }}</p>
+        <div class="accordion" id="accordionExample">
+          {{ $index := 1 }}
+          {{ range .Params.details }}
+          <div class="card">
+            <div class="card-header" id="heading{{$index}}">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn{{$index}}" type="button" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
+                  {{ .title | markdownify }}
+                  <i class="fas fa-plus float-right icon" id="icon{{$index}}"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse{{$index}}" class="collapse" aria-labelledby="heading{{$index}}" data-parent="#accordionExample">
+              <div class="card-body">
+                {{ .description | markdownify }}
+              </div>
+            </div>
+          </div>
+          {{ $index = add $index 1 }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="training-desc">
+          <p>{{ .Content }}</p>
+          {{ range .Params.testimony }}
+          <blockquote class="blockquote">
+            <p class="mb-0">{{ .text | markdownify }}</p>
+            <footer class="blockquote-footer">{{ .author }} - {{ .position }}</cite></footer>
+          </blockquote>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-md-12 text-center course-buttons">
+        <a href="{{ $data.homepage.training.buy_url | relLangURL }}" class="btn btn-primary solid-wb">{{i18n `want_this`}}</a>
+      </div>
+  </div><!-- Container end -->
+</section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(".toggle-btn").click(function() {
+      $(this).find('i').toggleClass("fas fa-plus fas fa-minus");
+    })
+  </script>
+
+{{ end }}

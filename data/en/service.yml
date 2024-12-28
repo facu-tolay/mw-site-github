@@ -1,0 +1,662 @@
+############################ Services ########################
+services:
+  platform:
+    name: |
+      Cloud & Platform  
+      Engineering
+    parent: "Services"
+    description: "We design and automate platforms tailored to your needs, obtaining predictable and reproducible environments in which your software and services can be efficiently and consistently deployed. It covers development, maintenance, and production operation, with a focus on customer service, automation, and security."
+    bg_image: "images/services/pe-bg.webp"
+    cta:
+      title: "Do you have a project?"
+      subtitle: "Let's discuss your opportunities"
+      buttons:
+        - label : "Contact us"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Book a meeting"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+    benefits:
+      - benefit: "Accelerates software development"
+      - benefit: "Reduces operational complexity"
+      - benefit: "Ensures business continuity"
+      - benefit: "Empowers developer autonomy"
+      - benefit: "Reduces time to market"
+      - benefit: "Improves customer service"
+      - benefit: "Avoids provider lock-in"
+      - benefit: "Creates dependable systems"
+      - benefit: "Reduces costs"
+      - benefit: "Enables faster problem resolution"
+    components:
+      a:
+        id: "cloud-native-architecture"
+        name: "Cloud Native Architecture"
+        description: "To obtain all of the benefits of the cloud, the applications and infrastructure need to be created for it. We design workloads capable of taking full advantage of the cloud."
+        bg_image: "/images/services/cloud-native.webp"
+        button: "See more"
+        page:
+          overview: "At Mikroways, we specialize in providing comprehensive solutions in containerization and container orchestration, as well as DevOps practices to optimize the development, deployment, and operation of applications in both cloud and on-premise environments. From assessing and modernizing applications to implementing and managing Kubernetes clusters, we offer customized services that enable organizations to fully leverage the benefits of containerization and orchestration."
+          description: "Cloud-native architecture refers to a software design approach that maximizes the capabilities and services offered by cloud computing platforms. It is based on principles of scalability, resilience, flexibility, and automation to efficiently develop and deploy applications in cloud environments."
+          components:
+            a:
+              id: "microservices"
+              name: "Microservices"
+              bg_image: "/images/services/cloud-native/microservices.webp"
+              description: "Instead of developing monolithic applications, cloud-native architecture promotes breaking down applications into small, independent services known as microservices. Each microservice handles a specific function and communicates with other services through APIs (Application Programming Interfaces)."
+            b:
+              id: "containers"
+              name: "Containers"
+              bg_image: "/images/services/cloud-native/cont.webp"
+              description: "Containers are a way to package and distribute applications along with all their dependencies. They use technologies like Docker to ensure that an application runs consistently across different environments, whether it's development, testing, or production."
+            c:
+              id: "orchestration"
+              name: "Container orchestration"
+              bg_image: "/images/services/cloud-native/cont-orch.webp"
+              description: "Container orchestration refers to the automated management of containers on a large scale. Tools like Kubernetes are widely used to automate tasks such as deployment, scaling, and managing the availability of containers in a cloud environment."
+            d:
+              id: "infrastructure-as-code"
+              name: "Infrastructure as Code (IaC)"
+              bg_image: "/images/services/cloud-native/iac.webp"
+              description: "Infrastructure as code is a practice that involves defining the infrastructure of the application using code. This enables automated creation and management of infrastructure resources, making it easier to deploy and maintain cloud environments."
+            e:
+              id: "devops"
+              name: "DevOps"
+              bg_image: "/images/services/cloud-native/devops.webp"
+              description: "The DevOps culture focuses on collaboration between development and operations teams to improve the continuous delivery of software. In the context of cloud-native architecture, DevOps involves automating development, testing, and deployment processes to ensure fast and reliable application delivery."
+          benefits:
+            title: "Benefits"
+            image: "/images/services/benefits-cloud-native.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-maximize"
+                title: "Scalability"
+                description: "Allows applications to scale quickly and efficiently to meet changing user demands, either by increasing or decreasing resources automatically."
+              b: 
+                id: "resiliency"
+                icon: "fa-solid fa-house-medical-circle-check"
+                title: "Resiliency"
+                description: "Cloud-native architecture promotes resilience by designing applications to be fault-tolerant and capable of automatically recovering from adverse events."
+              c:
+                id: "agility"
+                icon: "fa-solid fa-gauge-high"
+                title: "Agility"
+                description: "Facilitates agile development and continuous delivery of software, allowing organizations to quickly adapt to changes in the market and user needs."
+              d:
+                id: "efficiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Efficiency"
+                description: "Reduces the time and costs associated with deploying and managing applications by leveraging cloud automation and scalability."
+              e:
+                id: "portability"
+                icon: "fa-solid fa-recycle"
+                title: "Portability"
+                description: "Allows running applications consistently across different cloud and on-premises environments, providing greater flexibility and options for organizations."
+          services:
+            a:
+              id: "app-modernization"
+              icon: "fa-solid fa-circle-up"
+              title: "Legacy application modernization"
+              description:
+                - item: "Review and analysis of the current application architecture."
+                - item: "Development of strategies to migrate monolithic applications to a cloud-based architecture."
+                - item: "Containerization and container orchestration implementations to improve application scalability and availability."
+            b:
+              id: "cloud-native-apps-design"
+              icon: "fa-solid fa-cloud-arrow-up"
+              title: "Cloud native application design"
+              description:
+                - item: "We design and implement applications using cloud-native architecture."
+                - item: "We utilize cutting-edge technologies like Kubernetes (in which we are experts) and managed container services to deploy and manage applications efficiently."
+                - item: "We integrate DevOps practices to automate and streamline development, testing, and deployment processes, ensuring continuous and reliable software delivery."
+            c:
+              id: "training-consultancy"
+              icon: "fa-solid fa-hand-holding-hand"
+              title: "Training & Consultancy"
+              description:
+                - item: "Customized consultancy on native cloud architecture adoption strategies."
+                - item: "Training and education on cloud-native technologies and best practices for development and operations teams."
+                - item: "Continuous support and guidance throughout the project lifecycle to ensure success in the implementation and operation of cloud solutions."
+      b:
+        id: "infrastructure-provisioning"
+        name: "Infrastructure provisioning"
+        description: "Creating, replicating, updating, and managing IT infrastructure in an automated manner provides essential flexibility and velocity to any business."
+        bg_image: "/images/services/infrastructure.webp"
+        button: "See more"
+        page:
+          description: |
+            Infrastructure provisioning refers to the process of preparing and configuring the technological resources needed to support the operation of systems and applications. This includes servers, networks, storage, and any other components necessary to run workloads efficiently and securely.
+          benefits:
+            title: "Benefits"
+            image: "/images/services/cloud-native.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-maximize"
+                title: "Scalability"
+                description: "Infrastructure provisioning enables scaling resources according to business needs, ensuring that peak demand can be met without interruptions in service."
+              b: 
+                id: "agility"
+                icon: "fa-solid fa-gauge-high"
+                title: "Agility"
+                description: "By using automation tools and techniques, infrastructure provisioning allows for the quick and consistent deployment and configuration of new resources, speeding up the time to market for new products and services."
+              c:
+                id: "flexibility"
+                icon: "fa-solid fa-sliders"
+                title: "Flexibility"
+                description: "Infrastructure can be provisioned in on-premises environments or in the cloud, providing flexibility to adapt to the organization's workload requirements and budget."
+              d:
+                id: "cost-effiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Cost efficiency"
+                description: "By using cloud resources, you only pay for what you use, which can reduce operational costs compared to acquiring and maintaining physical infrastructure."
+          services:
+            a:
+              id: "infra-design"
+              icon: "fa-solid fa-cubes"
+              title: "Infrastructure design & implementation"
+              description:
+                - item: "Assessment of workload requirements and design of scalable and resilient infrastructure architectures."
+                - item: "Implementation of infrastructure using on-premise or cloud environments, via tools such as AWS, Azure, Google Cloud Platform, or hybrid infrastructure solutions."
+            b:
+              id: "provisioning-automation"
+              icon: "fa-solid fa-gears"
+              title: "Provisioning automation"
+              description:
+                - item: "Development of infrastructure-as-code scripts and templates to automate resource provisioning and system configuration."
+                - item: "Implementation of automation tools such as Terraform, Ansible, or Chef to manage and maintain infrastructure efficiently."
+            c:
+              id: "infra-mgmt-and-monitoring"
+              icon: "fa-solid fa-magnifying-glass-chart"
+              title: "Infrastructure management and monitoring"
+              description:
+                - item: "Configuration of monitoring tools to monitor the performance and health of the infrastructure and generate alerts in case of issues."
+                - item: "Implementation of cost management policies to optimize resource usage and reduce unnecessary expenses."
+            d:
+              id: "training-and-consultancy"
+              icon: "fa-solid fa-hand-holding-hand"
+              title: "Training & Consultancy"
+              description:
+                - item: "Advice on best practices for infrastructure provisioning and how to effectively implement them in your organization."
+                - item: "Training and education on infrastructure as code tools and automation techniques for operations and development teams."
+                - item: "Continuous support and guidance throughout the implementation and maintenance process to ensure optimal performance and scalability according to business needs."
+      c:
+        id: "containerization-and-orchestration"
+        name: "Containerization & Orchestration"
+        bg_image: "/images/services/containers.webp"
+        description: "Containers encapsulate applications and their dependencies, providing portability across different environments, while orchestration, such as Kubernetes, facilitates efficient container management, ensuring their consistent and scalable deployment."
+        button: "See more"
+        page:
+          overview: "At Mikroways, we specialize in providing comprehensive solutions in containerization and container orchestration, as well as DevOps practices to optimize the development, deployment, and operation of applications in cloud and on-premise environments. From assessing and modernizing applications to implementing and managing Kubernetes clusters, we offer customized services that enable organizations to fully leverage the benefits of containerization and orchestration."
+          components:
+            a:
+              id: "containerization"
+              name: "Containerization"
+              bg_image: "/images/services/cloud-native/microservices.webp"
+              description: "Containerization is an operating system-level virtualization approach that allows packaging an application and all its dependencies into a lightweight and portable container. Each container operates independently, which isolates the application from the runtime environment, ensuring consistency and portability across different environments."
+            b:
+              id: "orchestration"
+              name: "Orchestration"
+              bg_image: "/images/services/cloud-native/cont.webp"
+              description: "Container orchestration refers to the automated management of containers at scale. When you have multiple containers running on different hosts, it's necessary to coordinate their deployment, scaling, monitoring, and recovery in case of failures. This is where orchestration tools like Kubernetes come into play."
+          benefits_cont:
+            title: "Benefits of containerization"
+            image: "/images/services/benefits-containers.webp"
+            benefits:
+              a:
+                id: "portability"
+                icon: "fa-solid fa-recycle"
+                title: "Portability"
+                description: "Containers are independent of the execution environment, which means that once created, they can run anywhere that supports Docker or other container platforms."
+              b: 
+                id: "consistency"
+                icon: "fa-regular fa-clone"
+                title: "Consistency"
+                description: "By packaging the application and its dependencies together, it ensures that the application runs the same way in different environments, from development to production."
+              c:
+                id: "efficiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Efficiency"
+                description: "Containers share resources from the underlying operating system, making them more efficient in terms of resource usage compared to virtual machines."
+              d:
+                id: "quick-deployment"
+                icon: "fa-solid fa-gauge-high"
+                title: "Quick deployment"
+                description: "Containers can be started and stopped quickly, speeding up the process of deploying and scaling applications."
+              e:
+                id: "isolation"
+                icon: "fa-solid fa-layer-group"
+                title: "Isolation"
+                description: "Each container provides a level of isolation for the application, improving security and simplifying dependency management."
+          benefits_orch:
+            title: "Benefits of orchestration"
+            image: "/images/services/benefits-orch.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-recycle"
+                title: "Scalability"
+                description: "Kubernetes enables automatic scaling of applications based on workload, ensuring optimal performance at all times."
+              b: 
+                id: "high-availability"
+                icon: "fa-solid fa-coins"
+                title: "High availability"
+                description: "Kubernetes manages workload distribution among multiple instances of an application, ensuring high availability and fault tolerance."
+              c:
+                id: "deployment"
+                icon: "fa-solid fa-list-check"
+                title: "Declarative deployment"
+                description: "The definition of infrastructure as code allows for consistent and reproducible deployment of the application across different environments."
+              d:
+                id: "autohealing"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Monitoring & Autohealing"
+                description: "Kubernetes constantly monitors the state of applications and nodes, and can automatically take self-healing actions in case of failures."
+              e:
+                id: "resource-mgmt"
+                icon: "fa-solid fa-users-gear"
+                title: "Resource management"
+                description: "Kubernetes efficiently manages CPU and memory resources, dynamically allocating them according to the needs of the applications."
+          services:
+            a:
+              id: "cont-strategies"
+              icon: "fa-brands fa-docker"
+              title: "Implementation of containerization strategies"
+              description:
+                - item: "Evaluation of existing applications to identify those that would benefit from containerization."
+                - item: "Development of strategies and roadmaps for the gradual containerization of critical business applications."
+                - item: "Design and implementation of Dockerfiles and Docker Compose to package applications into containers efficiently and securely."
+            b:
+              id: "kubernetes-mgmt"
+              icon: "fa-solid fa-laptop-code"
+              title: "Deployment and management of Kubernetes clusters"
+              description:
+                - item: "Implementation of Kubernetes clusters in on-premises or public cloud environments."
+                - item: "Configuration and optimization of Kubernetes clusters to maximize scalability, availability, and security."
+                - item: "Deployment of applications on Kubernetes clusters using tools like Helm to manage application packages."
+            c:
+              id: "processes-automation"
+              icon: "fa-solid fa-arrows-spin"
+              title: "Process automation with DevOps"
+              description:
+                - item: "Integration of DevOps practices into the application development and deployment lifecycle."
+                - item: "Automation of CI/CD (Continuous Integration/Continuous Deployment) pipelines to ensure fast and reliable software delivery."
+                - item: "Implementation of monitoring and alerts to monitor the performance and health of applications and container infrastructure."
+      d:
+        id: "continuous-integration-and-deployment"
+        name: "Continuous Integration & Deployment"
+        description: "Automating software deployment significantly reduces time-to-market and enhances the productivity of the IT team."
+        bg_image: "/images/services/cicd.webp"
+        button: "See more"
+        page:
+          description: "Continuous Integration (CI) and Continuous Delivery (CD) are key practices in software development that automate the process of integrating, testing, and delivering code."
+          components:
+            a:
+              id: "cont-int"
+              name: "Continuous integration (CI)"
+              description: "It refers to the practice of regularly merging code changes into a shared repository, followed by automatically running unit and integration tests to verify the code integrity."
+            b:
+              id: "cont-del"
+              name: "Continuous delivery (CD)"
+              description: "Extend CI by automating the delivery of tested code to production or pre-production environments. This involves automating additional tests, such as acceptance testing and performance testing, followed by automated deployment to production environments."
+          benefits:
+            title: "Benefits of applying CI/CD"
+            image: "/images/services/cloud-native.webp"
+            benefits:
+              a:
+                id: "rapid-feedback"
+                icon: "fa-solid fa-people-arrows"
+                title: "Rapid feedback"
+                description: "It allows for early detection and correction of errors in the development cycle, leading to a faster and more efficient development cycle."
+              b: 
+                id: "software-quality"
+                icon: "fa-solid fa-medal"
+                title: "Software quality"
+                description: "Test automation ensures that the delivered code is of high quality and free of errors, improving customer satisfaction and confidence in the product."
+              c:
+                id: "reliable-deployment"
+                icon: "fa-solid fa-binary-circle-check"
+                title: "Reliable deployment"
+                description: "Automated continuous delivery ensures that software updates are consistently and reliably deployed in production environments, reducing the risk of human errors."
+              d:
+                id: "quick-deployment"
+                icon: "fa-solid fa-screen-users"
+                title: "Collaboration & visibility"
+                description: "Facilitates collaboration between development, testing, and operations teams by providing a transparent and automated process for software development and deployment."
+          services:
+            a:
+              id: "pipelines-implementation"
+              icon: "fa-sharp fa-solid fa-webhook"
+              title: "CI/CD pipeline implementation"
+              description:
+                - item: "Design and implementation of custom CI/CD pipelines tailored to the specific needs of your company and projects."
+                - item: "Integration of CI/CD tools such as Jenkins, GitLab CI/CD, CircleCI, or GitHub Actions to automate the process of integration, testing, and deployment."
+            b:
+              id: "test-automation"
+              icon: "fa-solid fa-laptop-binary"
+              title: "Automation for tests"
+              description:
+                - item: "Development of automated testing suites (unit, integration, functional, etc.) to ensure software quality at every stage of the development cycle."
+                - item: "Integration of automated testing tools such as Selenium, JUnit, or PyTest into the CI/CD pipelines."
+            c:
+              id: "iac-mgmt"
+              icon: "fa-solid fa-gear-code"
+              title: "Management of Infrastructure as Code"
+              description:
+                - item: "Implementation of Infrastructure as Code (IaC) practices to automate the creation and management of development, testing, and production environments."
+                - item: "Utilization of tools like Terraform, AWS CloudFormation, or Azure Resource Manager to define infrastructure declaratively."
+      e:
+        id: "monitoring-and-observability"
+        name: "Monitoring & Observability"
+        description: "Obtaining real-time insights into applications and services to minimize issue resolution time and enhance overall quality."
+        bg_image: "/images/portfolio/monitoring.jpg.webp"
+        button: "See more"
+        page:
+          description: "Monitoring and observability are essential practices in the development and operation of computer systems, especially in cloud environments."
+          components:
+            a:
+              id: "monitoring"
+              name: "Monitoring"
+              description: "Refers to the process of monitoring the status and performance of systems, applications, services, and infrastructure resources. This involves collecting metrics and logs about resource usage, application performance, and system health to detect and respond to potential issues."
+            b:
+              id: "observability"
+              name: "Observability"
+              description: "Refers to the ability to understand, analyze, and debug complex systems through the collection and visualization of data. Observability focuses on obtaining useful information from monitoring data, which enables operations and development teams to better understand system behavior and make informed decisions."
+          benefits:
+            title: "Monitoring and observability benefits"
+            image: "/images/services/benefits-monitoring.webp"
+            benefits:
+              a:
+                id: "problem-detection"
+                icon: "fa-solid fa-sensor-triangle-exclamation"
+                title: "Early problem detection"
+                description: "Continuous monitoring allows for the detection of performance issues or failures in real-time, enabling teams to respond quickly and minimize downtime."
+              b: 
+                id: "performance-optimization"
+                icon: "fa-solid fa-microchip"
+                title: "Performance optimization"
+                description: "The collection and analysis of monitoring data helps to identify bottlenecks and areas for improvement in the system, enabling the optimization of application performance and infrastructure."
+              c:
+                id: "informed-decisions"
+                icon: "fa-sharp fa-solid fa-brain-arrow-curved-right"
+                title: "Informed decision-making"
+                description: "Observability provides detailed insights into system behavior, helping teams better understand the root causes of issues and make informed decisions to improve the system."
+              d:
+                id: "user-experience"
+                icon: "fa-solid fa-face-smile"
+                title: "User experience improvement"
+                description: "By proactively detecting and fixing issues, a smoother and more reliable user experience is ensured, leading to increased customer satisfaction."
+              e:
+                id: "compliance"
+                icon: "fa-solid fa-signature"
+                title: "SLA compliance"
+                description: "Continuous monitoring ensures that systems meet the established service level agreements, ensuring high availability and performance."
+          services:
+            a:
+              id: "solutions-implementation"
+              icon: "fa-solid fa-eye"
+              title: "Monitoring and observability solutions"
+              description:
+                - item: "Design and implementation of customized monitoring systems tailored to the specific needs of your company and applications."
+                - item: "Implementation of monitoring tools such as Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), or cloud provider monitoring solutions like AWS CloudWatch or Azure Monitor."
+            b:
+              id: "alerts-setup"
+              icon: "fa-solid fa-bell-on"
+              title: "Notifications and alerts"
+              description:
+                - item: "Configuration of alerts and notifications to receive immediate notifications about performance issues or system failures."
+                - item: "Definition of custom alert thresholds and escalation policies to ensure a rapid response to critical issues."
+            c:
+              id: "performance-optimization"
+              icon: "fa-solid fa-crosshairs"
+              title: "Performance analysis and optimization"
+              description:
+                - item: "Detailed analysis of monitoring data to identify bottlenecks and areas for improvement in application performance and infrastructure."
+                - item: "Implementation of adjustments and optimizations based on data to improve system performance and efficiency."
+      f:
+        id: "business-continuity"
+        name: "Business Continuity"
+        description: "The continuity of your business is more important than anything else. That is why we make sure that you have an actionable, tested, updated and effective disaster recovery plan at all times, with minimal to no manual intervention."
+        bg_image: "/images/services/business-continuity.webp"
+        button: "See more"
+        page:
+          description: "It is important for an organization to maintain its critical operations and functions during and after disruptive events, such as infrastructure failures, cyberattacks, or any other crisis situation. The goal is to minimize the impact on the business and ensure quick and efficient recovery of operations."
+          benefits:
+            title: "Benefits"
+            benefits:
+              a:
+                id: "resiliency"
+                icon: "fa-solid fa-display-chart-up-circle-dollar"
+                title: "Business resiliency"
+                description: "Business continuity ensures that an organization can withstand and quickly recover from adverse events, thus minimizing the impact on its operations and customers."
+              b: 
+                id: "inactivity-reduction"
+                icon: "fa-solid fa-stopwatch-20"
+                title: "Reduced downtime"
+                description: "Having well-defined plans and procedures to manage crisis situations significantly reduces downtime and minimizes financial losses."
+              c:
+                id: "brand-protection"
+                icon: "fa-solid fa-building-shield"
+                title: "Brand reputation protection"
+                description: "The ability to maintain business continuity even in times of crisis demonstrates the reliability and commitment of the organization to its customers and stakeholders, thereby protecting its brand reputation."
+              d:
+                id: "compliance"
+                icon: "fa-solid fa-badge-check"
+                title: "Compliance"
+                description: "Implementing business continuity plans can help meet regulatory and compliance requirements related to risk management and data protection."
+          services:
+            a:
+              id: "drp"
+              icon: "fa-solid fa-memo-circle-check"
+              title: "Business continuity plan"
+              description:
+                - item: "Risk and vulnerability assessment to identify potential threats and their impacts on business operations."
+                - item: "Design and implementation of business continuity plans tailored to the specific needs and requirements of your organization."
+            b:
+              id: "impact-analysis"
+              icon: "fa-solid fa-radar"
+              title: "Business impact analysis"
+              description:
+                - item: "Conducting a business impact analysis to identify critical processes and functions and determine their recovery time objectives and fault tolerance requirements."
+            c:
+              id: "recovery-solutions"
+              icon: "fa-solid fa-vault"
+              title: "Backup and recovery solutions"
+              description:
+                - item: "Development and implementation of data backup and recovery strategies to ensure availability and integrity of critical business information."
+                - item: "The configuration of automated backup systems and disaster recovery solutions (DRP) to ensure quick recovery of data and systems in case of failure."
+            d:
+              id: "drp-testing"
+              icon: "fa-solid fa-building-circle-check"
+              title: "Business continuity tests"
+              description:
+                - item: "Planning and execution of drills and business continuity exercises to test the effectiveness of crisis plans and procedures."
+                - item: "The identification of areas for improvement and updating of business continuity plans based on exercise results."
+    technologies:
+      - name: "AWS"
+        logo: "images/tech/aws.png"
+      - name: "Google Cloud"
+        logo: "images/tech/gcloud.png"
+      - name: "Microsoft Azure"
+        logo: "images/tech/azure.png"
+      - name: "VMware"
+        logo: "images/tech/vmware.png"
+      - name: "Microsoft HyperV"
+        logo: "images/tech/hyperv.png"
+      - name: "Kubernetes"
+        logo: "images/tech/kubernetes.png"
+      - name: "Docker"
+        logo: "images/tech/docker.png"
+      - name: "Openshift"
+        logo: "images/tech/openshift.png"
+      - name: "Grafana"
+        logo: "images/tech/grafana.png"
+      - name: "Prometheus"
+        logo: "images/tech/prometheus.png"
+      - name: "Veeam"
+        logo: "images/tech/veeam.png"
+      - name: "Velero"
+        logo: "images/tech/velero.svg"
+  digital_transformation:
+    name: |
+      Digital Transformation
+    parent: "Services"
+    description:
+      - item: "In today's dynamic business world, Digital Transformation is more than a necessity: it is an essential strategy for survival and long-term success. At Mikroways, we understand the complexity of this process and offer a comprehensive Digital Transformation service designed to propel your company to the digital forefront."
+      - item: "Our current world is hyperconnected; change is super-accelerated; artificial intelligence is omnipresent; and decisions are increasingly data-driven."
+      - item: "What if you could accelerate practical innovation in your business? Mikroways' digital transformation team will help you inspire new ideas and drive practical innovation."
+    bg_image: "images/services/dt-bg.webp"
+    components_heading: "Our approach"
+    components:
+      a:
+        id: "digital-vision-strategy"
+        name: "Vision and digital strategy"
+        description: |
+          Our goal is to focus on digital strategy, integration, and comprehensive transformation, including the ability to demonstrate the viability and value of secure and efficient business solutions. At Mikroways, we offer a complementary portfolio to the industry, leveraging cross-sector best practices, and aspire to be the top choice for our clients in identifying, designing, accelerating, and scaling transformation opportunities.  
+          We lead in conversations and programs on digital transformation, as well as strategic design of digital businesses, operating models, products, and services. 
+        bg_image: "/images/services/digital-transformation/strategy.webp"
+      b:
+        id: "insights"
+        name: "Insights"
+        description: |
+          Data is a fundamental asset in your organization, allowing for the optimization of operations and offering competitive advantage. Investment in digital maturity, data credibility, and integration into organizational processes are essential elements for success. To achieve this, it is necessary to make accurate technological decisions that help meet drivers and achieve expected results.  
+          Mikroways offers a data-centric approach and robust governance to assist you in identifying and supporting relevant use cases with appropriate solutions for differentiated data management, while leveraging artificial intelligence and machine learning for intelligent and optimized processes.
+        bg_image: "/images/services/digital-transformation/insights.webp"
+      c:
+        id: "experience"
+        name: "Experience"
+        bg_image: "/images/services/digital-transformation/experience.webp"
+        description: |
+          Products and services are nowadays more complex, involving multiple touchpoints, processes, people, and technologies. They are conceived, developed, and managed by multifunctional teams both internal and external to the business, often with different ideas, agendas, constraints, and priorities influencing the final experience. At Mikroways, our role is to manage this complexity, generating value from conception to operation for both the business and the customer, and ensuring the success, adoption, and usage of products and services.
+      d:
+        id: "process-excellence"
+        name: "Excellence in processes"
+        description: |
+          To achieve sustainable transformation and reach the potential of technological investments and sustainability goals, organizations must rely on robust, stable, and efficient processes.  
+          Our team of professionals brings extensive experience and skills combining process mining and business process management. We have specialized skills and work closely with our automation and change management experts to achieve sustainable results.
+        bg_image: "/images/services/digital-transformation/processes.webp"
+      e:
+        id: "process-automation"
+        name: "Process automation"
+        description: |
+          At Mikroways, we offer support in designing, building, and managing your automation capability. We have experts who can assist you in developing your strategy; take cautious first steps; design your operating model; or scale automation.
+          Our experts possess essential digital transformation consulting skills to help you discover and prioritize your best opportunities; improve process performance through simplification, and demonstrate the practical application of the latest technologies to expand your automation to more complex use cases.
+        bg_image: "/images/services/digital-transformation/automation.webp"
+      f:
+        id: "change-management"
+        name: "Organizational change management"
+        description: |
+          We engage with people to empower and enable them throughout the digital transformation journey, ultimately helping the organization succeed in a new (hybrid) work environment.
+        bg_image: "/images/services/digital-transformation/change.webp"
+      g:
+        id: "tech-strategy"
+        name: "Technology Strategy and Innovation"
+        description: |
+          IT teams have transformed into an essential strategic and innovation partner, proactively driving digitally-enabled products, services, and business models. All while addressing the transformational challenges of complex IT legacy.
+          Optimize what you've achieved in operations, services, applications, and architectures, or enhance your capabilities with an innovation partner like Mikroways. We offer effective best practices to help clients master their IT digital transformations. Discover how we can help you deliver tangible future-proof business outcomes.
+        bg_image: "/images/services/digital-transformation/innovation.webp"
+      h:
+        id: "business-continuity"
+        name: "Accelerate your digital innovation"
+        description: |
+          We create highly effective multifunctional teams that adopt an agile approach to accelerate the delivery of prototypes or minimum viable solutions (MVPs) aligned with business objectives.
+        bg_image: "/images/services/digital-transformation/accelerate.webp"
+    cta:
+      title: "Do you have a project?"
+      subtitle: "Let's discuss your opportunities"
+      buttons:
+        - label : "Contact us"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Book a meeting"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+  professional_services:
+    name: |
+      Professional Services
+    parent: "Services"
+    description: "Our line of professional services honors our commitment to adapt to our clients' specific needs and always provide the best possible solution for each case. In that regard, we adopt a proactive approach to continuously drive improvements and efficiency in your business by applying our knowledge and expertise to your particular situation."
+    bg_image: "/images/services/ps-bg.webp"
+    components_heading: "Our professional services"
+    components:
+      a:
+        id: "managed-services"
+        name: "Managed Services"
+        bg_image: "/images/services/ps/managed-services.webp"
+        description: "Managed services are an essential part of our proposal to provide a comprehensive solution. With this service, we aim to free our clients from the complex task of managing their infrastructure and its components, by taking responsibility for its operation. We focus on the following points:"
+        benefits:
+          - item: "Reactive and proactive maintenance"
+          - item: "Continuous service monitoring"
+          - item: "Periodic capacity analysis"
+          - item: "Generation of documentation"
+          - item: "Improvements suggestions"
+      b:
+        id: "consultancy"
+        name: "Consultancy"
+        bg_image: "/images/services/ps/consultancy.webp"
+        description: "With our consulting service, we not only provide timely advice but also adopt a proactive approach to continuously drive improvements and efficiency in your business. Through regular assessments, we identify optimization opportunities and maximize operational performance. Our consultancy service is characterized by:"
+        benefits:
+          - item: "Continuous assistance"
+          - item: "Dynamic assessments"
+          - item: "Implementation of improvements"
+          - item: "Flexibility and adaptability"
+          - item: "Continuous monitoring"
+      c: 
+        id: "ctoaas"
+        name: "CTO as a service"
+        bg_image: "/images/services/ps/ctoaas.webp"
+        description: "It's a comprehensive solution for your company's technological needs, without the need to hire a full-time Chief Technology Officer (CTO). Our team of experts becomes your virtual CTO, providing strategic technological leadership and managing all facets of your digital infrastructure. Gain the following benefits:"
+        benefits:
+          - item: "Customized technological strategy"
+          - item: "Cost optimization"
+          - item: "Comprehensive management"
+          - item: "Flexibility and scalability"
+          - item: "Focus on core business"
+    cta:
+      title: "Do you have a project?"
+      subtitle: "Let's discuss your opportunities"
+      buttons:
+        - label : "Contact us"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Book a meeting"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+  cybersecurity:
+    name: |
+      Cybersecurity
+    parent: "Services"
+    description: "Cybersecurity is an unavoidable priority in the digital age, where threats constantly evolve. At Mikroways, we understand the importance of protecting your digital assets and data. Thus, our security service line is designed to provide robust and proactive defense against cyber threats."
+    bg_image: "images/services/cybersecurity-bg.webp"
+    catalog:
+      title: "Service line"
+      items:
+        - title: "Penetration testing"
+          description: "At Mikroways, we conduct penetration tests to simulate real-world cyberattacks on your systems. By doing this, we identify vulnerabilities that malicious hackers could exploit. Our goal is to help you strengthen your defenses by finding and fixing these weaknesses before they can be exploited by real attackers."
+          icon: "fa-solid fa-unlock"
+        - title: "Security assessment"
+          description: "Our security assessment involves a comprehensive evaluation of your IT infrastructure, policies, and controls. We thoroughly examine your systems to identify security vulnerabilities and assess the effectiveness of your existing security measures. With our assessment, you'll gain insights into areas that need improvement and receive recommendations to enhance your overall security posture."
+          icon: "fa-solid fa-arrows-to-eye"
+        - title: "Security in the cloud"
+          description: "We specialize in securing your data, applications, and infrastructure in the cloud. With our expertise, we implement robust security measures tailored to cloud environments like AWS, Azure, or GCP. From encryption to access controls, we ensure your cloud assets are protected from cyber threats and compliance risks."
+          icon: "fa-solid fa-cloud"
+        - title: "Security solutions implementation"
+          description: "Our team handles the deployment and configuration of cutting-edge cybersecurity tools and technologies. From firewalls to SIEM platforms, we implement a comprehensive suite of security solutions to safeguard your organization's IT assets. With our expertise, you can create a multi-layered defense strategy to address various security threats effectively."
+          icon: "fa-solid fa-vault"
+        - title: "Continuous monitoring"
+          description: "We provide continuous monitoring services to keep a watchful eye on your IT environment 24/7. Our advanced monitoring systems track network traffic, system logs, and user activity in real-time to detect and respond to security threats promptly. With our continuous monitoring, you'll have peace of mind knowing that we're always vigilant against cyber threats."
+          icon: "fa-solid fa-magnifying-glass-chart"
+        - title: "Deployment of resilient architectures"
+          description: "We design and implement resilient architectures to ensure your IT infrastructure can withstand and recover from cyberattacks and other disruptions. Our solutions include redundancy, failover mechanisms, and disaster recovery plans to minimize downtime and maintain business continuity. With our resilient architectures, you can rest assured that your organization is prepared to handle any adversity."
+          icon: "fa-solid fa-building-shield"
+    cta:
+      title: "Do you have a project?"
+      subtitle: "Let's discuss your opportunities"
+      buttons:
+        - label : "Contact us"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Book a meeting"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"

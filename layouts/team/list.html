@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ with $data.team }}
+<section id="team" class="team">
+  <div class="container">
+    <div class="row text-center">
+      {{ range $index,$elements:= .team_member }}
+      <div class="col-md-3 col-sm-6 mb-5">
+        <div class="team wow fadeInUp" data-wow-delay=".{{mul $index 2}}s">
+          <div class="img-hexagon">
+            <img src="{{ .image | absURL }}" alt="{{ .name | markdownify }}">
+            <span class="img-top"></span>
+            <span class="img-bottom"></span>
+          </div>
+          <div class="team-content">
+            <h3>{{ .name | markdownify }}</h3>
+            <p>{{ .designation | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12 heading">
+        {{ with .button }}
+        <a href="{{ .link | relLangURL }}" id="team-button" class="btn btn-primary {{.style}} cd-btn">{{ .label }}</a>
+        {{ end }}
+      </div>
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section>
+{{ end }}
+
+{{ end }}
+
+

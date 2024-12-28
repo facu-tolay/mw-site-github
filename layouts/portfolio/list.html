@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.portfolio.portfolio }}
+
+<section id="about" class="p-0 mb-3">
+{{ partial "page-header-bgimage.html" . }}
+</section>
+
+<div class="container about-full-desc">
+  <div class="col-sm-12 text-center portfolio-title">
+    <h2 class="portfolio-title">{{ .success_stories_title }}</h2>
+  </div>
+  <div class="col-sm-12 mb-5">
+    <p>{{ .introduction }}</p>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center mb-5 st-deck-row">
+  {{ range (where site.RegularPages "Section" "portfolio") }}
+  <div class="col-sm-4 col-md-3 st-deck">
+    <a class="st-deck-img" href="{{ .RelPermalink }}"><img src="{{ .Params.customer.logo | absURL }}" alt="{{ .Params.customer.name }}"></a>
+    <div class="st-deck-body">
+      <a href="{{ .RelPermalink }}">
+        <h5 class="card-title">{{ .Params.title | markdownify }}</h5>
+        <p class="card-text">{{ .Params.description | markdownify }}</p>
+      </a>
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+{{ with .call_to_action }}
+{{ partial "cta.html" . }}
+{{ end }}
+{{ end }}
+{{ end }}

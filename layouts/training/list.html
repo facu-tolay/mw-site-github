@@ -1,0 +1,69 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section id="training" class="training">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xs-12">
+      {{ $course := 1 }}
+      {{ $pages := (where .Site.RegularPages "Section" "training") }}
+      {{ range $idx, $item := (sort $pages ".Params.index" "asc") }}
+      <div class="col-md-12 col-xs-12 course">
+        <h3 class="training-title">{{ .Title | markdownify }}</h3>
+        <p>{{ .Params.description }}</p>
+        <div class="accordion" id="accordionExample">
+          {{ $index := 1 }}
+          {{ range .Params.details }}
+          <div class="card">
+            <div class="card-header" id="heading{{$index}}{{$course}}">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn{{$index}}{{$course}}" type="button" data-toggle="collapse" data-target="#collapse{{$index}}{{$course}}" aria-expanded="true" aria-controls="collapse{{$index}}{{$course}}">
+                  {{ .title | markdownify }}
+                  <i class="fas fa-plus float-right icon" id="icon{{$index}}{{$course}}"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse{{$index}}{{$course}}" class="collapse" aria-labelledby="heading{{$index}}{{$course}}" data-parent="#accordionExample">
+              <div class="card-body">
+                {{ .description | markdownify }}
+              </div>
+            </div>
+          </div>
+          {{ $index = add $index 1 }}
+          {{ end }}
+        {{ $course = add $course 1 }}
+        </div>
+      <div class="col-md-12 text-center course-buttons">
+        <a href="{{ $data.homepage.training.buy_url | relLangURL }}" class="btn btn-primary solid-wb">{{i18n `want_this`}}</a>
+        <a href="{{ .RelPermalink }}" class="btn btn-primary white-wb">{{i18n `see_more`}}</a>
+      </div>
+      </div>
+
+      {{ end }}
+      </div>
+      <div class="col-md-3 col-xs-12">
+        <h3 class="training-sidebar">{{ i18n `our_students_say` }}</h3>
+        {{ $pages := (where .Site.RegularPages "Section" "training") }}
+        {{ range $idx, $item := (sort $pages ".Params.index" "asc") }}
+        {{ range $item.Params.testimony }}
+        <div class="sidebar training-sidebar-testimony">
+          <div class="d-flex flex-column">
+            <div class="p2"><p>{{ .text }}</p></div>
+          </div>
+        </div>
+        <div class="p2 testimony-author"><p>{{ .author }}</div>
+        <div class="p2 testimony-position"><p></p>{{ .position }}</div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(".toggle-btn").click(function() {
+      $(this).find('i').toggleClass("fas fa-plus fas fa-minus");
+    })
+  </script>
+</section>
+
+{{ end }}

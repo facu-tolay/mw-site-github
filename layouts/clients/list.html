@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section id="clients" class="clients">
+  <div class="container">
+    {{ with $data.homepage.clients }}
+    <div class="row">
+      <div class="col-md-12 heading">
+        {{ with .title_icon }} <span class="title-icon float-left"><i class="fa {{ . }}"></i></span> {{ end }}
+        <h2 class="title">{{ .title | markdownify }} <span class="title-desc">{{ .subtitle | markdownify }}</span></h2>
+      </div>
+    </div> <!-- Title row end -->
+    {{ end }}
+  </div>
+
+  <div class="container">
+    <!--Isotope filter start -->
+    <div class="row text-right client-filter">
+      <div class="col-12">
+        <div class="isotope-nav" data-isotope-nav="isotope">
+          <ul>
+            <li><a href="#" class="active" data-filter="*">{{i18n `all`}}</a></li>
+            {{ $industries := slice }}
+            {{ $countries := slice }}
+            {{ range $data.homepage.clients.client }}
+            {{ $industries = $industries | append .industry }}
+            {{ $countries = $countries | append .country }}
+            {{ end }}
+            <li class="vl"></li>
+            {{ range ( $industries | uniq ) }}
+            <li><a href="#" data-filter=".{{ . | urlize }}">{{ . | humanize }}</a></li>
+            {{ end }}
+            <li class="vl"></li>
+            {{ range ( $countries | uniq ) }}
+            <li><a href="#" data-filter=".{{ . | urlize }}">{{ . | humanize }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div><!-- Isotope filter end -->
+  </div>
+
+  <div class="container-fluid">
+    <div class="row isotope" id="isotope">
+      {{ range $data.homepage.clients.client }}
+      <div class="col-sm-3 {{ .industry | urlize }} {{ .country | urlize }} isotope-item client-grid-logo">
+        <div class="grid">
+          <a href="{{ .link }}" target="_blank">
+            <img src="{{ .logo | absURL }}" class="client-list-logo" alt="client image">
+          </a>
+        </div>
+      </div><!-- Isotope item end -->
+      {{ end }}
+    </div><!-- Content row end -->
+  </div><!-- Container end -->
+</section>
+{{ end }}

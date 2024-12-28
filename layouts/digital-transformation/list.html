@@ -1,0 +1,87 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+<!-- Slider start -->
+{{ with $data.service.services.digital_transformation }}
+{{ partial "service-page-header.html" . }}
+
+<section id="service" style="padding-bottom: 2em !important;" class="border-bottom">
+  <div class="container cont-service-desc">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-sm-10 dt-service service-desc">
+        {{ range .description }}
+        <p>{{ .item }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ with $data.service.services.digital_transformation }}
+<div class="mt-5 pt-5 pb-5 dt-service-list">
+  <div class="col-sm-12 text-center text-uppercase pillars pt-3 pb-5">
+    <h2>{{ .components_heading }}</h2>
+  </div>
+  {{ range .components }}
+  <div id="{{ .id }}" class="d-none d-md-block container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);">
+    <h2 style="color: var(--blue-mw-dark); font-weight: 900; margin-bottom: 1em;">{{ .name }}</h2>
+    <div class="row">
+      <div class="col-sm-3">
+        <img style="width: 100%; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); margin-top: 0.4em; margin-bottom: 3em;" src="{{ .bg_image }}">
+      </div>
+      <div class="col-sm-9">
+        <p class="mb-5">{{ .description | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  <div class="d-sm-block d-md-none row justify-content-center">
+    {{ range .components }}
+    <div class="col-sm-12 col-md-5 col-lg-3" style="border-radius: 10px; min-height: 360px; margin: 0 1em 2em 1em; background-color: #f6fafe; padding-left: 2em; padding-top: 2em; border-bottom: 20px solid #eaeef5;">
+      <div class="col-sm-3 justify-content-center align-items-center d-flex" style="padding: 2.2em 3em; border: 5px solid #eaeef5; background: white; margin-bottom: 2em; border-radius: 10px;">
+        <img src="{{ .bg_image }}" style="width: 100%;"></i>
+      </div>
+      <div class="pb-3 d-flex">
+        <h4 style="color: #00376D;">{{ .name }}</h4>
+      </div>
+      <p style="line-height: 1.5em; color: black;">{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+</div>
+{{ end }}
+
+<section class="success-stories-strip">
+  <div class="container">
+    <div class="text-center success-stories-strip">
+      <h2>{{ i18n `success_stories` }}</h2>
+    </div>
+    <div class="row">
+      {{ range (where site.RegularPages "Section" "portfolio") }}
+      {{ if in .Params.featured "transformation" }}
+      <div class="col-sm-12 col-md-6">
+        <a href="{{ .RelPermalink}}">
+        <div class="ss-box">
+          <h4 class="card-title">{{ .Title | markdownify }}</h5>
+          <h5 class="card-subtitle mb-3">{{ .Params.customer.name | markdownify }}</h6>
+          <p class="card-text">{{ .Params.description }}</p>
+        </div>
+        </a>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .cta }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+{{ end }}
+{{ end }}
+

@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      <!-- Blog start -->
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <!-- Blog post start -->
+        <div class="post-content">
+          <!-- post image start -->
+          <div class="post-image-wrapper">
+            <img src="{{ .Params.image | absURL }}" class="img-fluid" alt="{{ .Title }}" />
+            <span class="blog-date">{{ .Date.Day }} {{ i18n .Date.Month }} {{ .Date.Year }}</span>
+          </div><!-- post image end -->
+          <div class="post-header clearfix">
+            <h2 class="post-title">{{ .Title }}</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">{{i18n `posted_by`}} {{ .Params.Author | title }}</span>
+              <span class="post-meta-cats">{{i18n `in`}} {{ range $index, $elements:= .Params.Categories }}<a
+                href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"> {{ if ne $index 0 }}, {{ end }}
+                {{ . | title }}</a> {{ end}}</span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>{{i18n `reading_time`}}: {{.ReadingTime}} {{i18n `minutes`}}</span>
+            </div><!-- post meta end -->
+          </div><!-- post heading end -->
+          <div class="entry-content">{{ .Content }}</div>
+
+          <div class="gap-30"></div>
+
+          <!-- comments -->
+          {{ if .Site.DisqusShortname }}
+          {{ template "_internal/disqus.html" . }}
+          {{ end }}
+        </div><!-- Blog post end -->
+      </div>
+      
+      {{ partial "blog-sidebar.html" . }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

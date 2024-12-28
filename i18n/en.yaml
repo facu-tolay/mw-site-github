@@ -1,0 +1,167 @@
+- id: recent_post
+  translation: Recent Posts
+
+- id: blog_categories
+  translation: Blog Categories
+
+- id: popular_tags
+  translation: Popular Tags
+
+- id: flickr_photos
+  translation: Flickr Photos
+
+- id: about_us
+  translation: About Us
+
+- id: continue_reading
+  translation: Continue Reading
+
+- id: name
+  translation: Full name
+
+- id: email
+  translation: Email
+
+- id: subject
+  translation: Subject
+
+- id: message
+  translation: Message
+
+- id: send_message
+  translation: Send Message
+
+- id: contact_details
+  translation: Contact Details
+
+- id: contact_us
+  translation: Contact Us
+
+- id: provide_name
+  translation: Please enter your full name
+
+- id: provide_email
+  translation: Please enter your e-mail
+
+- id: provide_message
+  translation: Your message
+
+- id: contact_form_message_success
+  translation: Your message has been sent successfully!
+
+- id: contact_form_message_error
+  translation: There was an error sending your message, please try again.
+
+- id: problem_overview
+  translation: Problem overview
+
+- id: solution_overview
+  translation: Solution overview
+
+- id: detailed_solution
+  translation: Detailed solution
+
+- id: technologies
+  translation: Technologies
+
+- id: clients
+  translation: Clients
+
+- id: client
+  translation: Client
+
+- id: all
+  translation: All
+
+- id: home_url
+  translation: ""
+
+- id: address
+  translation: Address
+
+- id: phone
+  translation: Phone No.
+
+- id: type_your_email
+  translation: Type your e-mail
+
+- id: newsletter_subscription_message_success
+  translation: Thank you for subscribing to our newsletter!
+
+- id: newsletter_subscription_message_error
+  translation: There was an error processing your request, please try again
+
+- id: want_this
+  translation: I want this
+
+- id: see_more
+  translation: See more
+
+- id: our_students_say
+  translation: Our students say
+
+- id: posted_by
+  translation: Posted by
+
+- id: in
+  translation: in
+
+- id: January
+  translation: January
+
+- id: February
+  translation: February
+
+- id: March
+  translation: March
+
+- id: April
+  translation: April
+
+- id: May
+  translation: May
+
+- id: June
+  translation: June
+
+- id: July
+  translation: July
+
+- id: August
+  translation: August
+
+- id: September
+  translation: September
+
+- id: October
+  translation: October
+
+- id: November
+  translation: November
+
+- id: December
+  translation: December
+
+- id: reading_time
+  translation: Reading time
+
+- id: minutes
+  translation: minutes
+
+- id: see_all
+  translation: See all
+
+- id: benefits
+  translation: Benefits
+
+- id: success_stories
+  translation: Success Stories
+
+- id: apply_now
+  translation: Apply now
+
+- id: learn_more
+  translation: Learn more
+
+- id: services_we_offer
+  translation: Services we offer

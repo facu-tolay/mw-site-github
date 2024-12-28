@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="about" class="p-0 mb-3">
+{{ partial "page-header-bgimage.html" (dict "bg_image" $data.jobs.bg_image "parent" $data.jobs.title "title" .Params.title) }}
+</section>
+
+<div formsappId="66082d1ab4d83eca6e71b750"></div>
+<script src="https://forms.app/static/embed.js" type="text/javascript" async defer onload="new formsapp('66082d1ab4d83eca6e71b750', 'standard', {'width':'100vw','height':'600px','opacity':0});"></script>
+{{ end }}
+

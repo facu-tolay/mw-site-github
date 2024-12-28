@@ -1,0 +1,109 @@
+about: "We specialize in productive IT services, and our mission is to build bridges using the appropriate technology to help our clients conquer and materialize their ideas."
+
+############################ Company Profile ########################
+title: "We are Mikroways"
+subtitle: "We provide IT solutions for a better world"
+page_header: "We are experts in designing, deploying and managing IT services in production"
+we_section_title: "You can rely on us"
+who_we_are:
+  title: "who we are"
+  description: "We are a team of committed and devoted professionals, who specialize in productive IT services. We are passionate about challenges, and our goal is to always provide the best solution for each client."
+  img: "/images/about/team.webp"
+what_we_do:
+  title: "what we do"
+  description: "We unleash our customers potential to provide the highest quality in software products and productive IT services. We achieve that by designing solutions that meet their unique requirements."
+  img: "/images/about/what-we-do.webp"
+our_values:
+  id: "values"
+  title: "our values"
+  description: "Our values are at the very core of who we are, we live and work by them."
+  icon: "fa-solid fa-heart"
+  values:
+    - value: "Honoring our commitments"
+      description: "We commit to seek the truth and honor our commitments, both in our work and in the results we seek, and to keep our word with customers and colleagues."
+    - value: "Curiosity"
+      description: "We innovate because we are passionate about learning, discovering and defining new ways of doing things."
+    - value: "Empathy"
+      description: "Understanding our customers needs is essential to design tailored-made solutions"
+    - value: "Proactive creativity"
+      description: "Supported by what we know and the desire to learn, we seek to improve and create solutions that are more efficient, more elegant, and more effective, even when existing ones work correctly."
+    - value: "Colaboration"
+      description: "We believe there is a wonderful synergy within teams, and that synergy is only possible if there is the ability and willingness of people to collaborate with each other."
+  link: "our-culture"
+why_work_with_us:
+  title: "Benefits of working at Mikroways"
+  benefits:
+    - benefit: "Work 100% remotely"
+      icon: "/images/icons/remote.svg"
+    - benefit: "Extended holidays"
+      icon: "/images/icons/holidays.svg"
+    - benefit: "Increase in salary every three months"
+      icon: "/images/icons/salary.svg"
+    - benefit: "Private health insurance"
+      icon: "/images/icons/health.svg"
+    - benefit: "English classes"
+      icon: "/images/icons/english.svg"
+    - benefit: "IT certifications paid by the company"
+      icon: "/images/icons/certifications.svg"
+    - benefit: "Continuous training"
+      icon: "/images/icons/training.svg"
+    - benefit: "Flexible working schedule"
+      icon: "/images/icons/schedule.svg"
+value_proposition:
+  title: "Our value proposition"
+  description:
+    - item: "We believe that in an increasingly uncertain and complex context, specialization becomes indispensable, not only to grow and thrive but even to remain competitive. For this reason, it is essential to focus all energies on what constitutes the core of each business. We consider this to be true for our clients and also for ourselves. That's why at Mikroways, we decided to specialize in technology, and specifically in how technology can unleash all contained potential."
+    - item: "Based on this, we seek to create strategic alliances with our clients, allowing them to focus on managing and growing their business, and trusting Mikroways to support that growth with the necessary technological solutions."
+    - item: "Given that technological evolution is continuous, our proposal consists of providing comprehensive and sustainable solutions, taking responsibility for their operation and evolution."
+full_description:
+  - item: "At Mikroways, we merge the passion for development with a mindset of constant innovation. Our dedication towards technological transformation goes beyond the implementation of solutions; it's a promise of absolute care towards our clients, considering ourselves architects of digital futures. We are creators of exceptional digital experiences, guiding companies towards a bright technological future with creativity, commitment, and a forward-thinking vision."
+  - item: "This approach has led to a highly trained and innovation-oriented team. We excel at understanding the specific needs of each client, finding motivation in providing optimal solutions for their particular situations. With a broad vision and the unique combination of experience and knowledge, at Mikroways, we strive to offer solutions of the highest quality, backed by decades of experience and an unwavering commitment to continuous improvement."
+funfact_item:
+  # funfact item loop
+  - name : "Countries"
+    icon : "fa-globe" # fontawesome icon pack 4.7 | https://fontawesome.com/v4.7.0/icons/
+    count : "5"
+
+  - name : "Customers"
+    icon : "fa-user" # fontawesome icon pack 4.7 | https://fontawesome.com/v4.7.0/icons/
+    count : "50"
+
+  # funfact item loop
+  - name : "Projects"
+    icon : "fa-suitcase" # fontawesome icon pack 4.7 | https://fontawesome.com/v4.7.0/icons/
+    count : "200"
+partners:
+  aws:
+    image: "/images/partners/aws.png"
+    statement: "We are AWS partner select!"
+    description:
+      - item: "We are proud to announce that we are partners of AWS, a global leader in cloud computing services, enabling us to offer innovative, scalable, and secure solutions that meet the technological needs of our clients. By collaborating with AWS, we ensure access to the most advanced infrastructure and services on the market, backed by a team with diverse certifications that guarantee the knowledge and experience necessary to maximize the value of AWS services for your business."
+gptw:
+  id: "gptw"
+  title: "We are a great place to work"
+  statement: |
+    100% of our team affirm that we are a **great place to work!**
+  description:
+    - item: "For the second consecutive year, we have obtained the “Great Place to Work” certification, reflecting Mikroways' deep commitment to creating an exceptional work environment for our employees."
+    - item: "At Mikroways, we deeply value our team and strive to foster a culture of inclusion, collaboration, and personal and professional growth. This recognition is a testimony to the hard work and dedication of every member of our team."
+    - item: "We are proud to provide a work environment where all employees feel valued, respected, and motivated to reach their full potential. We firmly believe that a happy and committed team is fundamental to Mikroways' success."
+  see_more:
+    link: "our-culture"
+    label: "See more"
+    style: "solid"
+our_culture:
+  title: "We are Mikroways"
+  subtitle: "We provide IT solutions for a better world"
+  page_header: "Join a team in which you and your ideas would be valued"
+  description:
+    - item: "At Mikroways, we believe that ideas have the potential to make the world a better place to live, and that the world is filled with individuals and organizations with great ideas that we wish to see born and flourish. We also believe that, in the world we live in, technology is crucial to realizing those ideas. However, adopting the right technology and adapting it to specific needs can be highly complex for organizations."
+    - item: "Therefore, we have set ourselves the mission of building bridges, using the right technology, that allows our clients to conquer and materialize their ideas."
+    - item: "This implies that we understand the specific situation of our clients and their objectives. It also demands that we know and understand the technology available at all times. To do this, we must always be informed, continuously learning. Our clients trust that we will give them the best possible solution, and therefore it is our responsibility to know, understand, and do everything necessary to repay that trust."
+    - item: "All of this is only possible if we have a conducive, dynamic work environment that fosters creativity and innovation, promotes collaboration and the exchange of ideas, in which different opinions and perspectives are respected and capitalized on. In this sense, it is essential to have a team of professionals with outstanding technical capacity and excellent human values."
+cta:
+  title: "Ready to be a part of our team?"
+  subtitle: "Check out the open opportunities"
+  buttons:
+    - label : "Join Mikroways"
+      style : "solid-wb"
+      internal_link : "work-with-us"

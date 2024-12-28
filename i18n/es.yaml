@@ -1,0 +1,170 @@
+- id: recent_post
+  translation: Entradas recientes
+
+- id: blog_categories
+  translation: Categorías del blog
+
+- id: popular_tags
+  translation: Etiquetas populares
+
+- id: flickr_photos
+  translation: Photos Flickr
+
+- id: about_us
+  translation: Acerca de Mikroways
+
+- id: continue_reading
+  translation: Leer más
+
+- id: name
+  translation: Nombre completo
+
+- id: surname
+  translation: Apellido
+
+- id: email
+  translation: Correo electrónico
+
+- id: subject
+  translation: Asunto
+
+- id: message
+  translation: Mensaje
+
+- id: send_message
+  translation: Enviar mensaje
+
+- id: contact_details
+  translation: Detalles de contacto
+
+- id: contact_us
+  translation: Contáctanos
+
+- id: provide_name
+  translation: Ingresa tu nombre
+
+- id: provide_email
+  translation: Ingresa tu correo electrónico
+
+- id: provide_message
+  translation: Mensaje a enviar
+
+- id: contact_form_message_success
+  translation: Su mensaje se ha enviado con éxito, gracias por contactarnos.
+
+- id: contact_form_message_error
+  translation: Hubo un error al enviar el mensaje, por favor vuelva a intentarlo.
+
+- id: problem_overview
+  translation: El problema
+
+- id: solution_overview
+  translation: La solución
+
+- id: detailed_solution
+  translation: En detalle
+
+- id: technologies
+  translation: Tecnologías
+
+- id: clients
+  translation: Clientes
+
+- id: client
+  translation: Cliente
+
+- id: all
+  translation: Todo
+
+- id: home_url
+  translation: es/
+
+- id: address
+  translation: Dirección
+
+- id: phone
+  translation: Teléfono
+
+- id: type_your_email
+  translation: Ingrese su correo electrónico
+
+- id: newsletter_subscription_message_success
+  translation: ¡Gracias por tu suscripción!
+
+- id: newsletter_subscription_message_error
+  translation: Hubo un error al suscribirte, por favor intentalo nuevamente.
+
+- id: want_this
+  translation: Quiero esto
+
+- id: see_more
+  translation: Ver más
+
+- id: our_students_say
+  translation: Nuestros estudiantes dicen
+
+- id: posted_by
+  translation: Publicado por
+
+- id: in
+  translation: en
+
+- id: January
+  translation: Enero
+
+- id: February
+  translation: Febrero
+
+- id: March
+  translation: Marzo
+
+- id: April
+  translation: Abril
+
+- id: May
+  translation: Mayo
+
+- id: June
+  translation: Junio
+
+- id: July
+  translation: Julio
+
+- id: August
+  translation: Agosto
+
+- id: September
+  translation: Septiembre
+
+- id: October
+  translation: Octubre
+
+- id: November
+  translation: Noviembre
+
+- id: December
+  translation: Diciembre
+
+- id: reading_time
+  translation: Tiempo de lectura
+
+- id: minutes
+  translation: minutos
+
+- id: see_all
+  translation: Ver todos
+
+- id: benefits
+  translation: Beneficios
+
+- id: success_stories
+  translation: Casos de éxito
+
+- id: apply_now
+  translation: Enviar solicitud
+
+- id: learn_more
+  translation: Ver más
+
+- id: services_we_offer
+  translation: Servicios que ofrecemos

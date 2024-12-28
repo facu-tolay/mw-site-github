@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+<!-- Slider start -->
+{{ with $data.service.services.platform.components.b }}
+<section id="about" class="p-0">
+{{ partial "page-header-bgimage.html" . }}
+</section>
+
+<section id="service">
+  <div class="container pt-3">
+    <div class="col-sm-12 text-center pillars">
+      <h2>{{ .name }}</h2>
+    </div>
+    <div class="row justify-content-center pt-4">
+      <div class="col-sm-9">
+        <p>{{ .page.description | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "benefits-block-no-image.html" . }}
+
+{{ with $data.service.services.platform.components.b.page }}
+{{ partial "services-block.html" . }}
+{{ end }}
+
+{{ with $data.service.services.platform.cta }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+{{ end }}
+{{ end }}

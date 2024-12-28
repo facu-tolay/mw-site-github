@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="about" class="p-0 mb-3">
+{{ partial "page-header-bgimage.html" (dict "bg_image" $data.jobs.bg_image "parent" $data.jobs.title "title" .Params.title) }}
+</section>
+
+<div class="container p-5 mt-5">
+  <div class="col-sm-12 jobs">
+    {{ .Content }}
+  </div>
+</div>
+
+<div class="container pb-5 mb-5">
+  <div class="col-md-12 text-center">
+    <a href="{{ $data.jobs.apply_page | relLangURL }}" class="btn btn-primary solid-blue">{{ i18n `apply_now` }}</a>
+  </div>
+</div>
+
+{{ end }}

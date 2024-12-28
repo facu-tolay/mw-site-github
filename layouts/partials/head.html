@@ -1,0 +1,81 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+
+  {{ "<!-- mobile responsive meta -->" | safeHTML }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ hugo.Generator }}
+
+  {{ with .Params.redirect_url }}
+  <meta http-equiv="refresh" content="0; url={{ . }}">
+  {{ end }}
+
+  {{ "<!-- plugins -->" | safeHTML }}
+  {{ range .Site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | absURL }}" async>
+  {{ end }}
+
+  {{ "<!-- Main Stylesheet -->" | safeHTML }}
+  {{ $styles := resources.Get "scss/style.scss" | toCSS }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" async>
+
+  {{ $preset3 := resources.Get "presets/preset3.css" }}
+	<link id="style-switch" href="{{ $preset3.Permalink }}" media="screen" rel="stylesheet" type="text/css" async>
+
+  {{ range .Site.Params.override_css }}
+  <link rel="stylesheet" href="{{ .link | absURL }}" async>
+  {{ end }}
+
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+  <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+
+  {{ with .Site.Params.google_tag_manager }}
+  {{ "<!-- Google Tag Manager -->" | safeHTML }}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ .id }}');</script>
+  {{ "<!-- End Google Tag Manager -->" | safeHTML }}
+  {{ end }}
+
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/opengraph.html" . }}
+
+  {{ with .Site.Params.hub_spot.url }}
+  {{ "<!-- Start of HubSpot Embed Code -->" | safeHTML }}
+  <script type="text/javascript" id="hs-script-loader" async defer src="{{ . | safeURL }}"></script>
+  {{ "<!-- End of HubSpot Embed Code -->" | safeHTML }}
+  {{ end }}
+  
+  {{ with .Site.Params.linkedin }}
+  {{ "<!-- Start of Linkedin Embed Code -->" | safeHTML }}
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("{{ .partner_id | safeURL }}");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid={{ .partner_id | safeURL }}&fmt=gif" >
+  </noscript>
+  {{ "<!-- End of Linkedin Embed Code -->" | safeHTML }}
+  {{ end }}
+
+  {{ with .Params.extra_head }}
+  {{ "<!-- Start of extra head config -->" | safeHTML }}
+  {{ . | safeHTML }}
+  {{ "<!-- End of extra head config -->" | safeHTML }}
+  {{ end }}
+</head>

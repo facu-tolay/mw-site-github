@@ -1,0 +1,28 @@
+<article class="post">
+  <!-- post image start -->
+  <div class="post-image-wrapper">
+    <img src="{{ .Params.image | absURL }}" class="img-fluid" alt="{{.Title}}" />
+    <span class="blog-date">{{ .Date.Day }} {{ i18n .Date.Month }} {{ .Date.Year }}</span>
+  </div><!-- post image end -->
+  <div class="post-header clearfix">
+    <h2 class="post-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="post-meta">
+      <span class="post-meta-author">{{i18n `posted_by`}} {{ .Params.Author | title }}</span>
+      <span class="post-meta-cats">{{i18n `in`}} {{ range $index, $elements:= .Params.Categories }}<a
+        href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"> {{ if ne $index 0 }}, {{ end }}
+        {{ . | title }}</a> {{ end}}</span>
+    </div>
+    <div class="post-meta post-meta-reading-time">
+      <span>{{i18n `reading_time`}}: {{.ReadingTime}} {{i18n `minutes`}}</span>
+    </div><!-- post meta end -->
+  </div><!-- post heading end -->
+  <div class="post-body">
+    <p>{{ .Summary }}</p>
+  </div>
+  <div class="post-footer">
+    <a href="{{ .RelPermalink }}" class="btn btn-primary">{{i18n `continue_reading`}} <i class="fa fa-angle-double-right">&nbsp;</i></a>
+  </div>
+</article>
+

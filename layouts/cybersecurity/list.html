@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+<!-- Slider start -->
+{{ with $data.service.services.cybersecurity }}
+{{ partial "service-page-header.html" . }}
+
+<section id="service">
+  <div class="container cont-service-desc">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-sm-10 service-desc" style="padding-left: 0; padding-right: 0;">
+        <p>{{ .description }}</p>
+      </div>
+    </div>
+  </div>
+
+  {{ with $data.service.services.cybersecurity.catalog }}
+  <div class="container-fluid">
+    <div class="col-sm-12 text-center text-uppercase pillars pt-3 pb-5">
+      <h2>{{ .title }}</h2>
+    </div>
+    <div class="row justify-content-center">
+      {{ range .items }}
+      <div class="col-sm-12 col-md-5 col-lg-3" style="border-radius: 10px; min-height: 360px; margin: 0 1em 2em 1em; background-color: #f6fafe; padding-left: 2em; padding-top: 2em; border-bottom: 20px solid #eaeef5;">
+        <div class="col-sm-3 justify-content-center align-items-center d-flex" style="padding: 2.2em 3em; border: 5px solid #eaeef5; background: white; margin-bottom: 2em; border-radius: 10px;">
+          <i class="{{ .icon }}" style="font-size: 2em; color: #00376d;"></i>
+        </div>
+        <div class="pb-3 d-flex">
+          <h4 style="color: #00376D;">{{ .title }}</h4>
+        </div>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+
+{{ with .cta }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+{{ end }}
+{{ end }}
+

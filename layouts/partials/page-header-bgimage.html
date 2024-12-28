@@ -1,0 +1,15 @@
+<div class="frontpage">
+  {{ if .bg_image }}
+  <div class="bg-image">
+    <img src="{{ .bg_image | absURL }}" alt="Background image" style="opacity: 0.2;">
+  {{ else }}
+  <div class="bg-image-generic">
+    <img src="/images/benefits-bg.svg" alt="Background image">
+  {{ end }}
+  </div>
+  <div class="frontpage-text">
+    <a href="{{ .Parent.Permalink | relLangURL }}">{{ site.Params.home }}</a><a class="frontpage-text-name">{{ if .parent }}{{ .parent }}{{ else }}{{ page.Title }}{{ end }}</a>
+    <h2 class="text-uppercase" style="font-weight: 900;">{{ if .title }}{{ .title | markdownify }}{{ else }}{{ .name | markdownify }}{{ end }}</h2>
+    <h3 style="font-family: 'Source Sans 3'; font-size: 1.6em;">{{ .subtitle | markdownify }}</h3>
+  </div>
+</div>

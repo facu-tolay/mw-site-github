@@ -1,0 +1,83 @@
+############################ Menu ########################
+menu:
+  menu_items:
+    - id: "services"
+      name: "Services"
+      tag: "What we do"
+      has_children: true
+      children:
+      - id: "platform"
+        name: "Cloud & Platform Engineering"
+        image: "images/services/platform-engineering.webp"
+        url: "platform-engineering"
+        short: "Design, build, and maintain scalable and reliable technology frameworks for various applications."
+        full: "We focus our efforts on implementing and maintaining Internal Development Platforms (IDP). These IDPs enhance the self-service capabilities of the development team, achieving cost optimization, a reduction in management complexities, and a significant increase in operational reliability"
+        buttons:
+          - label : "Learn more"
+            style : "gray-wb"
+
+      - id: "transformation"
+        name: "Digital Transformation"
+        image: "images/services/home-dt.svg"
+        url: "digital-transformation"
+        short: "Guides businesses in leveraging technology to innovate, streamline processes, and enhance customer experiences."
+        full: "We lead the adoption of innovative technologies and optimize processes to enhance the efficiency and competitiveness of your company. From identifying opportunities to ongoing management, we work closely to design strategies aligned with your goals. Specializing in process optimization, we leverage advanced tools to maximize productivity and accelerate Time to Market."
+        buttons:
+          - label : "Learn more"
+            style : "gray-wb"
+
+      - id: "profservices"
+        name: "Professional services"
+        image: "images/services/home-ps.svg"
+        url: "professional-services"
+        short: "Expert advice and solutions for optimizing technology usage and addressing business challenges."
+        full: "Not only do we provide timely advice, but we also become your committed long-term strategic partner. We adopt a proactive approach to continuously drive improvements and efficiency in your business. Through regular assessments and evaluations, we identify optimization opportunities and maximize operational performance."
+        buttons:
+          - label : "Learn more"
+            style : "gray-wb"
+
+      - id: "cybersecurity"
+        name: "Cybersecurity"
+        image: "images/services/home-cybersecurity.svg"
+        url: "cybersecurity"
+        short: "Expertise in safeguarding digital assets, mitigating risks, and ensuring data protection against cyber threats."
+        full: "We offer cutting-edge security solutions. As IT consulting specialists, we excel in providing comprehensive protection for your infrastructure, ensuring the confidentiality and integrity of your data in a constantly evolving digital world."
+        buttons:
+          - label : "Learn more"
+            style : "gray-wb"
+
+    - id: "about"
+      name: "About"
+      has_children: false
+      url: "/about"
+
+    - id: "success-stories"
+      name: "Success stories"
+      has_children: false
+      url: "/portfolio"
+
+    - id: "careers"
+      name: "Careers"
+      has_children: true
+      children:
+      - id: "culture"
+        name: "Our culture"
+        url: "our-culture"
+        short: "Discover what it feels like be part of Mikroways"
+        full: "Discover our culture and how we team up to make wonderful solutions for our customers!"
+
+      - id: "work-with-us"
+        name: "Work with us"
+        url: "work-with-us"
+        short: "Come work with us!"
+        full: "Come work with us at Mikroways and elevate your career!"
+
+    - id: "blog"
+      name: "Blog"
+      has_children: false
+      url: "/blog"
+
+    - id: "contact"
+      name: "Contact"
+      has_children: false
+      url: "/contact"

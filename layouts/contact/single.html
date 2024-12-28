@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ with $data.contact }}
+<section id="contact" class="pt-0">
+  {{ partial "page-header-bgimage.html" . }}
+</section>
+{{ end }}
+
+<div class="container pt-3 pb-5 mb-5">
+  <div class="row">
+    <h4>{{i18n `contact_form_message_success`}}</h4>
+  </div>
+</div>
+
+
+{{ end }}

@@ -1,0 +1,97 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<!-- Footer start -->
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      <!-- Menu on footer lists only the first 3 and the last 3 elements.
+        This works well when there are exactly 6 elements.-->
+      {{ with $data.menu.menu }}
+      {{ $first_column_items := math.Div (len .menu_items) 2 }}
+      <div class="col-md-3 col-sm-12 footer-widget">
+        {{ range first $first_column_items .menu_items }}
+        <div class="col-md-12 footer-menu-top">
+          <a {{ if not .has_children }}href="{{ .url | relLangURL }}"{{ end }}>{{ .name }}</a>
+        </div>
+        {{ if .has_children }}
+        {{ range $c_index,$c_element := .children }}
+        <div class="col-md-12 footer-menu-child">
+          <a href="{{ $c_element.url | relLangURL }}">{{ $c_element.name }}</a>
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        {{ range last (math.Sub (len .menu_items) $first_column_items) .menu_items }}
+        <div class="col-md-12 footer-menu-top">
+          <a {{ if not .has_children }}href="{{ .url | relLangURL }}"{{ end }}>{{ .name }}</a>
+        </div>
+        {{ if .has_children }}
+        {{ range $c_index,$c_element := .children }}
+        <div class="col-md-12 footer-menu-child">
+          <a href="{{ $c_element.url | relLangURL }}">{{ $c_element.name }}</a>
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">{{i18n `about_us`}}</h3>
+        <p>{{ $data.about.about | markdownify }}</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="{{ .Site.Params.address_url }}">{{ .Site.Params.address | markdownify }}</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="{{ .Site.Params.phone_url | safeURL }}">{{ .Site.Params.phone | markdownify }}</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="{{ .Site.Params.whatsapp_url }}">{{ .Site.Params.whatsapp | markdownify }}</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="{{ .Site.Params.email_url }}">{{ .Site.Params.email | markdownify }}</a></p>
+      </div>
+    </div><!-- Row end -->
+  </div><!-- Container end -->
+</footer><!-- Footer end -->
+
+
+<!-- Copyright start -->
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">{{ .Site.Params.copyright | markdownify }}</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        {{ range .Site.Params.social }}
+        <a target="_blank" href="{{ .link | absURL }}">
+          <span class="social"><i class="fa {{.icon}}"></i></span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    <!--/ Row end -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  <!--/ Container end -->
+</section>
+<!--/ Copyright end -->
+
+</div><!-- Body inner end -->
+
+{{ "<!-- Google Map API -->" | safeHTML }}
+{{ if .Site.Params.map.enable }}
+{{ with .Site.Params.map.gmap_api }}
+<script src="{{ . | safeURL }}"></script>
+{{ end }}
+{{ end }}
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range .Site.Params.plugins.js}}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>

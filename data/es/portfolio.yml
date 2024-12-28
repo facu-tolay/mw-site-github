@@ -1,0 +1,18 @@
+############################ Portfolio ########################
+portfolio:
+  title : "Soluciones personalizadas"
+  subtitle: "Porque cada cliente es único"
+  success_stories_title: "Casos de éxito"
+  bg_image: "images/success-stories.webp"
+  introduction: "Nuestras historias de éxito son testimonio de nuestro trabajo. Con ellas celebramos el viaje único de cada uno de nuestros clientes. En Mikroways, creemos que cada cliente tiene necesidades diferentes y por eso personalizamos nuestras soluciones para satisfacerlas. Descubra cómo nuestras soluciones a medida han permitido a empresas como la suya lograr resultados unicos. Únase a nosotros para destacar los diversos y excepcionales logros que hacen que nuestros clientes sean realmente extraordinarios."
+  call_to_action:
+    enable: true
+    title: "¿Tienes un proyecto?"
+    subtitle: "Evaluemos tus oportunidades"
+    buttons:
+      - label: "Contactáctanos"
+        style: "solid"
+        internal_link: "contact"
+      - label: "Programa una reunión"
+        style: "solid-wb"
+        calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"

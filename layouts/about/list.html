@@ -1,0 +1,132 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ with $data.about }}
+<section id="about" class="p-0 mb-5">
+  {{ partial "page-header-bgimage.html" . }}
+
+  <div class="container about-full-desc mt-5">
+    <div class="col-sm-12 mb-5 text-center">
+      <h2 style="">{{ .page_header }}</h2>
+    </div>
+    <div class="col-sm-12">
+      {{ range .full_description }}
+      <p>{{ .item }}</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Counter Strat -->
+{{ partial "funfact.html" . }}
+<!--/ Counter end -->
+
+<div class="container pb-5 mb-5">
+  <div class="col-sm-12 text-center text-uppercase pillars mt-5 mb-3 pt-5 pb-5">
+    <h2>{{ .we_section_title }}</h2>
+  </div>
+  <div class="row about-boxes">
+    <div class="col-lg-4 col-sm-12">
+      <div class="about-box small image">
+        <img src="{{ .who_we_are.img }}">
+      </div>
+      <div class="about-box small text text-center">
+        <h2>{{ .who_we_are.title | markdownify }}</h2>
+        <p>{{ .who_we_are.description }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div class="about-box tall text text-center pt-4">
+        <i class="{{ .our_values.icon }}" style="font-size: 3.5em;"></i>
+        <h2>{{ .our_values.title | markdownify }}</h2>
+        <p>{{ .our_values.description | markdownify }}</p>
+        <ul>
+        {{ range .our_values.values }}
+        <li>{{ .value }}</li>
+        {{ end }}
+        </ul>
+        <div class="col-sm-12 btn-service align-self-center">
+          <a href="{{ .our_values.link | relLangURL }}#{{ .our_values.id }}" class="btn-service">
+            <span style="color: var(--blue-mw-dark);">{{ i18n `see_more` }}</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div class="about-box small text-center">
+        <h2>{{ .what_we_do.title | markdownify }}</h2>
+        <p>{{ .what_we_do.description }}</p>
+      </div>
+      <div class="about-box small">
+        <img src="{{ .what_we_do.img }}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr></hr>
+<div class="container about-full-desc mb-5 pb-3">
+  <div class="col-sm-12 text-center text-uppercase pillars mt-5 mb-5 pt-3">
+    <h2>{{ .value_proposition.title }}</h2>
+  </div>
+  <div class="col-sm-12">
+    {{ range .value_proposition.description }}
+    <p>{{ .item }}</p>
+    {{ end }}
+  </div>
+</div>
+<hr></hr>
+
+<div class="container about-full-desc mt-5 mb-5 pb-5">
+  <div class="row mb-5">
+    <div class="col-md-3">
+      <img class="gptw-logo" src="/images/gptw.webp">
+    </div>
+    <div class="col-sm-12 col-md-9">
+      <div class="col-md-12 text-center">
+        <h2 class="gptw-title">{{ .gptw.statement | markdownify }}</h2>
+      </div>
+      <div class="row">
+      <div class="col-md-12">
+      {{ with .gptw.description }}
+      {{ range first 1 . }}
+      <p>{{ .item }}</p>
+      {{ end }}
+      {{ end }}
+      </div>
+      <div class="col-md-12 text-center">
+        <a href="{{ .gptw.see_more.link | relLangURL }}#{{ .gptw.id }}" class="btn-service">
+          <span style="color: var(--blue-mw-dark);">{{ i18n `see_more` }}</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container about-full-desc mt-5 mb-5 pb-5">
+  <div class="row mb-5">
+    <div class="col-md-3">
+      <img class="aws-logo" src="{{ .partners.aws.image }}">
+    </div>
+    <div class="col-sm-12 col-md-9">
+      <div class="col-md-12 text-center">
+        <h2 class="gptw-title">{{ .partners.aws.statement | markdownify }}</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+        {{ with .partners.aws.description }}
+        {{ range first 1 . }}
+          <p>{{ .item }}</p>
+        {{ end }}
+        {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+{{ end }}
+

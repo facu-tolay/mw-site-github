@@ -1,0 +1,83 @@
+############################ Menu ########################
+menu:
+  menu_items:
+    - id: "services"
+      name: "Servicios"
+      tag: "qué hacemos"
+      has_children: true
+      children:
+      - id: "platform"
+        name: "Cloud & Platform Engineering"
+        image: "images/services/platform-engineering.webp"
+        url: "platform-engineering"
+        short: "Diseñar, construir y mantener plataformas tecnológicas escalables y confiables."
+        full: "Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa."
+        buttons:
+          - label : "Ver más"
+            style : "gray-wb"
+
+      - id: "transformation"
+        name: "Transformación digital"
+        image: "images/services/home-dt.svg"
+        url: "digital-transformation"
+        short: "Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes."
+        full: "Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market."
+        buttons:
+          - label : "Ver más"
+            style : "gray-wb"
+
+      - id: "profservices"
+        name: "Servicios profesionales"
+        image: "images/services/home-ps.svg"
+        url: "professional-services"
+        short: "Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio."
+        full: "Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo."
+        buttons:
+          - label : "Ver más"
+            style : "gray-wb"
+
+      - id: "cybersecurity"
+        name: "Ciberseguridad"
+        image: "images/services/home-cybersecurity.svg"
+        url: "cybersecurity"
+        short: "Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques."
+        full: "Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución."
+        buttons:
+          - label : "Ver más"
+            style : "gray-wb"
+
+    - id: "about"
+      name: "Empresa"
+      has_children: false
+      url: "/about"
+
+    - id: "success-stories"
+      name: "Casos de éxito"
+      has_children: false
+      url: "/portfolio"
+
+    - id: "careers"
+      name: "Carreras"
+      has_children: true
+      children:
+      - id: "culture"
+        name: "Cultura"
+        url: "our-culture"
+        short: "Discover what it feels like be part of Mikroways"
+        full: "Discover our culture and how we team up to make wonderful solutions for our customers!"
+
+      - id: "work-with-us"
+        name: "Trabaja con nosotros"
+        url: "work-with-us"
+        short: "Come work with us!"
+        full: "Come work with us at Mikroways and elevate your career!"
+
+    - id: "blog"
+      name: "Blog"
+      has_children: false
+      url: "/blog"
+
+    - id: "contact"
+      name: "Contacto"
+      has_children: false
+      url: "/contact"

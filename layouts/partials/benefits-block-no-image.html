@@ -1,0 +1,16 @@
+<div class="container-fluid pb-4 triangle-background">
+  <div class="col-sm-12 text-center text-uppercase pillars pt-5 pb-5" style="opacity: 100%;">
+    <h2>{{ .page.benefits.title }}</h2>
+  </div>
+  <div class="row justify-content-center pl-3 pr-3" style="opacity: 100% !important;">
+    {{ range .page.benefits.benefits }}
+    <div class="col-sm-10 col-md-4" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em; opacity: 100% !important;">
+      <div class="d-flex align-items-center pb-3">
+        <i class="{{ .icon }}" style="font-size: 1.6em; color: #00376D; border: 1px solid #fafafa; background: var(--footer-bg); padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-left: 0.5em;">{{ .title }}</h4>
+      </div>
+        <p style="color: var(--main-font-color);">{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>

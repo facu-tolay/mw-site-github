@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="home" class="p-0">
+  <div class="frontpage">
+    <div class="bg-image" style="max-height: 500px;">
+      <img src="{{ $data.portfolio.portfolio.bg_image | absURL }}" alt="Homepage image">
+    </div>
+    <div class="frontpage-text">
+      <h2>{{ .Params.title | markdownify }}</h2>
+    </div>
+  </div>
+</section>
+{{ end }}

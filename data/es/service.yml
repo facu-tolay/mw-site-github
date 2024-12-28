@@ -1,0 +1,663 @@
+############################ Services ########################
+services:
+  platform:
+    name: |
+      Cloud & Platform  
+      Engineering
+    parent: "Servicios"
+    description: "Diseñamos y automatizamos plataformas adaptadas a tus necesidades, obteniendo entornos predecibles y repetibles en los cuales tu software y servicios puedan ser desplegados de manera eficiente y consistente. Cubre el desarrollo, mantenimiento y operación en producción, con un enfoque en el servicio al cliente, la automatización y la seguridad."
+    bg_image: "images/services/pe-bg.webp"
+    cta:
+      title: "¿Tienes un proyecto?"
+      subtitle: "Evaluemos tus oportunidades"
+      buttons:
+        - label : "Contáctanos"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Programa una reunión"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+    benefits:
+      - benefit: "Acelera el desarrollo de software"
+      - benefit: "Reduce la complejidad operacional"
+      - benefit: "Asegura la continuidad del negocio"
+      - benefit: "Brinda autonomía a los desarrolladores"
+      - benefit: "Reduce el time-to-market"
+      - benefit: "Mejora el servicio al cliente"
+      - benefit: "Elimina la dependencia del proveedor"
+      - benefit: "Crea sistemas confiables"
+      - benefit: "Reduce los costos"
+      - benefit: "Acelera la resolución de problemas"
+    components:
+      a:
+        id: "cloud-native-architecture"
+        name: "Arquitectura Cloud Native"
+        description: "Para obtener todos los beneficios de la nube, las aplicaciones y la infraestructura deben ser creadas para ella. Diseñamos cargas de trabajo capaces de aprovechar al máximo la nube."
+        bg_image: "/images/services/cloud-native.webp"
+        button: "Ver más"
+        page:
+          description: |
+            La arquitectura nativa de la nube se refiere a un enfoque de diseño de software que aprovecha al máximo las capacidades y servicios ofrecidos por las plataformas de computación en la nube. Se basa en los principios de escalabilidad, resiliencia, flexibilidad y automatización para desarrollar y desplegar aplicaciones de manera eficiente en entornos cloud.
+          overview: "En Mikroways nos especializamos en ofrecer soluciones integrales en contenerización y orquestación de contenedores, así como en prácticas DevOps para optimizar el desarrollo, despliegue y operación de aplicaciones en entornos cloud y locales. Desde la evaluación y modernización de aplicaciones hasta la implementación y gestión de clústeres Kubernetes, proporcionamos servicios personalizados que permiten a las organizaciones aprovechar al máximo las ventajas de la contenerización y la orquestación."
+          components:
+            a:
+              id: "microservices"
+              name: "Microservicios"
+              bg_image: "/images/services/cloud-native/microservices.webp"
+              description: "En lugar de desarrollar aplicaciones monolíticas, la arquitectura nativa de la nube promueve la descomposición de las aplicaciones en servicios pequeños e independientes conocidos como microservicios. Cada microservicio se encarga de una función específica y se comunica con otros servicios a través de APIs (interfaces de programación de aplicaciones)."
+            b:
+              id: "containers"
+              name: "Contenedores"
+              bg_image: "/images/services/cloud-native/cont.webp"
+              description: "Los contenedores son una forma de empaquetar y distribuir aplicaciones junto con todas sus dependencias. Utilizan tecnologías como Docker para garantizar que una aplicación se ejecute de manera consistente en diferentes entornos, ya sea en desarrollo, pruebas o producción."
+            c:
+              id: "orchestration"
+              name: "Orquestación de contenedores"
+              bg_image: "/images/services/cloud-native/cont-orch.webp"
+              description: "La orquestación de contenedores se refiere a la gestión automatizada de contenedores a gran escala. Herramientas como Kubernetes son ampliamente utilizadas para automatizar tareas como el despliegue, escalado, y la gestión de la disponibilidad de contenedores en un entorno cloud."
+            d:
+              id: "infrastructure-as-code"
+              name: "Infraestructura como código (IaC)"
+              bg_image: "/images/services/cloud-native/iac.webp"
+              description: "La infraestructura como código es una práctica que implica definir la infraestructura de la aplicación utilizando código. Esto permite la creación y gestión automatizada de recursos de infraestructura, lo que facilita la implementación y mantenimiento de entornos cloud."
+            e:
+              id: "devops"
+              name: "DevOps"
+              bg_image: "/images/services/cloud-native/devops.webp"
+              description: "La cultura DevOps se centra en la colaboración entre equipos de desarrollo y operaciones para mejorar la entrega continua de software. En el contexto de la arquitectura nativa de la nube, DevOps implica la automatización de procesos de desarrollo, pruebas y despliegue para garantizar una entrega rápida y confiable de aplicaciones."
+          benefits:
+            title: "Beneficios"
+            image: "/images/services/benefits-cloud-native.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-maximize"
+                title: "Escalabilidad"
+                description: "Permite escalar aplicaciones de manera rápida y eficiente para satisfacer las demandas cambiantes de los usuarios, ya sea aumentando o disminuyendo los recursos de manera automática."
+              b: 
+                id: "resiliency"
+                icon: "fa-solid fa-house-medical-circle-check"
+                title: "Resiliencia"
+                description: "La arquitectura nativa de la nube fomenta la resiliencia al diseñar aplicaciones para que sean tolerantes a fallos y capaces de recuperarse automáticamente de eventos adversos."
+              c:
+                id: "agility"
+                icon: "fa-solid fa-gauge-high"
+                title: "Agilidad"
+                description: "Facilita el desarrollo ágil y la entrega continua de software, lo que permite a las organizaciones adaptarse rápidamente a los cambios en el mercado y a las necesidades de los usuarios."
+              d:
+                id: "efficiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Eficiencia"
+                description: "Reduce el tiempo y los costos asociados con el despliegue y gestión de aplicaciones al aprovechar la automatización y la escalabilidad de la nube."
+              e:
+                id: "portability"
+                icon: "fa-solid fa-recycle"
+                title: "Portabilidad"
+                description: "Permite ejecutar aplicaciones de manera consistente en diferentes entornos cloud y locales, lo que brinda mayor flexibilidad y opciones a las organizaciones."
+          services:
+            a:
+              id: "app-modernization"
+              icon: "fa-solid fa-circle-up"
+              title: "Modernización de aplicaciones legadas"
+              description:
+                - item: "Revisión y análisis de la arquitectura actual de las aplicaciones."
+                - item: "Desarrollamos estrategias para migrar aplicaciones monolíticas a una arquitectura basada en la nube."
+                - item: "Implementaciones de contenedores y orquestación de contenedores para mejorar la escalabilidad y la disponibilidad de las aplicaciones."
+            b:
+              id: "cloud-native-apps-design"
+              icon: "fa-solid fa-cloud-arrow-up"
+              title: "Diseño de Aplicaciones Nativas de la Nube"
+              description:
+                - item: "Diseñamos e implementamos aplicaciones utilizando arquitectura cloud-native."
+                - item: "Utilizamos tecnologías de vanguardia como Kubernetes (en la cual somos expertos) y servicios de contenedores gestionados para desplegar y gestionar aplicaciones de manera eficiente."
+                - item: "Integramos prácticas DevOps para automatizar y agilizar procesos de desarrollo, pruebas y despliegue, garantizando una entrega continua y confiable de software."
+            c:
+              id: "training-consultancy"
+              icon: "fa-solid fa-hand-holding-hand"
+              title: "Consultoría y Capacitación"
+              description:
+                - item: "Asesoramiento personalizado sobre estrategias de adopción de arquitectura nativa de la nube."
+                - item: "Capacitación y formación en tecnologías y mejores prácticas cloud-native para equipos de desarrollo y operaciones."
+                - item: "Soporte continuo y acompañamiento durante todo el ciclo de vida del proyecto para garantizar el éxito en la implementación y operación de soluciones cloud."
+      b:
+        id: "infrastructure-provisioning"
+        name: "Provisión de infraestructura"
+        description: "Crear, replicar, actualizar y gestionar la infraestructura de TI de manera automatizada proporciona flexibilidad y velocidad esenciales a cualquier negocio."
+        bg_image: "/images/services/infrastructure.webp"
+        button: "Ver más"
+        page:
+          description: |
+            El aprovisionamiento de infraestructura se refiere al proceso de preparación y configuración de recursos tecnológicos necesarios para admitir la operación de sistemas y aplicaciones. Esto incluye servidores, redes, almacenamiento y cualquier otro componente necesario para ejecutar las cargas de trabajo de manera eficiente y segura.
+          benefits:
+            title: "Beneficios"
+            image: "/images/services/cloud-native.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-maximize"
+                title: "Escalabilidad"
+                description: "El aprovisionamiento de infraestructura permite escalar los recursos según las necesidades del negocio, garantizando que se puedan satisfacer los picos de demanda sin interrupciones en el servicio."
+              b: 
+                id: "agility"
+                icon: "fa-solid fa-gauge-high"
+                title: "Agilidad"
+                description: "Al utilizar herramientas y técnicas de automatización, el aprovisionamiento de infraestructura permite desplegar y configurar nuevos recursos de manera rápida y consistente, acelerando el tiempo de comercialización de nuevos productos y servicios."
+              c:
+                id: "flexibility"
+                icon: "fa-solid fa-sliders"
+                title: "Flexibilidad"
+                description: "La infraestructura puede ser aprovisionada en entornos locales o en la nube, lo que proporciona flexibilidad para adaptarse a los requisitos de carga de trabajo y presupuesto de la organización."
+              d:
+                id: "cost-effiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Eficiencia de costos"
+                description: "Al utilizar recursos en la nube, se paga solo por lo que se utiliza, lo que puede reducir los costos operativos en comparación con la adquisición y mantenimiento de infraestructura física."
+          services:
+            a:
+              id: "infra-design"
+              icon: "fa-solid fa-cubes"
+              title: "Diseño e Implementación de Infraestructura"
+              description:
+                - item: "Evaluación de requisitos de carga de trabajo y diseño de arquitecturas de infraestructura escalables y resilientes."
+                - item: "Implementación de infraestructura en entornos locales o en la nube, utilizando herramientas como AWS, Azure, Google Cloud Platform, o soluciones de infraestructura híbrida."
+            b:
+              id: "provisioning-automation"
+              icon: "fa-solid fa-gears"
+              title: "Automatización del aprovisionamiento"
+              description:
+                - item: "Desarrollo de scripts y plantillas de infraestructura como código para automatizar el aprovisionamiento de recursos y la configuración de sistemas."
+                - item: "Implementación de herramientas de automatización como Terraform, Ansible, o Chef para gestionar y mantener la infraestructura de manera eficiente."
+            c:
+              id: "infra-mgmt-and-monitoring"
+              icon: "fa-solid fa-magnifying-glass-chart"
+              title: "Gestión y Monitoreo de Infraestructura"
+              description:
+                - item: "Configuración de herramientas de monitoreo para supervisar el rendimiento y la salud de la infraestructura, y generar alertas en caso de problemas."
+                - item: "Implementación de políticas de gestión de costos para optimizar el uso de recursos y reducir los gastos innecesarios."
+            d:
+              id: "training-and-consultancy"
+              icon: "fa-solid fa-hand-holding-hand"
+              title: "Consultoría y Capacitación"
+              description:
+                - item: "Asesoramiento sobre las mejores prácticas de aprovisionamiento de infraestructura y cómo implementarlas de manera efectiva en tu organización."
+                - item: "Capacitación y formación en herramientas y técnicas de infraestructura como código y automatización para equipos de operaciones y desarrollo."
+                - item: "Soporte continuo y acompañamiento durante todo el proceso de implementación y mantenimiento de infraestructura para garantizar un rendimiento óptimo y una escalabilidad adecuada según las necesidades del negocio."
+      c:
+        id: "containerization-and-orchestration"
+        name: "Contenerización y orquestación"
+        bg_image: "/images/services/containers.webp"
+        description: "Los contenedores encapsulan aplicaciones y sus dependencias, proporcionando portabilidad entre diferentes entornos, mientras que la orquestación, con Kubernetes, facilita la gestión eficiente de contenedores, asegurando su despliegue consistente y escalable."
+        button: "Ver más"
+        page:
+          overview: "En Mikroways nos especializamos en ofrecer soluciones integrales en contenerización y orquestación de contenedores, así como en prácticas DevOps para optimizar el desarrollo, despliegue y operación de aplicaciones en entornos cloud y locales. Desde la evaluación y modernización de aplicaciones hasta la implementación y gestión de clústeres Kubernetes, proporcionamos servicios personalizados que permiten a las organizaciones aprovechar al máximo las ventajas de la contenerización y la orquestación."
+          components:
+            a:
+              id: "containerization"
+              name: "Contenerización"
+              bg_image: "/images/services/cloud-native/microservices.webp"
+              description: "La contenerización es un enfoque de virtualización a nivel de sistema operativo que permite empaquetar una aplicación y todas sus dependencias en un contenedor ligero y portátil. Cada contenedor funciona de manera independiente y aísla la aplicación del entorno de ejecución, lo que garantiza consistencia y portabilidad en diferentes entornos."
+            b:
+              id: "orchestration"
+              name: "Orquestación"
+              bg_image: "/images/services/cloud-native/cont.webp"
+              description: "La orquestación de contenedores se refiere a la gestión automatizada de contenedores a gran escala. Cuando tienes múltiples contenedores ejecutándose en diferentes hosts, es necesario coordinar su despliegue, escalamiento, monitoreo y recuperación en caso de fallos. Es aquí donde entran en juego las herramientas de orquestación, como Kubernetes."
+          benefits_cont:
+            title: "Beneficios de la contenerización"
+            image: "/images/services/benefits-containers.webp"
+            benefits:
+              a:
+                id: "portability"
+                icon: "fa-solid fa-recycle"
+                title: "Portabilidad"
+                description: "Los contenedores son independientes del entorno de ejecución, lo que significa que una vez creados, pueden ejecutarse en cualquier lugar que tenga soporte para Docker u otra plataforma de contenedores."
+              b: 
+                id: "consistency"
+                icon: "fa-regular fa-clone"
+                title: "Consistencia"
+                description: "Al empaquetar la aplicación y sus dependencias juntas, se garantiza que la aplicación se ejecute de la misma manera en diferentes entornos, desde el desarrollo hasta la producción."
+              c:
+                id: "efficiency"
+                icon: "fa-solid fa-money-bill-transfer"
+                title: "Eficiencia de recursos"
+                description: "Los contenedores comparten recursos del sistema operativo subyacente, lo que los hace más eficientes en términos de uso de recursos en comparación con las máquinas virtuales."
+              d:
+                id: "quick-deployment"
+                icon: "fa-solid fa-gauge-high"
+                title: "Rápido despliegue"
+                description: "Los contenedores se pueden iniciar y detener rápidamente, lo que agiliza el proceso de despliegue y escalado de aplicaciones."
+              e:
+                id: "isolation"
+                icon: "fa-solid fa-layer-group"
+                title: "Aislamiento"
+                description: "Cada contenedor proporciona un grado de aislamiento para la aplicación, lo que mejora la seguridad y facilita la gestión de dependencias."
+          benefits_orch:
+            title: "Beneficios de la orquestación"
+            image: "/images/services/benefits-orch.webp"
+            benefits:
+              a:
+                id: "scalability"
+                icon: "fa-solid fa-maximize"
+                title: "Escalabilidad"
+                description: "Kubernetes facilita el escalamiento automático de aplicaciones en función de la carga de trabajo, lo que garantiza un rendimiento óptimo en todo momento."
+              b: 
+                id: "high-availability"
+                icon: "fa-solid fa-coins"
+                title: "Alta disponibilidad"
+                description: "Kubernetes maneja la distribución de la carga de trabajo entre múltiples instancias de una aplicación, asegurando una alta disponibilidad y tolerancia a fallos."
+              c:
+                id: "deployment"
+                icon: "fa-solid fa-list-check"
+                title: "Despliegue declarativo"
+                description: "La definición de la infraestructura como código permite un despliegue consistente y reproducible de la aplicación en diferentes entornos."
+              d:
+                id: "autohealing"
+                icon: "fa-solid fa-house-medical-circle-check"
+                title: "Monitoreo y autosanado"
+                description: "Kubernetes monitorea constantemente el estado de las aplicaciones y los nodos, y puede realizar acciones de autosanación automáticamente en caso de fallos."
+              e:
+                id: "resource-mgmt"
+                icon: "fa-solid fa-users-gear"
+                title: "Gestión de los recursos"
+                description: "Kubernetes gestiona eficientemente los recursos de CPU y memoria, asignándoles dinámicamente según las necesidades de las aplicaciones."
+          services:
+            a:
+              id: "cont-strategies"
+              icon: "fa-brands fa-docker"
+              title: "Implementación de Estrategias de Contenerización"
+              description:
+                - item: "Evaluación de las aplicaciones existentes para identificar aquellas que se beneficiarían de la contenerización."
+                - item: "Desarrollo de estrategias y hojas de ruta para la contenerización gradual de aplicaciones críticas para el negocio."
+                - item: "Diseño e implementación de Dockerfiles y Docker Compose para empaquetar aplicaciones en contenedores de manera eficiente y segura."
+            b:
+              id: "kubernetes-mgmt"
+              icon: "fa-solid fa-laptop-code"
+              title: "Despliegue y Gestión de Clústeres Kubernetes"
+              description:
+                - item: "Implementación de clústeres Kubernetes en entornos locales o en la nube pública."
+                - item: "Configuración y optimización de clústeres Kubernetes para maximizar la escalabilidad, disponibilidad y seguridad."
+                - item: "Despliegue de aplicaciones en clústeres Kubernetes utilizando herramientas como Helm para gestionar paquetes de aplicaciones."
+            c:
+              id: "processes-automation"
+              icon: "fa-solid fa-arrows-spin"
+              title: "Automatización de Procesos con DevOps"
+              description:
+                - item: "Integración de prácticas DevOps en el ciclo de vida de desarrollo y despliegue de aplicaciones."
+                - item: "Automatización de pipelines de CI/CD (Integración Continua/Entrega Continua) para garantizar la entrega rápida y confiable de software."
+                - item: "Implementación de monitoreo y alertas para supervisar el rendimiento y la salud de las aplicaciones y la infraestructura de contenedores."
+      d:
+        id: "continuous-integration-and-deployment"
+        name: "Integración y despliegue continuos"
+        description: "La automatización del despliegue de software reduce significativamente el tiempo de llegada al mercado y mejora la productividad del equipo de TI."
+        bg_image: "/images/services/cicd.webp"
+        button: "Ver más"
+        page:
+          description: "La Integración Continua (CI) y la Entrega Continua (CD) son prácticas clave en el desarrollo de software que automatizan el proceso de integración, pruebas y entrega de código."
+          components:
+            a:
+              id: "cont-int"
+              name: "Integración continua (CI)"
+              description: "Se refiere a la práctica de fusionar cambios de código en un repositorio compartido de forma regular, seguido de la ejecución automática de pruebas unitarias y de integración para verificar la integridad del código."
+            b:
+              id: "cont-del"
+              name: "Entrega continua (CD)"
+              description: "Extiende la CI al automatizar la entrega de código probado a entornos de producción o de preproducción. Esto implica la automatización de pruebas adicionales, como pruebas de aceptación y pruebas de desempeño, seguidas de la implementación automatizada en entornos de producción."
+          benefits:
+            title: "Beneficios de aplicar CI/CD"
+            image: "/images/services/cloud-native.webp"
+            benefits:
+              a:
+                id: "rapid-feedback"
+                icon: "fa-solid fa-people-arrows"
+                title: "Rápida retroalimentación"
+                description: "Permite detectar y corregir errores de manera temprana en el ciclo de desarrollo, lo que conduce a un ciclo de desarrollo más rápido y eficiente."
+              b: 
+                id: "software-quality"
+                icon: "fa-solid fa-medal"
+                title: "Calidad del software"
+                description: "La automatización de pruebas garantiza que el código entregado sea de alta calidad y esté libre de errores, lo que mejora la satisfacción del cliente y la confianza en el producto."
+              c:
+                id: "reliable-deployment"
+                icon: "fa-solid fa-binary-circle-check"
+                title: "Despliegue confiable"
+                description: "La entrega continua automatizada garantiza que las actualizaciones de software se desplieguen de manera consistente y confiable en entornos de producción, reduciendo el riesgo de errores humanos."
+              d:
+                id: "colab-and-visib"
+                icon: "fa-solid fa-screen-users"
+                title: "Colaboración y visibilidad"
+                description: "Facilita la colaboración entre equipos de desarrollo, pruebas y operaciones al proporcionar un proceso transparente y automatizado para el desarrollo y despliegue de software."
+          services:
+            a:
+              id: "pipelines-implementation"
+              icon: "fa-sharp fa-solid fa-webhook"
+              title: "Implementación de Pipelines de CI/CD"
+              description:
+                - item: "Diseño e implementación de pipelines de CI/CD personalizados que se ajusten a las necesidades específicas de tu empresa y proyectos."
+                - item: "Integración de herramientas de CI/CD como Jenkins, GitLab CI/CD, CircleCI, o GitHub Actions para automatizar el proceso de integración, pruebas y despliegue."
+            b:
+              id: "test-automation"
+              icon: "fa-solid fa-laptop-binary"
+              title: "Automatización de pruebas"
+              description:
+                - item: "Desarrollo de suites de pruebas automatizadas (unitarias, de integración, funcionales, etc.) para garantizar la calidad del software en cada etapa del ciclo de desarrollo."
+                - item: "Integración de herramientas de pruebas automatizadas como Selenium, JUnit, o PyTest en los pipelines de CI/CD."
+            c:
+              id: "iac-mgmt"
+              icon: "fa-solid fa-gear-code"
+              title: "Gestión de infraestructura como código"
+              description:
+                - item: "Implementación de prácticas de Infraestructura como Código (IaC) para automatizar la creación y gestión de entornos de desarrollo, pruebas y producción."
+                - item: "Utilización de herramientas como Terraform, AWS CloudFormation o Azure Resource Manager para definir la infraestructura de manera declarativa."
+      e:
+        id: "monitoring-and-observability"
+        name: "Monitoreo y observabilidad"
+        description: "Obtener información en tiempo real sobre aplicaciones y servicios permite minimizar el tiempo de resolución de problemas y mejorar su calidad general."
+        bg_image: "/images/portfolio/monitoring.jpg.webp"
+        button: "Ver más"
+        page:
+          description: "El monitoreo y la observabilidad son prácticas esenciales en el desarrollo y operación de sistemas informáticos, especialmente en entornos de nube."
+          components:
+            a:
+              id: "monitoring"
+              name: "Monitoreo"
+              description: "Se refiere al proceso de supervisar el estado y el rendimiento de los sistemas, aplicaciones, servicios y recursos de infraestructura. Esto implica recopilar métricas y registros sobre el uso de recursos, el rendimiento de las aplicaciones y la salud del sistema para detectar y responder a problemas potenciales."
+            b:
+              id: "observability"
+              name: "Observabilidad"
+              description: "Se refiere a la capacidad de comprender, analizar y depurar sistemas complejos a través de la recopilación y visualización de datos. La observabilidad se centra en obtener información útil a partir de datos de monitoreo, lo que permite a los equipos de operaciones y desarrollo comprender mejor el comportamiento del sistema y tomar decisiones informadas."
+          benefits:
+            title: "Beneficios del monitoreo y la observabilidad"
+            image: "/images/services/benefits-monitoring.webp"
+            benefits:
+              a:
+                id: "problem-detection"
+                icon: "fa-solid fa-sensor-triangle-exclamation"
+                title: "Detección temprana de problemas"
+                description: "El monitoreo continuo permite detectar problemas de rendimiento o fallas en tiempo real, lo que permite a los equipos responder rápidamente y minimizar el tiempo de inactividad."
+              b: 
+                id: "performance-optimization"
+                icon: "fa-solid fa-microchip"
+                title: "Optimización del rendimiento"
+                description: "La recopilación y análisis de datos de monitoreo ayuda a identificar cuellos de botella y puntos de mejora en el sistema, lo que permite optimizar el rendimiento de las aplicaciones y la infraestructura."
+              c:
+                id: "informed-decisions"
+                icon: "fa-sharp fa-solid fa-brain-arrow-curved-right"
+                title: "Toma de decisiones informadas"
+                description: "La observabilidad proporciona insights detallados sobre el comportamiento del sistema, lo que ayuda a los equipos a comprender mejor las causas raíz de los problemas y a tomar decisiones informadas para mejorar el sistema."
+              d:
+                id: "user-experience"
+                icon: "fa-solid fa-face-smile"
+                title: "Mejora en la experiencia del usuario"
+                description: "Al detectar y corregir problemas de manera proactiva, se garantiza una experiencia de usuario más fluida y confiable, lo que aumenta la satisfacción del cliente."
+              e:
+                id: "compliance"
+                icon: "fa-solid fa-signature"
+                title: "Cumplimiento de SLAs"
+                description: "El monitoreo constante garantiza que los sistemas cumplan con los acuerdos de nivel de servicio establecidos, lo que garantiza una alta disponibilidad y rendimiento de los servicios."
+          services:
+            a:
+              id: "solutions-implementation"
+              icon: "fa-solid fa-eye"
+              title: "Soluciones de monitoreo y observabilidad"
+              description:
+                - item: "Diseño e implementación de sistemas de monitoreo personalizados que se adapten a las necesidades específicas de tu empresa y aplicaciones."
+                - item: "Implementación de herramientas de monitoreo como Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), o soluciones de monitoreo de proveedores de nube como AWS CloudWatch o Azure Monitor."
+            b:
+              id: "alerts-setup"
+              icon: "fa-solid fa-bell-on"
+              title: "Alertas y notificaciones"
+              description:
+                - item: "Configuración de alertas y notificaciones para recibir notificaciones inmediatas sobre problemas de rendimiento o fallas del sistema."
+                - item: "Definición de umbrales de alerta personalizados y políticas de escalación para garantizar una respuesta rápida a problemas críticos."
+            c:
+              id: "performance-optimization"
+              icon: "fa-solid fa-crosshairs"
+              title: "Análisis y optimización del rendimiento"
+              description:
+                - item: "Análisis detallado de datos de monitoreo para identificar cuellos de botella y áreas de mejora en el rendimiento de las aplicaciones y la infraestructura."
+                - item: "Implementación de ajustes y optimizaciones basadas en datos para mejorar el rendimiento y la eficiencia del sistema."
+      f:
+        id: "business-continuity"
+        name: "Continuidad del negocio"
+        description: "La continuidad de tu negocio es más importante que cualquier otra cosa. Por eso nos aseguramos de que siempre tengas un plan de recuperación ante desastres accionable, probado, actualizado y efectivo, con mínima o ninguna intervención manual."
+        bg_image: "/images/services/business-continuity.webp"
+        button: "Ver más"
+        page:
+          description: "Es importante para una organización mantener sus operaciones y funciones críticas durante y después de un evento disruptivo, como fallos de infraestructura, ciberataques o cualquier otra situación de crisis. El objetivo es minimizar el impacto en el negocio y garantizar la recuperación rápida y eficiente de las operaciones."
+          benefits:
+            title: "Beneficios"
+            benefits:
+              a:
+                id: "resiliency"
+                icon: "fa-solid fa-display-chart-up-circle-dollar"
+                title: "Resiliencia empresarial"
+                description: "La continuidad del negocio garantiza que una organización pueda resistir y recuperarse rápidamente de eventos adversos, minimizando el impacto en sus operaciones y clientes."
+              b: 
+                id: "inactivity-reduction"
+                icon: "fa-solid fa-stopwatch-20"
+                title: "Menor tiempo de inactividad"
+                description: "Al contar con planes y procedimientos bien definidos para gestionar situaciones de crisis, se reduce significativamente el tiempo de inactividad y se minimizan las pérdidas financieras."
+              c:
+                id: "brand-protection"
+                icon: "fa-solid fa-building-shield"
+                title: "Reputación de marca"
+                description: "La capacidad de mantener la continuidad de las operaciones incluso en tiempos de crisis demuestra la fiabilidad y el compromiso de la organización con sus clientes y partes interesadas, protegiendo así su reputación de marca."
+              d:
+                id: "compliance"
+                icon: "fa-solid fa-badge-check"
+                title: "Cumplimiento normativo"
+                description: "La implementación de planes de continuidad del negocio puede ayudar a cumplir con los requisitos normativos y regulatorios relacionados con la gestión de riesgos y la protección de datos."
+          services:
+            a:
+              id: "drp"
+              icon: "fa-solid fa-memo-circle-check"
+              title: "Planes de continuidad del negocio"
+              description:
+                - item: "Evaluación de riesgos y vulnerabilidades para identificar amenazas potenciales y sus impactos en las operaciones del negocio."
+                - item: "Diseño e implementación de planes de continuidad del negocio adaptados a las necesidades y requisitos específicos de tu organización."
+            b:
+              id: "impact-analysis"
+              icon: "fa-solid fa-radar"
+              title: "Análisis de impacto en el negocio"
+              description:
+                - item: "Realización de análisis de impacto en el negocio para identificar los procesos y funciones críticas y determinar sus requisitos de tiempo de recuperación y tolerancia a fallos."
+            c:
+              id: "recovery-solutions"
+              icon: "fa-solid fa-vault"
+              title: "Soluciones de respaldo y recuperación"
+              description:
+                - item: "Desarrollo e implementación de estrategias de respaldo y recuperación de datos para garantizar la disponibilidad e integridad de la información crítica del negocio."
+                - item: "Configuración de sistemas de respaldo automatizados y soluciones de recuperación ante desastres (DRP) para garantizar la recuperación rápida de datos y sistemas en caso de fallo."
+            d:
+              id: "drp-testing"
+              icon: "fa-solid fa-building-circle-check"
+              title: "Simulacros y ejercicios de continuidad del negocio"
+              description:
+                - item: "Planificación y ejecución de simulacros y ejercicios de continuidad del negocio para probar la efectividad de los planes y procedimientos de crisis."
+                - item: "Identificación de áreas de mejora y actualización de los planes de continuidad del negocio en función de los resultados de los ejercicios."
+    technologies:
+      - name: "AWS"
+        logo: "images/tech/aws.png"
+      - name: "Google Cloud"
+        logo: "images/tech/gcloud.png"
+      - name: "Microsoft Azure"
+        logo: "images/tech/azure.png"
+      - name: "VMware"
+        logo: "images/tech/vmware.png"
+      - name: "Microsoft HyperV"
+        logo: "images/tech/hyperv.png"
+      - name: "Kubernetes"
+        logo: "images/tech/kubernetes.png"
+      - name: "Docker"
+        logo: "images/tech/docker.png"
+      - name: "Openshift"
+        logo: "images/tech/openshift.png"
+      - name: "Grafana"
+        logo: "images/tech/grafana.png"
+      - name: "Prometheus"
+        logo: "images/tech/prometheus.png"
+      - name: "Veeam"
+        logo: "images/tech/veeam.png"
+      - name: "Velero"
+        logo: "images/tech/velero.svg"
+  digital_transformation:
+    name: |
+      Transformación digital
+    parent: "Servicios"
+    description:
+      - item: "En el dinámico mundo empresarial actual, la Transformación Digital es más que una necesidad: es una estrategia esencial para la supervivencia y el éxito a largo plazo. En Mikroways, comprendemos la complejidad de este proceso y ofrecemos un servicio integral de Transformación Digital diseñado para impulsar a tu empresa hacia la vanguardia digital."
+      - item: "Nuestro mundo actual está hiperconectado; el cambio es superacelerado; la inteligencia artificial es omnipresente; y las decisiones están cada vez más basadas en datos."
+      - item: "¿Y si pudieras acelerar la innovación práctica en tu negocio? El equipo de transformación digital de Mikroways te ayudará a inspirar nuevas ideas y a impulsar la innovación práctica."
+    bg_image: "images/services/dt-bg.webp"
+    components_heading: "Nuestro enfoque"
+    components:
+      a:
+        id: "digital-vision-strategy"
+        name: "Visión y estrategia digital"
+        description: |
+          Nuestro objetivo es enfocarnos en estrategia digital, integración y transformación integral, incluyendo la capacidad de demostrar la viabilidad y el valor de soluciones empresariales seguras y eficientes. En Mikroways ofrecemos un portfolio complementario a la industria, aprovechando las mejores prácticas intersectoriales y aspiramos a ser la primera opción para nuestros clientes en la identificación, diseño, aceleración y escalado de oportunidades de transformación.  
+          Encabezamos conversaciones y programas de transformación, así como el diseño estratégico de negocios digitales, modelos operativos, productos y servicios.
+        bg_image: "/images/services/digital-transformation/strategy.webp"
+      b:
+        id: "insights"
+        name: "Insights"
+        description: |
+          Los datos son un activo fundamental en tu organización, permitiendo optimizar operaciones o conseguir ventajas competitivas. La inversión en madurez digital, credibilidad de datos e integración en los procesos organizativos son elementos esenciales para el éxito. Para lograrlo, es necesario tomar decisiones tecnológicas acertadas que ayuden a cumplir con los impulsores y alcanzar los resultados esperados.  
+          Mikroways ofrece un enfoque centrado en los datos y una sólida gobernanza para asistirte en la identificación y apoyo de casos de uso relevantes con soluciones adecuadas para una gestión diferenciada de datos, al mismo tiempo que aprovecha la inteligencia artificial y el aprendizaje automático para procesos inteligentes y optimizados.
+        bg_image: "/images/services/digital-transformation/insights.webp"
+      c:
+        id: "experience"
+        name: "Experiencia"
+        bg_image: "/images/services/digital-transformation/experience.webp"
+        description: |
+          Hoy en día, los productos y servicios son más complejos, involucrando múltiples puntos de contacto, procesos, personas y tecnologías. Son concebidos, desarrollados y gestionados por equipos multifuncionales tanto internos como externos al negocio, a menudo con diferentes ideas, agendas, restricciones y prioridades que influyen en la experiencia final. En Mikroways nuestra función es gestionar esta complejidad, generando valor desde la concepción hasta la operación tanto para el negocio como para el cliente, y garantizando el éxito, la adopción y el uso de los productos y servicios.
+      d:
+        id: "process-excellence"
+        name: "Excelencia en los procesos"
+        description: |
+          Para lograr una transformación sostenible y alcanzar el potencial de las inversiones tecnológicas y los objetivos de sostenibilidad, las organizaciones deben basarse en procesos robustos, estables y eficientes.  
+          Nuestro equipo de profesionales en procesos aportan una amplia experiencia y habilidades que combinan la minería de procesos y la gestión de procesos empresariales. Contamos con habilidades especializadas y trabajamos estrechamente con nuestros expertos en automatización y gestión del cambio para obtener resultados sostenibles.
+        bg_image: "/images/services/digital-transformation/processes.webp"
+      e:
+        id: "process-automation"
+        name: "Automatización de procesos"
+        description: |
+          En Mikroways ofrecemos apoyo en el diseño, construcción y gestión de tu capacidad de automatización. Contamos con expertos que pueden ayudarte en el desarrollo de tu estrategia; dar los primeros pasos con cautela; diseñar tu modelo operativo; o escalar la automatización.  
+          Nuestros expertos poseen habilidades esenciales de consultoría en transformación digital para ayudarte a descubrir y priorizar tus mejores oportunidades; mejorar el rendimiento del proceso mediante la simplificación, y demostrar la aplicación práctica de las últimas tecnologías para ampliar tu automatización a casos de uso más complejos.
+        bg_image: "/images/services/digital-transformation/automation.webp"
+      f:
+        id: "change-management"
+        name: "Gestión del cambio organizacional"
+        description: |
+          Nos involucramos con las personas para empoderarlas y habilitarlas en el transcurso de la transformación digital, lo que en última instancia ayuda a la organización a tener éxito en un nuevo entorno de trabajo (híbrido).
+        bg_image: "/images/services/digital-transformation/change.webp"
+      g:
+        id: "tech-strategy"
+        name: "Estrategia e innovación tecnológica"
+        description: |
+          El equipo de IT se ha transformado en un socio estratégico y de innovación esencial, impulsando de manera proactiva productos, servicios y modelos de negocio habilitados digitalmente. Todo esto mientras se enfrenta a los desafíos transformacionales de un legado de IT complejo.  
+          Optimiza lo que has logrado en operaciones, servicios, aplicaciones y arquitecturas, o amplía tus capacidades con un socio para la innovación como Mikroways. Ofrecemos las mejores prácticas efectivas para ayudar a los clientes a dominar sus transformaciones digitales de IT. Descubre cómo podemos ayudarte a entregar resultados comerciales tangibles a prueba de futuro.
+        bg_image: "/images/services/digital-transformation/innovation.webp"
+      h:
+        id: "business-continuity"
+        name: "Aceleración en innovación digital"
+        description: |
+          Creamos squads multifuncionales altamente efectivos que adoptan un enfoque ágil para acelerar la entrega de prototipos o soluciones mínimas viables (MVP) que estén alineadas con los objetivos comerciales.
+        bg_image: "/images/services/digital-transformation/accelerate.webp"
+    cta:
+      title: "¿Tienes un proyecto?"
+      subtitle: "Evaluemos tus oportunidades"
+      buttons:
+        - label : "Contáctanos"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Programa una reunión"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+  professional_services:
+    name: |
+      Servicios Profesionales
+    parent: "Servicios"
+    description: "Hemos diseñado nuestra línea de servicios profesionales, honrando nuestro compromiso de adaptarnos a las necesidades específicas de nuestros clientes y de proporcionar siempre la mejor solución para cada caso. En ese sentido, adoptamos un enfoque proactivo para impulsar continuamente mejoras y eficiencia en su negocio mediante la aplicación de nuestro conocimiento y experiencia a su situación particular."
+    bg_image: "/images/services/ps-bg.webp"
+    components_heading: "Nuestros servicios profesionales"
+    components:
+      a:
+        id: "managed-services"
+        name: "Servicios gestionados"
+        bg_image: "/images/services/ps/managed-services.webp"
+        description: "Los servicios gestionados son una parte esencial de nuestra propuesta para proporcionar una solución integral. Con este servicio, nuestro objetivo es liberar a nuestros clientes de la compleja tarea de gestionar su infraestructura y sus componentes, asumiendo la responsabilidad de su operación. Nos enfocamos en los siguientes puntos:"
+        benefits:
+          - item: "Mantenimiento proactivo y reactivo"
+          - item: "Monitoreo continuo"
+          - item: "Análisis periódico de la capacidad"
+          - item: "Generación de documentación"
+          - item: "Sugerencias de mejora"
+      b:
+        id: "consultancy"
+        name: "Consultoría"
+        bg_image: "/images/services/ps/consultancy.webp"
+        description: "En nuestro servicio de consultoría no sólo proporcionamos asesoramiento puntual, sino que adoptamos un enfoque proactivo para impulsar continuamente mejoras y eficiencia en tu negocio. A través de evaluaciones periódicas, identificamos oportunidades de optimización y maximizamos el rendimiento operativo. Nuestra consultoría se caracteriza por:"
+        benefits:
+          - item: "Asesoramiento continuo"
+          - item: "Evaluaciones dinámicas"
+          - item: "Implementación de mejoras"
+          - item: "Flexibilidad y adaptabilidad"
+          - item: "Monitoreo continuo"
+      c: 
+        id: "ctoaas"
+        name: "CTO como servicio"
+        bg_image: "/images/services/ps/ctoaas.webp"
+        description: "Es la solución integral para las necesidades tecnológicas de tu empresa, sin la necesidad de contratar un Director de Tecnología o CTO a tiempo completo. Nuestro equipo de expertos se convierte en tu CTO virtual, brindando liderazgo estratégico en tecnología y gestionando todas las facetas de tu infraestructura digital. Apaláncate en Mikroways y obtén los siguientes beneficios:"
+        benefits:
+          - item: "Estrategia tecnológica personalizada"
+          - item: "Optimización de costos"
+          - item: "Gestión integral"
+          - item: "Flexibilidad y escalabilidad"
+          - item: "Enfoque en el core business"
+    cta:
+      title: "¿Tienes un proyecto?"
+      subtitle: "Evaluemos tus oportunidades"
+      buttons:
+        - label : "Contáctanos"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Programa una reunión"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"
+  cybersecurity:
+    name: |
+      Ciberseguridad
+    parent: "Servicios"
+    description: "La seguridad cibernética es una prioridad ineludible en la era digital, donde las amenazas evolucionan constantemente. En Mikroways, comprendemos la importancia de proteger tus activos digitales y datos confidenciales. Nuestra línea de servicio de Seguridad está diseñada para brindar una defensa robusta y proactiva contra las amenazas cibernéticas."
+    bg_image: "images/services/cybersecurity-bg.webp"
+    catalog:
+      title: "Línea de servicios"
+      items:
+        - title: "Test de penetración"
+          description: "En Mikroways, realizamos pruebas de penetración para simular ciberataques del mundo real en sus sistemas. Al hacer esto, identificamos vulnerabilidades que los hackers maliciosos podrían explotar. Nuestro objetivo es ayudarlo a fortalecer sus defensas encontrando y solucionando estas debilidades antes de que puedan ser explotadas por atacantes reales."
+          icon: "fa-solid fa-unlock"
+        - title: "Evaluación y auditoría de seguridad"
+          description: "Nuestra evaluación de seguridad implica una evaluación integral de su infraestructura de TI, políticas y controles. Examinamos minuciosamente sus sistemas para identificar vulnerabilidades de seguridad y evaluar la efectividad de sus medidas de seguridad existentes. Con nuestra evaluación, obtendrá información sobre las áreas que necesitan mejora y recibirá recomendaciones para mejorar su postura de seguridad general."
+          icon: "fa-solid fa-arrows-to-eye"
+        - title: "Seguridad en la nube"
+          description: "Nos especializamos en asegurar sus datos, aplicaciones e infraestructura en la nube. Con nuestra experiencia, implementamos medidas de seguridad robustas adaptadas a entornos de nube como AWS, Azure o GCP. Desde la encriptación hasta los controles de acceso, nos aseguramos de que sus activos en la nube estén protegidos contra amenazas cibernéticas y riesgos de cumplimiento."
+          icon: "fa-solid fa-cloud"
+        - title: "Implementación de soluciones de seguridad"
+          description: "Nuestro equipo se encarga del despliegue y configuración de herramientas y tecnologías de ciberseguridad de vanguardia. Desde firewalls hasta plataformas SIEM, implementamos una suite integral de soluciones de seguridad para proteger los activos de TI de su organización. Con nuestra experiencia, puede crear una estrategia de defensa multicapa para abordar de manera efectiva diversas amenazas de seguridad."
+          icon: "fa-solid fa-vault"
+        - title: "Monitoreo continuo"
+          description: "Proporcionamos servicios de monitoreo continuo para mantener una vigilancia constante sobre su entorno de TI las 24 horas del día, los 7 días de la semana. Nuestros sistemas avanzados de monitoreo rastrean el tráfico de red, los registros del sistema y la actividad del usuario en tiempo real para detectar y responder a las amenazas de seguridad de manera oportuna. Con nuestro monitoreo continuo, tendrá la tranquilidad de saber que estamos siempre vigilantes contra las amenazas cibernéticas."
+          icon: "fa-solid fa-magnifying-glass-chart"
+        - title: "Creación de arquitecturas resilientes"
+          description: "Diseñamos e implementamos arquitecturas resilientes para garantizar que su infraestructura de TI pueda resistir y recuperarse de ciberataques y otras interrupciones. Nuestras soluciones incluyen redundancia, mecanismos de conmutación por error y planes de recuperación ante desastres para minimizar el tiempo de inactividad y mantener la continuidad del negocio. Con nuestras arquitecturas resilientes, puede estar seguro de que su organización está preparada para manejar cualquier adversidad."
+          icon: "fa-solid fa-building-shield"
+    cta:
+      title: "¿Tienes un proyecto?"
+      subtitle: "Evaluemos tus oportunidades"
+      buttons:
+        - label : "Contáctanos"
+          style : "solid"
+          internal_link : "contact"
+        - label: "Programa una reunión"
+          style: "solid-wb"
+          calendly_url:  "https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways"

@@ -1,0 +1,23 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section id="main-container">
+  {{ with $data.homepage.approach }}
+  <div class="container">
+    <!-- Company Profile -->
+    <div class="row">
+      <div class="col-md-12 heading">
+        <h2 class="title">{{ .title | markdownify }} <span class="title-desc">{{ .subtitle | markdownify }}</span></h2>
+      </div>
+    </div><!-- Title row end -->
+
+    <div class="row landing-tab">
+      <div class="col-md-12 col-sm-12">
+        <img src="{{ .approach_diagram }}" width="100%">
+      </div>
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ 1st container end -->
+  <div class="gap-60"></div>
+  {{ end }}
+</section>

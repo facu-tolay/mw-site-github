@@ -1,0 +1,59 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+<!-- Slider start -->
+{{ with $data.service.services.platform.components.a }}
+<section id="about" class="p-0">
+{{ partial "page-header-bgimage.html" . }}
+</section>
+
+<section id="service" style="background: #f6fafe;">
+  <div class="container pt-3">
+    <div class="col-sm-12 text-center pillars">
+      <h2>{{ .name }}</h2>
+    </div>
+    <div class="row justify-content-center pt-4">
+    <div class="col-sm-9">
+      <p>{{ .page.description | markdownify }}</p>
+      </div>
+    </div>
+    {{ range .page.components }}
+    <div id="{{ .id }}" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="{{ .bg_image }}">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">{{ .name }}</h3>
+          <p>{{ .description | markdownify }}</p>
+          <ul class="mb-5">
+          {{ range .benefits }}
+          <li>{{ .item }}</li>
+          {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ with $data.service.services.platform.components.a.page }}
+{{ partial "services-benefits.html" (dict "img_position" "left" "benefits" .benefits) }}
+{{ end }}
+
+{{ partial "services-overview-strip.html" . }}
+
+{{ with $data.service.services.platform.components.a.page }}
+{{ partial "services-block.html" . }}
+{{ end }}
+
+{{ with $data.service.services.platform.cta }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+{{ end }}
+{{ end }}

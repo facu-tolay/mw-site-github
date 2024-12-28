@@ -1,0 +1,174 @@
+######################## default configuration ####################
+baseURL = "/"
+title = "Mikroways"
+theme = "bizcraft-hugo"
+# post pagination
+paginate = "3"
+# post excerpt
+summaryLength = "10"
+# google analytics
+googleAnalytics = "UA-47781870-2"
+# disqus short name
+#disqusShortname = "#" # get your shortname form here : https://disqus.com
+removePathAccents = true
+
+############################# Outputs ##############################
+[outputs]
+home = ["HTML", "RSS"]
+
+[markup.goldmark.renderer]
+unsafe= true
+
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+#[[params.plugins.css]]
+#link = "plugins/fontawesome/font-awesome.min.css"
+[[params.plugins.css]]
+link = "plugins/animate.css"
+[[params.plugins.css]]
+link = "plugins/prettyPhoto.css"
+[[params.plugins.css]]
+link = "plugins/owl/owl.carousel.css"
+[[params.plugins.css]]
+link = "plugins/owl/owl.theme.css"
+[[params.plugins.css]]
+link = "plugins/flex-slider/flexslider.css"
+#[[params.plugins.css]]
+#link = "plugins/cd-hero/cd-hero.css"
+[[params.plugins.css]]
+link = "css/timeline.css"
+[[params.override_css]]
+link = "css/custom.css"
+[[params.override_css]]
+link = "css/asciinema-player.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/style-switcher.js"
+[[params.plugins.js]]
+link = "plugins/owl/owl.carousel.js"
+[[params.plugins.js]]
+link = "plugins/jquery.prettyPhoto.js"
+[[params.plugins.js]]
+link = "plugins/flex-slider/jquery.flexslider.js"
+[[params.plugins.js]]
+link = "plugins/isotope.js"
+[[params.plugins.js]]
+link = "plugins/ini.isotope.js"
+[[params.plugins.js]]
+link = "plugins/wow.min.js"
+[[params.plugins.js]]
+link = "plugins/jquery.easing.1.3.js"
+[[params.plugins.js]]
+link = "plugins/jquery.counterup.min.js"
+[[params.plugins.js]]
+link = "plugins/waypoints.min.js"
+[[params.plugins.js]]
+link = "js/contactformlambda.js"
+[[params.plugins.js]]
+link = "https://kit.fontawesome.com/b4a4fb980a.js"
+[[params.plugins.js]]
+link = "js/asciinema-player.js"
+[[params.plugins.js]]
+link = "js/megamenu.js"
+
+#################### default parameters ################################
+[params]
+logo = "images/logo.webp"
+white_logo = "images/logo-blanco.png"
+home = "Home"
+# Meta data
+description = "En Mikroways somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas."
+author = "Mikroways"
+# contact info
+address = "Av. del Libertador 7208, Buenos Aires, Argentina"
+phone = "+54 (221) 447-3084"
+phone_url = "tel:+542214473084"
+whatsapp = "+54 9 (221) 680-0267"
+whatsapp_url = "https://wa.me/+5492216800267"
+email = "contacto@mikroways.net"
+email_url = "mailto:contacto@mikroways.net"
+# copyright
+copyright = "Copyright&copy; 2024 Mikroways&reg;"
+# Filter in success stories
+enableFilterSt = false
+
+# flickr photos
+[[params.flickr_photos]]
+image = "images/gallery/1.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/2.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/3.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/4.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/5.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/6.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/7.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/8.jpg"
+[[params.flickr_photos]]
+image = "images/gallery/9.jpg"
+
+# google map
+[params.map]
+enable = false
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
+map_latitude = "-34.91179"
+map_longitude = "-57.95820"
+map_marker = "images/marker.png"
+  
+# HubSpot
+[params.hub_spot]
+url  = "//js.hs-scripts.com/45476202.js"
+
+# Linkedin
+[params.linkedin]
+partner_id = "6063204"
+
+# Google tag manager
+[params.google_tag_manager]
+id = "GTM-TZL29LZV"
+
+
+############################# social site ########################
+[[params.social]]
+name = "linkedin"
+icon = "fa-linkedin" # fontawesome icon pack 4.7 | https://fontawesome.com/v4.7.0/icons/
+link = "https://www.linkedin.com/company/mikroways/"
+
+[[params.social]]
+name = "youtube"
+icon = "fa-youtube"
+link = "https://www.youtube.com/user/Mikroways"
+
+[[params.social]]
+name = "github"
+icon = "fa-github" # fontawesome icon pack 4.7 | https://fontawesome.com/v4.7.0/icons/
+link = "https://github.com/orgs/Mikroways/repositories"
+
+################################### English language #####################################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+home = "Home"
+
+################################### Spanish language #####################################
+[Languages.es]
+languageName = "Es"
+languageCode = "es-ar"
+contentDir = "content/spanish"
+weight = 2
+home = "Inicio"

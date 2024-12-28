@@ -1,0 +1,14 @@
+############################ Workflow ########################
+workflow:
+  title: "How we do it"
+  subtitle: "Our approach"
+  image: "images/services/circle-en.webp"
+  steps:
+    - name: "Discovery"
+      description: "We determine the initial state and set goals"
+    - name: "Solution design"
+      description: "We plan the transformation and design the solution"
+    - name: "Execution"
+      description: "we implement the solution according to the design"
+    - name: "Operation & optimization"
+      description: "We manage the solution by continuously executing preventive, corrective and evolutive maintenance"

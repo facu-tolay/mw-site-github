@@ -1,0 +1,7 @@
+{{ with .Site.Params.google_tag_manager }}
+{{ "<!-- Google Tag Manager (noscript) -->" | safeHTML }}
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ .id | safeURL }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+{{ "<!-- End Google Tag Manager (noscript) -->" | safeHTML }}
+{{ end }}

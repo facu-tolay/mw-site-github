@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section id="training" class="training">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 col-xs-12">
+        <div class="col-md-12 col-xs-12 course">
+        {{ range $idx, $item := $data.service.services.profile_tab }}
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="heading{{$idx}}">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left toggle-btn" id="btn{{$idx}}" type="button" data-toggle="collapse" data-target="#collapse{{$idx}}" aria-expanded="true" aria-controls="collapse{{$idx}}">
+                    {{ .title | markdownify }}
+                    <i class="fas fa-plus float-right icon" id="icon{{$idx}}"></i>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse{{$idx}}" class="collapse" aria-labelledby="heading{{$idx}}" data-parent="#accordionExample">
+                <div class="card-body">
+                  {{ $item.content | markdownify }}
+                  <div class="col-md-12 text-center course-buttons">
+                    <a href="{{ $data.homepage.training.buy_url | relLangURL }}" class="btn btn-primary solid-wb">{{i18n `want_this`}}</a>
+                    <a href="{{ .RelPermalink }}" class="btn btn-primary white-wb">{{i18n `see_more`}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+</section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(".toggle-btn").click(function() {
+      $(this).find('i').toggleClass("fas fa-plus fas fa-minus");
+    })
+  </script>
+
+
+{{ end }}
+

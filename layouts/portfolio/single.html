@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $thisPage := .GetPage "." }}
+
+<!-- Slider start -->
+<section id="home" class="p-0">
+  <div class="frontpage">
+    <div class="bg-image" style="max-height: 500px;">
+      <img src="{{ $data.portfolio.portfolio.bg_image | absURL }}" alt="Homepage image">
+    </div>
+    <div class="frontpage-text">
+      <h2>{{ .Params.title | markdownify }}</h2>
+      <h3>{{ .Params.customer.name | markdownify }}</h3>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <!-- Portfolio item row start -->
+    <div class="row">
+      <!-- Main content -->
+      <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10 text-justify">
+              <div class="portfolio-desc">
+                <h3 class="widget-title success-story">{{i18n `problem_overview`}}</h3>
+                <p>{{ .Params.problem }}</p>
+                <h3 class="widget-title success-story">{{i18n `solution_overview`}}</h3>
+                <p>{{ .Params.solution }}</p>
+                {{ with .Params.testimony }}
+                <blockquote class="blockquote">
+                  <p class="mb-0">{{ .text | markdownify }}</p>
+                  <footer class="blockquote-footer">{{ .author }} - {{ .position }}</cite></footer>
+                </blockquote>
+                {{ end }}
+                <h3 class="widget-title">{{i18n `detailed_solution`}}</h3>
+                <p>{{ .Content }}</p>
+              </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sidebar start -->
+      <div class="col-md-3 col-sm-12 col-xs-12 ">
+        <div class="sidebar success-case-sidebar">
+          <div class="d-flex flex-column portfolio-desc">
+            {{ with .Params.customer }}
+            <div class="p2 text-center"><a href="{{ .url }}" target="_blank" alt="{{ .name }}"><img class="success-story-client" src="{{ .logo | absURL }}" width="90%"></a></div>
+            {{ end }}
+            <div class="p2 text-center"><h3 class="widget-title tech-stack">{{i18n `technologies`}}</h3></div>
+            <div class="p2 text-center"><p>{{ delimit .Params.tech ", " }}</p></div>
+            {{ with .Params.buttons }}
+            <div class="p2 text-center"><a href="{{ .link | relLangURL }}" id="portfolio-button" class="btn btn-primary {{.style}} cd-btn">{{ .label }}</a></div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div><!-- Portfolio item row end -->
+  </div><!-- Container end -->
+</section>
+
+{{ end }}

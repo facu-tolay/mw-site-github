@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <h3 style="text-align: center; font-weight: 800; text-transform: uppercase;">{{ if .title }}{{ .title }}{{ else }}{{ i18n `contact_us`}}{{ end }}</h3>
+</div>
+<div class="col-md-8">
+  <form id="contact-form" method="post" role="form">
+    <div class="messages"></div>
+    <div class="controls">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form_name">{{i18n `name` }} *</label>
+            <input id="form_name" type="text" name="name" class="form-control" placeholder="{{i18n `provide_name`}}" required="required" data-error="Firstname is required.">
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form_email">{{i18n `email`}} *</label>
+            <input id="form_email" type="email" name="email" class="form-control" placeholder="{{i18n `provide_email`}}" required="required" data-error="Valid email is required.">
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="form_message">{{i18n `message`}} *</label>
+            <textarea id="form_message" name="message" class="form-control" placeholder="{{i18n `provide_message`}}" rows="5" required="required" data-error="Please, leave us a message."></textarea>
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+        <div class="col-md-12 text-right">
+          <input type="button" id="submitbutton" style="background-color: var(--blue-mw-primary); border-radius: 16px;" class="btn btn-primary solid" value="{{i18n `send_message`}}">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{{ if eq .contact_form_only "false" }}
+<div class="col-md-4">
+  <div class="contact-info">
+    <p><i class="fa fa-home info"></i> {{ site.Params.address | markdownify }} </p>
+    <p><i class="fa fa-phone info"></i> {{ site.Params.phone | markdownify }} </p>
+    <p><i class="fa fa-envelope-o info"></i> {{ site.Params.email | markdownify }}</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.8913978201545!2d-58.45943611768573!3d-34.54615663653288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb55421c2a511%3A0x9e10a293a196863c!2sAv.%20del%20Libertador%207208%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1710964534748!5m2!1sen!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{ end }}

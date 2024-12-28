@@ -1,0 +1,14 @@
+############################ Workflow ########################
+workflow:
+  title: "Cómo lo hacemos"
+  subtitle: "Nuestro enfoque"
+  image: "images/services/circle-es.webp"
+  steps:
+    - name: "Discovery"
+      description: "Determinamos el estado inicial y entendemos necesidades y objetivos"
+    - name: "Diseño de solución"
+      description: "Planificamos el proyecto de transformación y diseñamos la solución"
+    - name: "Ejecución"
+      description: "Implementamos la solución según el diseño obtenido"
+    - name: "Operación y optimización"
+      description: "Gestionamos la solución y realizamos el mantenimiento preventivo, correctivo y evolutivo"

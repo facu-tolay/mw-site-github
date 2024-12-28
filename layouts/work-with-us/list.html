@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ with $data.jobs }}
+<section id="about" class="p-0 mb-3">
+  {{ partial "page-header-bgimage.html" . }}
+</section>
+
+<div class="col-sm-12 text-center portfolio-title">
+  <h2 class="portfolio-title">{{ .page_header }}</h2>
+</div>
+
+<div class="container col-lg-9 col-sm-11">
+  {{ $list := (where site.RegularPages "Section" "work-with-us") }}
+  {{ $len := (len $list) }}
+  {{ range $index,$element := $list }}
+  {{ if eq (math.Add 1 $index) $len }}
+  <div class="col-sm-12">
+  {{ else }}
+  <div class="col-sm-12 border-bottom">
+  {{ end }}
+    <div class="row mt-5 mb-5 d-flex align-items-center">
+      <div class="col-sm-4">
+        <div class="col-sm-12 d-flex">
+          <p class="border" style="background-color: var(--blue-mw-dark); color: white; border-radius: 10px; padding: 0.2em 1em; font-weight: 600;">{{ .Params.schedule }}</p>
+          <p style="padding: 0.2em 1em; font-weight: 600;">{{ .Params.location }}</p>
+        </div>
+        <div class="col-sm-12">
+          <h3 style="font-weight: 900;">{{ .Params.title }}</h3>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <p style="font-size: 1.1em; line-height: 2em;">{{ .Params.summary }}</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="{{ .RelPermalink }}" class="btn btn-primary solid-blue">{{ i18n `learn_more` }}</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ end }}

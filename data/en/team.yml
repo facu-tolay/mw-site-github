@@ -1,0 +1,230 @@
+title : "The team"
+title_icon : "fa-weixin"
+button:
+  label : "Work with us"
+  style : "solid"
+  link : "contact"
+team_member:
+  - name : "Leandro Di Tommaso"
+    image : "images/team/leandro.jpg.webp"
+    designation : "Founder & CEO"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Christian Rodríguez"
+    image : "images/team/car.jpg.webp"
+    designation : "CTO"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Mauricio Foster"
+    image : "images/team/mauricio.jpg.webp"
+    designation : "CDO"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Gerónimo Afonso"
+    image : "images/team/geronimo.jpg.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Lucas Di Cunzolo"
+    image : "images/team/lucas.png.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Manuel Chichi"
+    image : "images/team/manuel.jpg.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Federico Gásquez"
+    image : "images/team/federicog.png.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Cristian Luengo"
+    image : "images/team/cristian.jpg.webp"
+    designation : "Administrative Assistant"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Juan Pablo Sánchez Magariños"
+    image : "images/team/juan-pablo.jpg.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Matías Gudín"
+    image : "images/team/matiasg.jpg.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Macarena Lindo Poisson"
+    image : "images/team/macarena.jpg.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Inti Tidball"
+    image : "images/team/inti.webp"
+    designation : "DevOps Engineer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Danisa Di Tommaso"
+    image : "images/team/danisa.jpg.webp"
+    designation : "UI/UX Designer"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"
+
+  - name : "Federico Coscarelli"
+    image : "images/team/federico.jpg.webp"
+    designation : "Accountant"
+    social:
+      - name : "twitter"
+        icon : "fa-twitter"
+        link : "#"
+
+      - name : "linkedin"
+        icon : "fa-linkedin"
+        link : "#"
+
+      - name : "github"
+        icon : "fa-github"
+        link : "#"

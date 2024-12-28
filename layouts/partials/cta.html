@@ -1,0 +1,20 @@
+<section class="cta">
+  <div class="container cta-bg-image">
+      <div class="col-md-12 text-center">
+        <h2>{{ .title | markdownify }}</h2>
+        <h3>{{ .subtitle | markdownify}}</h3>
+        <p>
+          {{ range .buttons }}
+          <a href="{{ if .internal_link }}{{ .internal_link | relLangURL }}{{ else }}{{ .link }}{{ end }}" class="btn btn-primary {{.style}} ml-3 mr-3 mt-2" {{ if .calendly_url }}onclick="Calendly.initPopupWidget({url: {{ .calendly_url }}});return false;"{{ end }}>{{ .label }}</a>
+
+          {{ end }}
+        </p>
+      </div>
+  </div>
+</section>
+
+<!-- Principio del widget de enlace de Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Final del widget de enlace de Calendly -->
+

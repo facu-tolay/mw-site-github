@@ -1,0 +1,11 @@
+<section id="pe-header" class="p-0">
+  <div class="frontpage">
+    <div class="bg-image">
+      <img src="{{ .bg_image | absURL }}" alt="Homepage image">
+    </div>
+    <div class="frontpage-text">
+      <a href="{{ .Parent.Permalink | relLangURL }}">{{ site.Params.home }}</a><a class="frontpage-text-name">{{ .parent }}</a>
+      <h2>{{ .name | markdownify }}</h2>
+    </div>
+  </div>
+</section>
