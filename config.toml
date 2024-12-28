@@ -11,6 +11,7 @@ googleAnalytics = "UA-47781870-2"
 # disqus short name
 #disqusShortname = "#" # get your shortname form here : https://disqus.com
 removePathAccents = true
+relativeURLs = true
 
 ############################# Outputs ##############################
 [outputs]
