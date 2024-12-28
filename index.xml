@@ -2,178 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/</link>
+    <link>https://facu-tolay.github.io/</link>
     <description>Recent content on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Aug 2023 20:30:55 -0300</lastBuildDate>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data encryption in IaC: Using SOPS with Terraform</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2023-08-30-terraform-with-sops/</link>
+      <link>https://facu-tolay.github.io/blog/2023-08-30-terraform-with-sops/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2023-08-30-terraform-with-sops/</guid>
+      <guid>https://facu-tolay.github.io/blog/2023-08-30-terraform-with-sops/</guid>
       <description>Data Encryption in IaC: Using SOPS with Terraform In the realm of Infrastructure as Code (IaC), the secure management of sensitive information is crucial.</description>
     </item>
     <item>
       <title>Harbor in OKD</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2023-08-25-harbor-in-okd/</link>
+      <link>https://facu-tolay.github.io/blog/2023-08-25-harbor-in-okd/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2023-08-25-harbor-in-okd/</guid>
+      <guid>https://facu-tolay.github.io/blog/2023-08-25-harbor-in-okd/</guid>
       <description>Previously we talked about how to use Harbor as image cache and how to configure CRI-O to use Harbor as cache.</description>
     </item>
     <item>
       <title>GitLab Continuous Integration with Capistrano</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2022-02-11-gitlab-ci-with-capistrano/</link>
+      <link>https://facu-tolay.github.io/blog/2022-02-11-gitlab-ci-with-capistrano/</link>
       <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2022-02-11-gitlab-ci-with-capistrano/</guid>
+      <guid>https://facu-tolay.github.io/blog/2022-02-11-gitlab-ci-with-capistrano/</guid>
       <description>In the previous post we saw how to automate a deployment using Capistrano.</description>
     </item>
     <item>
       <title>Task automation using Capistrano</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2022-01-28-task-automation-using-capistrano/</link>
+      <link>https://facu-tolay.github.io/blog/2022-01-28-task-automation-using-capistrano/</link>
       <pubDate>Fri, 28 Jan 2022 11:06:24 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2022-01-28-task-automation-using-capistrano/</guid>
+      <guid>https://facu-tolay.github.io/blog/2022-01-28-task-automation-using-capistrano/</guid>
       <description>Capistrano is a tool to automate tasks on remote servers, such as automate audits of any number of machines, the definition of workflows over SSH, among others.</description>
     </item>
     <item>
       <title>Containerd with Harbor</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-12-30-containerd-with-harbor/</link>
+      <link>https://facu-tolay.github.io/blog/2021-12-30-containerd-with-harbor/</link>
       <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-12-30-containerd-with-harbor/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-12-30-containerd-with-harbor/</guid>
       <description>Previously we explained how to install a Harbor server and how to configure CRI-O to use it.</description>
     </item>
     <item>
       <title>CRI-O with Harbor</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-12-29-crio-with-harbor/</link>
+      <link>https://facu-tolay.github.io/blog/2021-12-29-crio-with-harbor/</link>
       <pubDate>Wed, 29 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-12-29-crio-with-harbor/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-12-29-crio-with-harbor/</guid>
       <description>In the previous post We saw how to install a Harbor server that works as a cache for container images.</description>
     </item>
     <item>
       <title>Use Harbor as image cache repository</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-12-23-use-harbor-as-image-cache/</link>
+      <link>https://facu-tolay.github.io/blog/2021-12-23-use-harbor-as-image-cache/</link>
       <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-12-23-use-harbor-as-image-cache/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-12-23-use-harbor-as-image-cache/</guid>
       <description>It&amp;rsquo;s common to come across teams using, for example, GitLab runners that run pipelines very frequently.</description>
     </item>
     <item>
       <title>Install Kubernetes on VMware Vsphere</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-11-03-kubernetes-clusterapi/</link>
+      <link>https://facu-tolay.github.io/blog/2021-11-03-kubernetes-clusterapi/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-11-03-kubernetes-clusterapi/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-11-03-kubernetes-clusterapi/</guid>
       <description>In this post we explain how to automate the installation of Kubernetes on VMware Vsphere using ClusterAPI, among other tools.</description>
     </item>
     <item>
       <title>Mikroways becomes AWS select partner</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-10-04-consulting-partner-select-aws/</link>
+      <link>https://facu-tolay.github.io/blog/2021-10-04-consulting-partner-select-aws/</link>
       <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-10-04-consulting-partner-select-aws/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-10-04-consulting-partner-select-aws/</guid>
       <description>Starting today, Mikroways is select consulting partner of Amazon Web Services.</description>
     </item>
     <item>
       <title>Digital Transformation</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/banco-columbia/</link>
+      <link>https://facu-tolay.github.io/portfolio/banco-columbia/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:06 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/banco-columbia/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/banco-columbia/</guid>
       <description></description>
     </item>
     <item>
       <title>Deployment to the cloud</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/balanz/</link>
+      <link>https://facu-tolay.github.io/portfolio/balanz/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:05 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/balanz/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/balanz/</guid>
       <description></description>
     </item>
     <item>
       <title>Deploying DevOps</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/automatizacion-vt/</link>
+      <link>https://facu-tolay.github.io/portfolio/automatizacion-vt/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:04 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/automatizacion-vt/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/automatizacion-vt/</guid>
       <description>Forming an excellent team with Veritran, we jointly defined a semantic version for the platform and its components, establishing the dependencies that would simplify the compatibility management.</description>
     </item>
     <item>
       <title>Observability</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/monitoreo-senasa/</link>
+      <link>https://facu-tolay.github.io/portfolio/monitoreo-senasa/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:03 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/monitoreo-senasa/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/monitoreo-senasa/</guid>
       <description>The agency had a Nagios-based monitoring system that generated too many alerts, mixing low-impact ones with critical ones that had to be dealt with immediately.</description>
     </item>
     <item>
       <title>Cost reduction</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/circular-lab-costos/</link>
+      <link>https://facu-tolay.github.io/portfolio/circular-lab-costos/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:02 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/circular-lab-costos/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/circular-lab-costos/</guid>
       <description>After understanding the client&amp;rsquo;s needs, the following goals were set:</description>
     </item>
     <item>
       <title>DevOps implementation</title>
-      <link>https://facu-tolay.github.io/mw-site-github/portfolio/bluedraft-cicd/</link>
+      <link>https://facu-tolay.github.io/portfolio/bluedraft-cicd/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/portfolio/bluedraft-cicd/</guid>
+      <guid>https://facu-tolay.github.io/portfolio/bluedraft-cicd/</guid>
       <description>We began by providing training to introduce good practices and standardize important concepts.</description>
     </item>
     <item>
       <title>Ebook 2024</title>
-      <link>https://facu-tolay.github.io/mw-site-github/ebooks/ebook2024/</link>
+      <link>https://facu-tolay.github.io/ebooks/ebook2024/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/ebooks/ebook2024/</guid>
+      <guid>https://facu-tolay.github.io/ebooks/ebook2024/</guid>
       <description></description>
     </item>
     <item>
       <title>Succesful</title>
-      <link>https://facu-tolay.github.io/mw-site-github/contact/succesful/</link>
+      <link>https://facu-tolay.github.io/contact/succesful/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/contact/succesful/</guid>
+      <guid>https://facu-tolay.github.io/contact/succesful/</guid>
       <description></description>
     </item>
     <item>
       <title>DevOps Engineer Junior</title>
-      <link>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-junior/</link>
+      <link>https://facu-tolay.github.io/work-with-us/devops-engineer-junior/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-junior/</guid>
+      <guid>https://facu-tolay.github.io/work-with-us/devops-engineer-junior/</guid>
       <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
     </item>
     <item>
       <title>DevOps Engineer Semi-senior</title>
-      <link>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-ssr/</link>
+      <link>https://facu-tolay.github.io/work-with-us/devops-engineer-ssr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-ssr/</guid>
+      <guid>https://facu-tolay.github.io/work-with-us/devops-engineer-ssr/</guid>
       <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
     </item>
     <item>
       <title>DevOps Engineer Trainee</title>
-      <link>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-trainee/</link>
+      <link>https://facu-tolay.github.io/work-with-us/devops-engineer-trainee/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/work-with-us/devops-engineer-trainee/</guid>
+      <guid>https://facu-tolay.github.io/work-with-us/devops-engineer-trainee/</guid>
       <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
     </item>
     <item>
       <title>Fundamentos de Docker</title>
-      <link>https://facu-tolay.github.io/mw-site-github/training/docker/</link>
+      <link>https://facu-tolay.github.io/training/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/training/docker/</guid>
+      <guid>https://facu-tolay.github.io/training/docker/</guid>
       <description>Temario Contenido Teórico Introducción y antecedentes. ¿Qué es y por qué usarlo?</description>
     </item>
     <item>
       <title>Fundamentos de Kubernetes</title>
-      <link>https://facu-tolay.github.io/mw-site-github/training/kubernetes/</link>
+      <link>https://facu-tolay.github.io/training/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/training/kubernetes/</guid>
+      <guid>https://facu-tolay.github.io/training/kubernetes/</guid>
       <description>Temario Contenido Teórico Introducción a K8S: antecedentes, CNCF. Arquitectura general y conceptos básicos de Kubernetes.</description>
     </item>
     <item>
       <title>John Doe</title>
-      <link>https://facu-tolay.github.io/mw-site-github/author/john-doe/</link>
+      <link>https://facu-tolay.github.io/author/john-doe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/author/john-doe/</guid>
+      <guid>https://facu-tolay.github.io/author/john-doe/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vulputate augue.</description>
     </item>
     <item>
       <title>Workflow continuo de desarrollo a producción</title>
-      <link>https://facu-tolay.github.io/mw-site-github/training/wfc/</link>
+      <link>https://facu-tolay.github.io/training/wfc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/training/wfc/</guid>
+      <guid>https://facu-tolay.github.io/training/wfc/</guid>
       <description>Temario Contenido Teórico Importancia de utilizar estándares de codificación. Semántica del versionado para componentes y producto.</description>
     </item>
   </channel>

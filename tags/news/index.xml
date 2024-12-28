@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>news on Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/tags/news/</link>
+    <link>https://facu-tolay.github.io/tags/news/</link>
     <description>Recent content in news on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Oct 2021 12:14:34 -0300</lastBuildDate>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/tags/news/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/tags/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mikroways becomes AWS select partner</title>
-      <link>https://facu-tolay.github.io/mw-site-github/blog/2021-10-04-consulting-partner-select-aws/</link>
+      <link>https://facu-tolay.github.io/blog/2021-10-04-consulting-partner-select-aws/</link>
       <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/blog/2021-10-04-consulting-partner-select-aws/</guid>
+      <guid>https://facu-tolay.github.io/blog/2021-10-04-consulting-partner-select-aws/</guid>
       <description>Starting today, Mikroways is select consulting partner of Amazon Web Services.</description>
     </item>
   </channel>

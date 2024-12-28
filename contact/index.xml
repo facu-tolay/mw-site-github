@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contact us on Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/contact/</link>
+    <link>https://facu-tolay.github.io/contact/</link>
     <description>Recent content in Contact us on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Jan 1970 00:00:01 +0000</lastBuildDate>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/contact/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/contact/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Succesful</title>
-      <link>https://facu-tolay.github.io/mw-site-github/contact/succesful/</link>
+      <link>https://facu-tolay.github.io/contact/succesful/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/contact/succesful/</guid>
+      <guid>https://facu-tolay.github.io/contact/succesful/</guid>
       <description></description>
     </item>
   </channel>

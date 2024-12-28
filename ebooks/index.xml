@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ebooks on Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/ebooks/</link>
+    <link>https://facu-tolay.github.io/ebooks/</link>
     <description>Recent content in Ebooks on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Jan 1970 00:00:01 +0000</lastBuildDate>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/ebooks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/ebooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ebook 2024</title>
-      <link>https://facu-tolay.github.io/mw-site-github/ebooks/ebook2024/</link>
+      <link>https://facu-tolay.github.io/ebooks/ebook2024/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
-      <guid>https://facu-tolay.github.io/mw-site-github/ebooks/ebook2024/</guid>
+      <guid>https://facu-tolay.github.io/ebooks/ebook2024/</guid>
       <description></description>
     </item>
   </channel>

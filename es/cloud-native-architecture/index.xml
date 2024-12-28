@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud native architecture on Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/es/cloud-native-architecture/</link>
+    <link>https://facu-tolay.github.io/es/cloud-native-architecture/</link>
     <description>Recent content in Cloud native architecture on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ar</language>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/es/cloud-native-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/es/cloud-native-architecture/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

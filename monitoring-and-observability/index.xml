@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Monitoring &amp; Observability on Mikroways</title>
-    <link>https://facu-tolay.github.io/mw-site-github/monitoring-and-observability/</link>
+    <link>https://facu-tolay.github.io/monitoring-and-observability/</link>
     <description>Recent content in Monitoring &amp; Observability on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://facu-tolay.github.io/mw-site-github/monitoring-and-observability/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/monitoring-and-observability/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
