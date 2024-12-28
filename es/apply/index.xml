@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aplicar a un trabajo on Mikroways</title>
-    <link>https://facu-tolay.github.io/es/apply/</link>
+    <link>https://facu-tolay.github.io/mw-site-github/es/apply/</link>
     <description>Recent content in Aplicar a un trabajo on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ar</language>
-    <atom:link href="https://facu-tolay.github.io/es/apply/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/mw-site-github/es/apply/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

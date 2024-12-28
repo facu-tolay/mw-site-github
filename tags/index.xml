@@ -2,206 +2,206 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Mikroways</title>
-    <link>https://facu-tolay.github.io/tags/</link>
+    <link>https://facu-tolay.github.io/mw-site-github/tags/</link>
     <description>Recent content in Tags on Mikroways</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Aug 2023 20:30:55 -0300</lastBuildDate>
-    <atom:link href="https://facu-tolay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://facu-tolay.github.io/mw-site-github/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>encryption</title>
-      <link>https://facu-tolay.github.io/tags/encryption/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/encryption/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/encryption/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/encryption/</guid>
       <description></description>
     </item>
     <item>
       <title>git</title>
-      <link>https://facu-tolay.github.io/tags/git/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/git/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/git/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>infrastructure</title>
-      <link>https://facu-tolay.github.io/tags/infrastructure/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/infrastructure/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/infrastructure/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>sops</title>
-      <link>https://facu-tolay.github.io/tags/sops/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/sops/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/sops/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/sops/</guid>
       <description></description>
     </item>
     <item>
       <title>terraform</title>
-      <link>https://facu-tolay.github.io/tags/terraform/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/terraform/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/terraform/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
       <title>version</title>
-      <link>https://facu-tolay.github.io/tags/version/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/version/</link>
       <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/version/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/version/</guid>
       <description></description>
     </item>
     <item>
       <title>cache</title>
-      <link>https://facu-tolay.github.io/tags/cache/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/cache/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/cache/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/cache/</guid>
       <description></description>
     </item>
     <item>
       <title>crio</title>
-      <link>https://facu-tolay.github.io/tags/crio/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/crio/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/crio/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/crio/</guid>
       <description></description>
     </item>
     <item>
       <title>harbor</title>
-      <link>https://facu-tolay.github.io/tags/harbor/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/harbor/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/harbor/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/harbor/</guid>
       <description></description>
     </item>
     <item>
       <title>okd</title>
-      <link>https://facu-tolay.github.io/tags/okd/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/okd/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/okd/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/okd/</guid>
       <description></description>
     </item>
     <item>
       <title>openshift</title>
-      <link>https://facu-tolay.github.io/tags/openshift/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/openshift/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/openshift/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/openshift/</guid>
       <description></description>
     </item>
     <item>
       <title>redhat</title>
-      <link>https://facu-tolay.github.io/tags/redhat/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/redhat/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/redhat/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/redhat/</guid>
       <description></description>
     </item>
     <item>
       <title>registry-mirror</title>
-      <link>https://facu-tolay.github.io/tags/registry-mirror/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/registry-mirror/</link>
       <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/registry-mirror/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/registry-mirror/</guid>
       <description></description>
     </item>
     <item>
       <title>automation</title>
-      <link>https://facu-tolay.github.io/tags/automation/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/automation/</link>
       <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/automation/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>capistrano</title>
-      <link>https://facu-tolay.github.io/tags/capistrano/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/capistrano/</link>
       <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/capistrano/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/capistrano/</guid>
       <description></description>
     </item>
     <item>
       <title>gitlab-ci</title>
-      <link>https://facu-tolay.github.io/tags/gitlab-ci/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/gitlab-ci/</link>
       <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/gitlab-ci/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/gitlab-ci/</guid>
       <description></description>
     </item>
     <item>
       <title>containerd</title>
-      <link>https://facu-tolay.github.io/tags/containerd/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/containerd/</link>
       <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/containerd/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/containerd/</guid>
       <description></description>
     </item>
     <item>
       <title>images</title>
-      <link>https://facu-tolay.github.io/tags/images/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/images/</link>
       <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/images/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/images/</guid>
       <description></description>
     </item>
     <item>
       <title>dex</title>
-      <link>https://facu-tolay.github.io/tags/dex/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/dex/</link>
       <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/dex/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/dex/</guid>
       <description></description>
     </item>
     <item>
       <title>docker-compose</title>
-      <link>https://facu-tolay.github.io/tags/docker-compose/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/docker-compose/</link>
       <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/docker-compose/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/docker-compose/</guid>
       <description></description>
     </item>
     <item>
       <title>traefik</title>
-      <link>https://facu-tolay.github.io/tags/traefik/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/traefik/</link>
       <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/traefik/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/traefik/</guid>
       <description></description>
     </item>
     <item>
       <title>ansible</title>
-      <link>https://facu-tolay.github.io/tags/ansible/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/ansible/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/ansible/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/ansible/</guid>
       <description></description>
     </item>
     <item>
       <title>clusterapi</title>
-      <link>https://facu-tolay.github.io/tags/clusterapi/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/clusterapi/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/clusterapi/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/clusterapi/</guid>
       <description></description>
     </item>
     <item>
       <title>kubernetes</title>
-      <link>https://facu-tolay.github.io/tags/kubernetes/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/kubernetes/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/kubernetes/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>vmware</title>
-      <link>https://facu-tolay.github.io/tags/vmware/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/vmware/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/vmware/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/vmware/</guid>
       <description></description>
     </item>
     <item>
       <title>vsphere</title>
-      <link>https://facu-tolay.github.io/tags/vsphere/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/vsphere/</link>
       <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/vsphere/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/vsphere/</guid>
       <description></description>
     </item>
     <item>
       <title>aws</title>
-      <link>https://facu-tolay.github.io/tags/aws/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/aws/</link>
       <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/aws/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>news</title>
-      <link>https://facu-tolay.github.io/tags/news/</link>
+      <link>https://facu-tolay.github.io/mw-site-github/tags/news/</link>
       <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
-      <guid>https://facu-tolay.github.io/tags/news/</guid>
+      <guid>https://facu-tolay.github.io/mw-site-github/tags/news/</guid>
       <description></description>
     </item>
   </channel>
