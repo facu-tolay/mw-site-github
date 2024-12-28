@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iac on Mikroways</title>
+    <link>/es/tags/iac/</link>
+    <description>Recent content in iac on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 24 Jun 2022 10:06:58 -0300</lastBuildDate>
+    <atom:link href="/es/tags/iac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infraestructura como código para aprovisionar Windows</title>
+      <link>/es/blog/2022-06-24-windows-iac/</link>
+      <pubDate>Fri, 24 Jun 2022 10:06:58 -0300</pubDate>
+      <guid>/es/blog/2022-06-24-windows-iac/</guid>
+      <description>La automatización nos permite ser más eficientes pero también nos evita que cometamos varios errores comunes, mejorando la calidad del software y de los servicios.</description>
+    </item>
+  </channel>
+</rss>

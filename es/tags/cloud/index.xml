@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloud on Mikroways</title>
+    <link>/es/tags/cloud/</link>
+    <description>Recent content in cloud on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 08 May 2024 12:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jornada de Adopción Cloud para Banco Columbia en AWS</title>
+      <link>/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</link>
+      <pubDate>Wed, 08 May 2024 12:00:00 -0300</pubDate>
+      <guid>/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</guid>
+      <description>Recientemente, tuvimos el honor de ser los anfitriones de una jornada inspiradora sobre las soluciones en la nube para nuestro cliente, Banco Columbia S.</description>
+    </item>
+    <item>
+      <title>Recalculando los backups en tiempos de nube</title>
+      <link>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</link>
+      <pubDate>Wed, 21 Sep 2022 12:13:23 -0300</pubDate>
+      <guid>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</guid>
+      <description>Sabemos la importancia de tener backups de nuestra información y los gestionamos en el día a día pero, ¿cómo se hacen backups de forma correcta en un contexto de nube?</description>
+    </item>
+    <item>
+      <title>¿Qué debo considerar para que mi aplicación sea &#39;apta nube&#39;?</title>
+      <link>/es/blog/2022-09-09-aplicacion-apta-nube/</link>
+      <pubDate>Fri, 09 Sep 2022 15:37:12 -0300</pubDate>
+      <guid>/es/blog/2022-09-09-aplicacion-apta-nube/</guid>
+      <description>Aprovechar al máximo el potencial que tiene la nube requiere un cambio en la forma de desarrollar o, al menos, cumplir una serie de pautas para maximizar el beneficio.</description>
+    </item>
+    <item>
+      <title>A la nube con escalas</title>
+      <link>/es/blog/2022-08-23-a-la-nube-con-escalas/</link>
+      <pubDate>Tue, 23 Aug 2022 10:26:58 -0300</pubDate>
+      <guid>/es/blog/2022-08-23-a-la-nube-con-escalas/</guid>
+      <description>¿Qué es realmente la nube? ¿Me puede ayudar en mi proyecto?</description>
+    </item>
+  </channel>
+</rss>

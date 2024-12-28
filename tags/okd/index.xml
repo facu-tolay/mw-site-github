@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>okd on Mikroways</title>
+    <link>/tags/okd/</link>
+    <description>Recent content in okd on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Aug 2023 01:37:55 -0300</lastBuildDate>
+    <atom:link href="/tags/okd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harbor in OKD</title>
+      <link>/blog/2023-08-25-harbor-in-okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/blog/2023-08-25-harbor-in-okd/</guid>
+      <description>Previously we talked about how to use Harbor as image cache and how to configure CRI-O to use Harbor as cache.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Mikroways</title>
+    <link>/es/tags/docker/</link>
+    <description>Recent content in docker on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 22 Sep 2023 16:30:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contenedores nativos de Microsoft Windows usando docker</title>
+      <link>/es/blog/2023-09-22-windows-containers/</link>
+      <pubDate>Fri, 22 Sep 2023 16:30:00 -0300</pubDate>
+      <guid>/es/blog/2023-09-22-windows-containers/</guid>
+      <description>Contenedores nativos de Microsoft windows usando docker En Mikroways utilizamos mucho los contenedores.</description>
+    </item>
+    <item>
+      <title>Limitando la memoria de aplicaciones java en ambientes containerizados</title>
+      <link>/es/blog/2023-05-10-java-cgroups/</link>
+      <pubDate>Wed, 10 May 2023 10:00:00 -0300</pubDate>
+      <guid>/es/blog/2023-05-10-java-cgroups/</guid>
+      <description>En este post analizaremos el comportamiento de OpenJDK en ambientes containerizados, haciendo foco en la utilización de memoria y presentaremos un conocido problema de la versión 1.</description>
+    </item>
+  </channel>
+</rss>

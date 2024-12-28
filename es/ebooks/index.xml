@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ebooks on Mikroways</title>
+    <link>/es/ebooks/</link>
+    <description>Recent content in Ebooks on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 01 Jan 1970 00:00:01 +0000</lastBuildDate>
+    <atom:link href="/es/ebooks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ebook 2024</title>
+      <link>/es/ebooks/ebook2024/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
+      <guid>/es/ebooks/ebook2024/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Mikroways</title>
+    <link>/es/categories/</link>
+    <description>Recent content in Categories on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 08 May 2024 12:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transformacion digital</title>
+      <link>/es/categories/transformacion-digital/</link>
+      <pubDate>Wed, 08 May 2024 12:00:00 -0300</pubDate>
+      <guid>/es/categories/transformacion-digital/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevSecOps</title>
+      <link>/es/categories/devsecops/</link>
+      <pubDate>Thu, 26 Oct 2023 10:20:00 -0300</pubDate>
+      <guid>/es/categories/devsecops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mikroways</title>
+      <link>/es/categories/mikroways/</link>
+      <pubDate>Wed, 10 May 2023 10:00:00 -0300</pubDate>
+      <guid>/es/categories/mikroways/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

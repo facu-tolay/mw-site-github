@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redhat on Mikroways</title>
+    <link>/es/tags/redhat/</link>
+    <description>Recent content in redhat on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 25 Aug 2023 01:37:55 -0300</lastBuildDate>
+    <atom:link href="/es/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harbor en OKD</title>
+      <link>/es/blog/2023-08-25-harbor-en-okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/es/blog/2023-08-25-harbor-en-okd/</guid>
+      <description>Vimos en anteriores entregas como utilizar Harbor como cache de imágenes y como configurar CRI-O para que utilice Harbor como cache.</description>
+    </item>
+  </channel>
+</rss>

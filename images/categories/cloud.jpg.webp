@@ -1,0 +1,14 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: images/categories/cloud.jpg.webp</li>
+<li>RequestId: WD91XB2Z0GPEFD2K</li>
+<li>HostId: diaFuijTT79ta93dRJP6W+cPwtUzWpaanluQ7nc46tX+Dj/1WDCAYuXihC9BSJkzmRxYtcEeJGY=</li>
+</ul>
+<hr/>
+</body>
+</html>

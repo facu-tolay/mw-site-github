@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>monitoreo on Mikroways</title>
+    <link>/es/tags/monitoreo/</link>
+    <description>Recent content in monitoreo on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 15 Sep 2022 10:26:58 -0300</lastBuildDate>
+    <atom:link href="/es/tags/monitoreo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Escalado automático de aplicaciones basado en la carga</title>
+      <link>/es/blog/2022-09-15-escalado-automatico-de-aplicaciones/</link>
+      <pubDate>Thu, 15 Sep 2022 10:26:58 -0300</pubDate>
+      <guid>/es/blog/2022-09-15-escalado-automatico-de-aplicaciones/</guid>
+      <description>¿Por qué escalar automáticamente aplicaciones? Son muchos los casos en los cuales escalar aplicaciones es una necesidad.</description>
+    </item>
+  </channel>
+</rss>

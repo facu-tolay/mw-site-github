@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>restic on Mikroways</title>
+    <link>/es/tags/restic/</link>
+    <description>Recent content in restic on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 21 Sep 2022 12:13:23 -0300</lastBuildDate>
+    <atom:link href="/es/tags/restic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recalculando los backups en tiempos de nube</title>
+      <link>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</link>
+      <pubDate>Wed, 21 Sep 2022 12:13:23 -0300</pubDate>
+      <guid>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</guid>
+      <description>Sabemos la importancia de tener backups de nuestra información y los gestionamos en el día a día pero, ¿cómo se hacen backups de forma correcta en un contexto de nube?</description>
+    </item>
+  </channel>
+</rss>

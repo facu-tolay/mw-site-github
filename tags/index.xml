@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Mikroways</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Aug 2023 20:30:55 -0300</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>encryption</title>
+      <link>/tags/encryption/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/encryption/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>infrastructure</title>
+      <link>/tags/infrastructure/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>sops</title>
+      <link>/tags/sops/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/sops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>terraform</title>
+      <link>/tags/terraform/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>version</title>
+      <link>/tags/version/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/tags/version/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cache</title>
+      <link>/tags/cache/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/cache/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>crio</title>
+      <link>/tags/crio/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/crio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>harbor</title>
+      <link>/tags/harbor/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/harbor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>okd</title>
+      <link>/tags/okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/okd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>openshift</title>
+      <link>/tags/openshift/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/openshift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>redhat</title>
+      <link>/tags/redhat/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/redhat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>registry-mirror</title>
+      <link>/tags/registry-mirror/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/tags/registry-mirror/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>automation</title>
+      <link>/tags/automation/</link>
+      <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
+      <guid>/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>capistrano</title>
+      <link>/tags/capistrano/</link>
+      <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
+      <guid>/tags/capistrano/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>gitlab-ci</title>
+      <link>/tags/gitlab-ci/</link>
+      <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
+      <guid>/tags/gitlab-ci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>containerd</title>
+      <link>/tags/containerd/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/tags/containerd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>images</title>
+      <link>/tags/images/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/tags/images/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>dex</title>
+      <link>/tags/dex/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/tags/dex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>docker-compose</title>
+      <link>/tags/docker-compose/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>traefik</title>
+      <link>/tags/traefik/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/tags/traefik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ansible</title>
+      <link>/tags/ansible/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/ansible/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>clusterapi</title>
+      <link>/tags/clusterapi/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/clusterapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>kubernetes</title>
+      <link>/tags/kubernetes/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>vmware</title>
+      <link>/tags/vmware/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>vsphere</title>
+      <link>/tags/vsphere/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>news</title>
+      <link>/tags/news/</link>
+      <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
+      <guid>/tags/news/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

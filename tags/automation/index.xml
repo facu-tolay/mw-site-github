@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Mikroways</title>
+    <link>/tags/automation/</link>
+    <description>Recent content in automation on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Feb 2022 09:52:58 -0300</lastBuildDate>
+    <atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitLab Continuous Integration with Capistrano</title>
+      <link>/blog/2022-02-11-gitlab-ci-with-capistrano/</link>
+      <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
+      <guid>/blog/2022-02-11-gitlab-ci-with-capistrano/</guid>
+      <description>In the previous post we saw how to automate a deployment using Capistrano.</description>
+    </item>
+    <item>
+      <title>Task automation using Capistrano</title>
+      <link>/blog/2022-01-28-task-automation-using-capistrano/</link>
+      <pubDate>Fri, 28 Jan 2022 11:06:24 -0300</pubDate>
+      <guid>/blog/2022-01-28-task-automation-using-capistrano/</guid>
+      <description>Capistrano is a tool to automate tasks on remote servers, such as automate audits of any number of machines, the definition of workflows over SSH, among others.</description>
+    </item>
+    <item>
+      <title>Install Kubernetes on VMware Vsphere</title>
+      <link>/blog/2021-11-03-kubernetes-clusterapi/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/blog/2021-11-03-kubernetes-clusterapi/</guid>
+      <description>In this post we explain how to automate the installation of Kubernetes on VMware Vsphere using ClusterAPI, among other tools.</description>
+    </item>
+  </channel>
+</rss>

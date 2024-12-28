@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Cloud native architecture</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="La arquitectura nativa de la nube se refiere a un enfoque de diseño de software que aprovecha al máximo las capacidades y servicios ofrecidos por las plataformas de computación en la nube. Se basa en los principios de escalabilidad, resiliencia, flexibilidad y automatización para desarrollar y desplegar aplicaciones de manera eficiente en entornos cloud.">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Cloud native architecture" />
+<meta property="og:description" content="La arquitectura nativa de la nube se refiere a un enfoque de diseño de software que aprovecha al máximo las capacidades y servicios ofrecidos por las plataformas de computación en la nube. Se basa en los principios de escalabilidad, resiliencia, flexibilidad y automatización para desarrollar y desplegar aplicaciones de manera eficiente en entornos cloud." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/es/cloud-native-architecture/" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+          <i class="fa fa-globe" id="world-icon"></i><select class="m-2 border-0" id="select-language" onchange="location = this.value;">
+            
+            
+            
+            
+            
+            
+            
+            
+            <option id="en" value="/cloud-native-architecture/">En</option>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <option id="es" value="/es/cloud-native-architecture/" selected>Es
+            </option>
+            
+            
+            
+            
+          </select>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+<section id="about" class="p-0">
+<div class="frontpage">
+  
+  <div class="bg-image">
+    <img src="/images/services/cloud-native.webp" alt="Background image" style="opacity: 0.2;">
+  
+  </div>
+  <div class="frontpage-text">
+    <a href="/es/">Inicio</a><a class="frontpage-text-name">Cloud native architecture</a>
+    <h2 class="text-uppercase" style="font-weight: 900;">Arquitectura Cloud Native</h2>
+    <h3 style="font-family: 'Source Sans 3'; font-size: 1.6em;"></h3>
+  </div>
+</div>
+
+</section>
+
+<section id="service" style="background: #f6fafe;">
+  <div class="container pt-3">
+    <div class="col-sm-12 text-center pillars">
+      <h2>Arquitectura Cloud Native</h2>
+    </div>
+    <div class="row justify-content-center pt-4">
+    <div class="col-sm-9">
+      <p>La arquitectura nativa de la nube se refiere a un enfoque de diseño de software que aprovecha al máximo las capacidades y servicios ofrecidos por las plataformas de computación en la nube. Se basa en los principios de escalabilidad, resiliencia, flexibilidad y automatización para desarrollar y desplegar aplicaciones de manera eficiente en entornos cloud.</p>
+      </div>
+    </div>
+    
+    <div id="microservices" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="/images/services/cloud-native/microservices.webp">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">Microservicios</h3>
+          <p>En lugar de desarrollar aplicaciones monolíticas, la arquitectura nativa de la nube promueve la descomposición de las aplicaciones en servicios pequeños e independientes conocidos como microservicios. Cada microservicio se encarga de una función específica y se comunica con otros servicios a través de APIs (interfaces de programación de aplicaciones).</p>
+          <ul class="mb-5">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="containers" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="/images/services/cloud-native/cont.webp">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">Contenedores</h3>
+          <p>Los contenedores son una forma de empaquetar y distribuir aplicaciones junto con todas sus dependencias. Utilizan tecnologías como Docker para garantizar que una aplicación se ejecute de manera consistente en diferentes entornos, ya sea en desarrollo, pruebas o producción.</p>
+          <ul class="mb-5">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="orchestration" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="/images/services/cloud-native/cont-orch.webp">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">Orquestación de contenedores</h3>
+          <p>La orquestación de contenedores se refiere a la gestión automatizada de contenedores a gran escala. Herramientas como Kubernetes son ampliamente utilizadas para automatizar tareas como el despliegue, escalado, y la gestión de la disponibilidad de contenedores en un entorno cloud.</p>
+          <ul class="mb-5">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="infrastructure-as-code" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="/images/services/cloud-native/iac.webp">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">Infraestructura como código (IaC)</h3>
+          <p>La infraestructura como código es una práctica que implica definir la infraestructura de la aplicación utilizando código. Esto permite la creación y gestión automatizada de recursos de infraestructura, lo que facilita la implementación y mantenimiento de entornos cloud.</p>
+          <ul class="mb-5">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="devops" class="container pt-5 mt-5 mb-5 border" style="padding: 0 4em; border-radius: 16px; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); background: white;">
+      <div class="row">
+        <div class="d-none d-md-block col-md-3">
+          <img style="max-width: 100%; max-height: unset; box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3); border-radius: 16px; padding: 0;" src="/images/services/cloud-native/devops.webp">
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <h3 style="color: var(--blue-mw-dark); font-weight: 900;">DevOps</h3>
+          <p>La cultura DevOps se centra en la colaboración entre equipos de desarrollo y operaciones para mejorar la entrega continua de software. En el contexto de la arquitectura nativa de la nube, DevOps implica la automatización de procesos de desarrollo, pruebas y despliegue para garantizar una entrega rápida y confiable de aplicaciones.</p>
+          <ul class="mb-5">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<div class="container-fluid pb-4" style="background-color: ;">
+  <div class="col-sm-12 text-center text-uppercase pillars pt-5 pb-5">
+    <h2>Beneficios</h2>
+  </div>
+  <div class="row justify-content-center pl-3 pr-3">
+    
+    
+    
+    
+    <div class="d-none d-md-block col-md-4 col-lg-3" style="margin: 0 1em 2em 1em; padding: unset;">
+      <img src="/images/services/benefits-cloud-native.webp" style="object-fit: cover; height: 100%; width: 100%; border-radius: 28px;">
+    </div>
+    
+    
+    
+    <div class="col-sm-10 col-md-4 col-lg-3" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em;">
+        <i class="fa-solid fa-maximize" style="font-size: 2em; color: #52B04F; border: 1px solid #fafafa; background: #e5f1df; padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-bottom: 0.5em;">Escalabilidad</h4>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">Permite escalar aplicaciones de manera rápida y eficiente para satisfacer las demandas cambiantes de los usuarios, ya sea aumentando o disminuyendo los recursos de manera automática.</p>
+    </div>
+    
+    
+    <div class="col-sm-10 col-md-4 col-lg-3" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em;">
+        <i class="fa-solid fa-house-medical-circle-check" style="font-size: 2em; color: #52B04F; border: 1px solid #fafafa; background: #e5f1df; padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-bottom: 0.5em;">Resiliencia</h4>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">La arquitectura nativa de la nube fomenta la resiliencia al diseñar aplicaciones para que sean tolerantes a fallos y capaces de recuperarse automáticamente de eventos adversos.</p>
+    </div>
+    
+    
+    <div class="col-sm-10 col-md-4 col-lg-3" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em;">
+        <i class="fa-solid fa-gauge-high" style="font-size: 2em; color: #52B04F; border: 1px solid #fafafa; background: #e5f1df; padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-bottom: 0.5em;">Agilidad</h4>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">Facilita el desarrollo ágil y la entrega continua de software, lo que permite a las organizaciones adaptarse rápidamente a los cambios en el mercado y a las necesidades de los usuarios.</p>
+    </div>
+    
+    
+    <div class="col-sm-10 col-md-4 col-lg-3" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em;">
+        <i class="fa-solid fa-money-bill-transfer" style="font-size: 2em; color: #52B04F; border: 1px solid #fafafa; background: #e5f1df; padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-bottom: 0.5em;">Eficiencia</h4>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">Reduce el tiempo y los costos asociados con el despliegue y gestión de aplicaciones al aprovechar la automatización y la escalabilidad de la nube.</p>
+    </div>
+    
+    
+    <div class="col-sm-10 col-md-4 col-lg-3" style="background: white; border: 2px solid #c6c6c6; border-radius: 28px; margin: 0 1em 2em 1em; padding-left: 2em; padding-top: 2em; padding-bottom: 1em;">
+        <i class="fa-solid fa-recycle" style="font-size: 2em; color: #52B04F; border: 1px solid #fafafa; background: #e5f1df; padding: 0.5em; border-radius: 16px;"></i>
+        <h4 style="color: black; padding-top: 0.5em; padding-bottom: 0.5em;">Portabilidad</h4>
+        <p style="line-height: 1.5em; color: var(--main-font-color);">Permite ejecutar aplicaciones de manera consistente en diferentes entornos cloud y locales, lo que brinda mayor flexibilidad y opciones a las organizaciones.</p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+<section class="mt-5 p-0" style="background: #f6fafe;">
+  <div class="container-fluid p-0 d-flex">
+    <div class="align-items-center p-0 justify-content-center d-flex">
+      <img src="/images/arrows.webp"/ style="max-height: 250px;" class="d-none d-lg-block">
+    </div>
+    <div class="container justify-content-center align-items-center d-flex pt-5 pb-5 pl-4 pr-4">
+      <p>En Mikroways nos especializamos en ofrecer soluciones integrales en contenerización y orquestación de contenedores, así como en prácticas DevOps para optimizar el desarrollo, despliegue y operación de aplicaciones en entornos cloud y locales. Desde la evaluación y modernización de aplicaciones hasta la implementación y gestión de clústeres Kubernetes, proporcionamos servicios personalizados que permiten a las organizaciones aprovechar al máximo las ventajas de la contenerización y la orquestación.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="services-block">
+  <div class="col-sm-12 text-center pillars pb-3">
+    <h2 style="font-weight: 800;">Servicios que ofrecemos</h2>
+  </div>
+  
+  <div class="container mt-5 mb-5 d-flex" style="width: 80%; border-radius: 16px; padding: 2em; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); border-top: 16px solid var(--blue-mw-primary);">
+    <div class="col-sm-2 text-center">
+      <i class="fa-solid fa-circle-up" style="font-size: 3rem; color: #00376d; padding: 16px; border-radius: 8px; background-color: #eaeef5;"></i>
+    </div>
+    <div class="col-sm-10">
+      <h4 style="margin-left: 1em;">Modernización de aplicaciones legadas</h4>
+      <ul>
+      
+        <li>Revisión y análisis de la arquitectura actual de las aplicaciones.</li>
+      
+        <li>Desarrollamos estrategias para migrar aplicaciones monolíticas a una arquitectura basada en la nube.</li>
+      
+        <li>Implementaciones de contenedores y orquestación de contenedores para mejorar la escalabilidad y la disponibilidad de las aplicaciones.</li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  <div class="container mt-5 mb-5 d-flex" style="width: 80%; border-radius: 16px; padding: 2em; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); border-top: 16px solid var(--blue-mw-primary);">
+    <div class="col-sm-2 text-center">
+      <i class="fa-solid fa-cloud-arrow-up" style="font-size: 3rem; color: #00376d; padding: 16px; border-radius: 8px; background-color: #eaeef5;"></i>
+    </div>
+    <div class="col-sm-10">
+      <h4 style="margin-left: 1em;">Diseño de Aplicaciones Nativas de la Nube</h4>
+      <ul>
+      
+        <li>Diseñamos e implementamos aplicaciones utilizando arquitectura cloud-native.</li>
+      
+        <li>Utilizamos tecnologías de vanguardia como Kubernetes (en la cual somos expertos) y servicios de contenedores gestionados para desplegar y gestionar aplicaciones de manera eficiente.</li>
+      
+        <li>Integramos prácticas DevOps para automatizar y agilizar procesos de desarrollo, pruebas y despliegue, garantizando una entrega continua y confiable de software.</li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  <div class="container mt-5 mb-5 d-flex" style="width: 80%; border-radius: 16px; padding: 2em; box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); border-top: 16px solid var(--blue-mw-primary);">
+    <div class="col-sm-2 text-center">
+      <i class="fa-solid fa-hand-holding-hand" style="font-size: 3rem; color: #00376d; padding: 16px; border-radius: 8px; background-color: #eaeef5;"></i>
+    </div>
+    <div class="col-sm-10">
+      <h4 style="margin-left: 1em;">Consultoría y Capacitación</h4>
+      <ul>
+      
+        <li>Asesoramiento personalizado sobre estrategias de adopción de arquitectura nativa de la nube.</li>
+      
+        <li>Capacitación y formación en tecnologías y mejores prácticas cloud-native para equipos de desarrollo y operaciones.</li>
+      
+        <li>Soporte continuo y acompañamiento durante todo el ciclo de vida del proyecto para garantizar el éxito en la implementación y operación de soluciones cloud.</li>
+      
+      </ul>
+    </div>
+  </div>
+  
+</section>
+
+
+
+
+
+<section class="cta">
+  <div class="container cta-bg-image">
+      <div class="col-md-12 text-center">
+        <h2>¿Tienes un proyecto?</h2>
+        <h3>Evaluemos tus oportunidades</h3>
+        <p>
+          
+          <a href="/es/contact" class="btn btn-primary solid ml-3 mr-3 mt-2" >Contáctanos</a>
+
+          
+          <a href="" class="btn btn-primary solid-wb ml-3 mr-3 mt-2" onclick="Calendly.initPopupWidget({url: &#34;https://calendly.com/luciano-rodriguez-mikroways/15-minutes-call-mikroways&#34;});return false;">Programa una reunión</a>
+
+          
+        </p>
+      </div>
+  </div>
+</section>
+
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+
+
+
+
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

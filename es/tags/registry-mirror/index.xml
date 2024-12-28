@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>registry-mirror on Mikroways</title>
+    <link>/es/tags/registry-mirror/</link>
+    <description>Recent content in registry-mirror on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 25 Aug 2023 01:37:55 -0300</lastBuildDate>
+    <atom:link href="/es/tags/registry-mirror/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harbor en OKD</title>
+      <link>/es/blog/2023-08-25-harbor-en-okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/es/blog/2023-08-25-harbor-en-okd/</guid>
+      <description>Vimos en anteriores entregas como utilizar Harbor como cache de imágenes y como configurar CRI-O para que utilice Harbor como cache.</description>
+    </item>
+    <item>
+      <title>Containerd con Harbor</title>
+      <link>/es/blog/2021-12-30-containerd-con-harbor/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/es/blog/2021-12-30-containerd-con-harbor/</guid>
+      <description>Anteriormente explicamos como instalar un servidor de Harbor y como configurar CRI-O para que lo utilice.</description>
+    </item>
+    <item>
+      <title>CRI-O con Harbor</title>
+      <link>/es/blog/2021-12-29-crio-con-harbor/</link>
+      <pubDate>Wed, 29 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/es/blog/2021-12-29-crio-con-harbor/</guid>
+      <description>En la entrega anterior vimos como instalar un servidor de Harbor que funcione como cache de imágenes de contenedores.</description>
+    </item>
+    <item>
+      <title>Utilizar Harbor como cache de imágenes</title>
+      <link>/es/blog/2021-12-23-utilizar-harbor-como-cache-de-imagenes/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/es/blog/2021-12-23-utilizar-harbor-como-cache-de-imagenes/</guid>
+      <description>Es común encontrarse con equipos que utilizan, por ejemplo, runners de GitLab y ejecutan pipelines con mucha frecuencia.</description>
+    </item>
+  </channel>
+</rss>

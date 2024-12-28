@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openjdk on Mikroways</title>
+    <link>/es/tags/openjdk/</link>
+    <description>Recent content in openjdk on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 10 May 2023 10:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/openjdk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Limitando la memoria de aplicaciones java en ambientes containerizados</title>
+      <link>/es/blog/2023-05-10-java-cgroups/</link>
+      <pubDate>Wed, 10 May 2023 10:00:00 -0300</pubDate>
+      <guid>/es/blog/2023-05-10-java-cgroups/</guid>
+      <description>En este post analizaremos el comportamiento de OpenJDK en ambientes containerizados, haciendo foco en la utilización de memoria y presentaremos un conocido problema de la versión 1.</description>
+    </item>
+  </channel>
+</rss>

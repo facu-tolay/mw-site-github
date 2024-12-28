@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Automatización de tareas con Capistrano</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Capistrano como herramienta para la automatización de tareas">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Automatización de tareas con Capistrano" />
+<meta property="og:description" content="Capistrano como herramienta para la automatización de tareas" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/blog/2022-01-28-automatizacion-de-tareas-con-capistrano/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-01-28T11:06:24-03:00" />
+<meta property="article:modified_time" content="2022-01-28T11:06:24-03:00" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        
+        <div class="post-content">
+          
+          <div class="post-image-wrapper">
+            <img src="/images/blog/ruby.webp" class="img-fluid" alt="Automatización de tareas con Capistrano" />
+            <span class="blog-date">28 Enero 2022</span>
+          </div>
+          <div class="post-header clearfix">
+            <h2 class="post-title">Automatización de tareas con Capistrano</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">Publicado por Macarena Poisson</span>
+              <span class="post-meta-cats">en <a
+                href="/es/categories/devsecops"> 
+                DevSecOps</a> </span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>Tiempo de lectura: 6 minutos</span>
+            </div>
+          </div>
+          <div class="entry-content"><p>Capistrano es una herramienta para automatizar tareas en servidores remotos, tales como la automatización de tareas de auditoría, la definición de workflows mediante ssh, entre otras.
+En este caso, nos enfocaremos en el despliegue a un servidor remoto.</p>
+<h3 id="instalación">Instalación</h3>
+<p>Al estar implementado en Ruby, es posible instalar Capistrano como una gema del lenguaje. Se puede conocer más sobre las distintas formas de instalación siguiendo la <a href="https://capistranorb.com/documentation/getting-started/installation/">documentación oficial</a>.</p>
+<p>Es importante notar que, a pesar de ser una gema de Ruby, Capistrano puede adaptarse al despliegue de cualquier aplicación, sin importar su lenguaje de programación. Además, es posible extender las tareas propias de la herramienta para brindar soporte a cualquier requerimiento del lenguaje o framework utilizado.</p>
+<h3 id="tareas">Tareas</h3>
+<p>El enfoque que utiliza Capistrano es el de dividir el proceso en distintas tareas, las cuales, a su vez, son divididas en etapas o subtareas variando según el ambiente de despliegue. Estas tareas pueden ser las predefinidas de la herramienta o pueden ser las definidas por el usuario de la misma. Esto nos brinda flexibilidad al momento de definir el proceso de despliegue, ajustándose así a las necesidades específicas de cada sistema.</p>
+<p>Para conocer más sobre las tareas predefinidas, es posible ejecutar <code>cap -T -A</code> para obtener un listado completo de las mismas. Por ejemplo, dentro de la tarea <strong>deploy</strong>, es decir, en el <strong><em>namespace</em></strong> de la tarea deploy, se encuentran las subtareas:</p>
+<ul>
+<li><strong>deploy:starting</strong>: inicializa el despliegue, se asegura que todo este listo.</li>
+<li><strong>deploy:started</strong>: inicializa el hook (para tareas personalizadas)</li>
+<li><strong>deploy:updating</strong>: actualiza el/los servidor/es con una nueva release</li>
+<li><strong>deploy:updated</strong>: actualiza el hook</li>
+<li><strong>deploy:publishing</strong>: publica la nueva release</li>
+<li><strong>deploy:published</strong>: publica el hook</li>
+<li><strong>deploy:finishing</strong>: termina el despliegue, limpia todo</li>
+<li><strong>deploy:finished</strong>: termina el hook</li>
+<li>Entre otras</li>
+</ul>
+<p>Como podemos observar, existe una subtarea por cada etapa del proceso de despliegue. Podemos utilizar esto para definir tareas específicas que se ejecuten antes o después de cada uno de estos estados por medio del uso de hooks.</p>
+<p>Por ejemplo, supongamos el caso en el que necesitamos copiar un archivo de un directorio al otro justo antes de que termine el despliegue. Como mencionamos anteriormente, sabemos que existe el estado <em>“finishing”</em> dentro del namespace de la tarea deploy y que podemos definir nuestra propia tarea después de que pase dicho estado. Es por esto que nuestra tarea podría verse de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span> namespace <span style="color:#e6db74">:deploy</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>   after <span style="color:#e6db74">:finishing</span>, <span style="color:#e6db74">:upload</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>     on roles(<span style="color:#e6db74">:app</span>) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>       path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;web/assets&#34;</span>
+</span></span><span style="display:flex;"><span>       upload! <span style="color:#e6db74">&#34;themes/assets/style.css&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Así como podemos definir esta tarea, Capistrano nos brinda un sinfín de posibles personalizaciones de nuestro sistema.</p>
+<h3 id="roles">Roles</h3>
+<p>En la sección anterior pudimos ver que es posible definir tareas según lo necesitemos por cada estado. Además, Capistrano nos brinda la posibilidad de dividir estas tareas filtrando por el rol que ocupan en nuestro sistema.
+Supongamos el caso en el cual el proceso de despliegue de una aplicación web contiene tareas que no queremos replicar en el proceso de despliegue de una base de datos. Para esto, Capistrano provee lo que se conoce como <em>“filtrado por roles”</em>, el cual nos permite definir para qué roles se va a ejecutar cada tarea.</p>
+<p>El primer paso es definir los roles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span> role <span style="color:#e6db74">:app</span>, <span style="color:#e6db74">%w{deploy@example.com}</span>, <span style="color:#e6db74">my_property</span>: <span style="color:#e6db74">:my_value</span>
+</span></span><span style="display:flex;"><span> role <span style="color:#e6db74">:web</span>, <span style="color:#e6db74">%w{user1@primary.com user2@additional.com}</span>, <span style="color:#e6db74">other_property</span>: <span style="color:#e6db74">:other_value</span>
+</span></span><span style="display:flex;"><span> role <span style="color:#e6db74">:db</span>,  <span style="color:#e6db74">%w{deploy@example.com}</span>
+</span></span></code></pre></div><p>Luego, especificamos dentro de la tarea en qué rol/roles se ejecutará. Siguiendo el ejemplo anterior:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span> namespace <span style="color:#e6db74">:deploy</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>   after <span style="color:#e6db74">:finishing</span>, <span style="color:#e6db74">:upload</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>     on roles(<span style="color:#e6db74">:web</span>) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>       path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;web/assets&#34;</span>
+</span></span><span style="display:flex;"><span>       upload! <span style="color:#e6db74">&#34;themes/assets/style.css&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>     on roles(<span style="color:#e6db74">:db</span>) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e"># Migrate database</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="ambientes">Ambientes</h3>
+<p>En general, en el proceso de desarrollo de una aplicación contamos con distintos ambientes: production, staging, development, etc, y estos ambientes cuentan con distintas configuraciones. Es posible mantener esta división en Capistrano de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cap install STAGES<span style="color:#f92672">=</span>production,staging,development
+</span></span></code></pre></div><p>Esto nos creará la estructura de directorios y archivos necesarios para configurar el despliegue, como se ve a continuación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; cap install STAGES<span style="color:#f92672">=</span>production,staging,development
+</span></span><span style="display:flex;"><span> mkdir -p config/deploy
+</span></span><span style="display:flex;"><span> create config/deploy.rb
+</span></span><span style="display:flex;"><span> create config/deploy/production.rb
+</span></span><span style="display:flex;"><span> create config/deploy/staging.rb
+</span></span><span style="display:flex;"><span> create config/deploy/development.rb
+</span></span><span style="display:flex;"><span> mkdir -p lib/capistrano/tasks
+</span></span><span style="display:flex;"><span> create Capfile
+</span></span><span style="display:flex;"><span> Capified
+</span></span></code></pre></div><p>Dentro del archivo <code>config/deploy.rb</code> estará la configuración base y compartida por todos los ambientes, mientras que en el directorio <code>config/deploy</code> se encuentran los archivos de configuración específica de cada ambiente. Cada uno de estos archivos contiene la documentación necesaria para ello.</p>
+<p>La sintaxis para ejecutar una tarea en un ambiente específico es <code>cap &lt;ambiente&gt; &lt;tarea [:subtarea]&gt; </code>
+Siguiendo el ejemplo anterior:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> cap staging deploy <span style="color:#75715e"># Ejecutará todo el proceso de despliegue</span>
+</span></span><span style="display:flex;"><span> cap staging deploy:upload <span style="color:#75715e"># Sólo ejecutará la tarea upload</span>
+</span></span></code></pre></div><h3 id="despliegue">Despliegue</h3>
+<p>Al realizarse un despliegue, Capistrano creará una estructura de directorios específica en el servidor remoto para organizar el código fuente y otros datos relacionados con el mismo. Supongamos el caso en el que definimos la raíz de nuestro despliegue, con la variable <code>:deploy_to</code>, en <code>/var/www/my_app_name</code>. Una vez finalizado el despliegue, en nuestro servidor remoto se tendrá una estructura de directorios como la siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>├── current -&gt; /var/www/my_app_name/releases/20220126141435/
+</span></span><span style="display:flex;"><span>├── releases
+</span></span><span style="display:flex;"><span>│   ├── 20220124110903
+</span></span><span style="display:flex;"><span>│   ├── 20220124151246
+</span></span><span style="display:flex;"><span>│   ├── 20220125101011
+</span></span><span style="display:flex;"><span>│   ├── 20220125140220
+</span></span><span style="display:flex;"><span>│   └── 20220126141435
+</span></span><span style="display:flex;"><span>├── repo
+</span></span><span style="display:flex;"><span>│   └── &lt;datos del VCS&gt;
+</span></span><span style="display:flex;"><span>├── revisions.log
+</span></span><span style="display:flex;"><span>└── shared
+</span></span><span style="display:flex;"><span>    └── &lt;linked_files y linked_dirs&gt;
+</span></span></code></pre></div><ul>
+<li>Releases es el directorio que contiene todos los despliegues en carpetas con el timestamp de cuando fueron creados</li>
+<li>Current es un link simbólico a la última release realizada. Este link es actualizado sólo si el despliegue terminó exitosamente, caso contrario se mantiene la anterior release.</li>
+<li>Repo es el directorio que contiene el sistema de control de versiones configurado, por ejemplo, git.</li>
+<li>Revisions.log es el archivo utilizado para almacenar los logs de los despliegues y rollbacks</li>
+<li>Shared es la carpeta que contiene todos los archivos y directorios que se desean mantener entre releases, es decir, que no se versionen de una release a otra. Esto se define por medio de las variables <code>linked_dirs</code> y <code>linked_files</code> en el archivo de configuración deploy.rb</li>
+</ul>
+<h4 id="linked_files">linked_files</h4>
+<p>Si se desea mantener una misma versión de un archivo entre releases como, por ejemplo, configuraciones de la base de datos, es posible hacerlo por medio de linked_files. Dentro de nuestras releases esos archivos serán links simbólicos a los archivos almacenados en el directorio shared del servidor remoto.
+La forma de configurar esto es</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span> append <span style="color:#e6db74">:linked_files</span>, <span style="color:#e6db74">&#34;config/database.yaml&#34;</span>
+</span></span><span style="display:flex;"><span> set <span style="color:#e6db74">:local_base_dir</span>, <span style="color:#e6db74">&#34;shared-configurations&#34;</span>
+</span></span></code></pre></div><p>Donde local_base_dir es el directorio local donde Capistrano buscará por un archivo cuyo path tenga el patrón <code>config/database.&lt;ambiente&gt;.yaml</code> para luego subirlo en el servidor como config/database.yaml. Esto nos permite tener distintos archivos de configuración por ambiente de forma transparente.</p>
+<h3 id="releases-y-rollback">Releases y rollback</h3>
+<p>Dado que Capistrano mantiene en el directorio releases todo el historial de despliegues, es muy sencillo volver a un estado anterior. Alcanza con ejecutar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> cap &lt;ambiente&gt; deploy:rollback
+</span></span></code></pre></div><p>Para volver a la versión inmediata anterior o</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> cap &lt;ambiente&gt; deploy:rollback ROLLBACK_RELEASE<span style="color:#f92672">=</span>release
+</span></span></code></pre></div><p>Para volver a una versión específica anterior.</p>
+<p>En cualquiera de los casos, se actualiza el link simbólico del directorio current y se crea un archivo de backup de la versión que estuvo activa antes del rollback.</p>
+<h3 id="conclusión">Conclusión</h3>
+<p>Hemos visto cómo utilizando Capistrano podemos automatizar nuestro proceso de despliegue de forma simple y flexible. En el siguiente post veremos cómo integrar esta automatización con GitLab CI</p>
+</div>
+
+          <div class="gap-30"></div>
+
+          
+          
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+  <div class="sidebar sidebar-right">
+    
+    <div class="widget widget-tab">
+      <h3 class="widget-title">Entradas recientes</h3>
+      <ul class="posts-list list-unstyled clearfix">
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">
+              <img alt="Jornada de Adopción Cloud para Banco Columbia en AWS" src="/images/blog/jornada-cloud-aws.webp">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">Jornada de Adopción Cloud para Banco Columbia en AWS</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">8 Mayo 2024</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-10-27-instalando-ansible/">
+              <img alt="Instalando ansible como dev... ¿O como ops?" src="/images/blog/snake-ansible.jpg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-10-27-instalando-ansible/">Instalando ansible como dev... ¿O como ops?</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">26 Octubre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-09-22-windows-containers/">
+              <img alt="Contenedores nativos de Microsoft Windows usando docker" src="/images/blog/whale-flying.jpeg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-09-22-windows-containers/">Contenedores nativos de Microsoft Windows usando docker</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">22 Septiembre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="widget widget-categories">
+      <h3 class="widget-title">Categorías del blog</h3>
+      <ul class="category-list clearfix">
+        <li><a href="/es/categories/devsecops">Devsecops</a><span class="posts-count"> (20)</span></li>
+        
+        <li><a href="/es/categories/mikroways">Mikroways</a><span class="posts-count"> (4)</span></li>
+        
+        <li><a href="/es/categories/transformacion-digital">Transformacion digital</a><span class="posts-count"> (1)</span></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+
+    
+    <div class="widget widget-tags">
+      <h3 class="widget-title">Etiquetas populares</h3>
+      <ul class="list-unstyled clearfix">
+        <li><a href="/es/tags/12factor">12factor</a></li>
+        
+        <li><a href="/es/tags/ansible">Ansible</a></li>
+        
+        <li><a href="/es/tags/automatizacion">Automatizacion</a></li>
+        
+        <li><a href="/es/tags/autoscaling">Autoscaling</a></li>
+        
+        <li><a href="/es/tags/aws">Aws</a></li>
+        
+        <li><a href="/es/tags/backup">Backup</a></li>
+        
+        <li><a href="/es/tags/backups">Backups</a></li>
+        
+        <li><a href="/es/tags/cache">Cache</a></li>
+        
+        <li><a href="/es/tags/capistrano">Capistrano</a></li>
+        
+        <li><a href="/es/tags/cgroups">Cgroups</a></li>
+        
+        <li><a href="/es/tags/chatbots">Chatbots</a></li>
+        
+        <li><a href="/es/tags/chatops">Chatops</a></li>
+        
+        <li><a href="/es/tags/cloud">Cloud</a></li>
+        
+        <li><a href="/es/tags/clusterapi">Clusterapi</a></li>
+        
+        <li><a href="/es/tags/containerd">Containerd</a></li>
+        
+        <li><a href="/es/tags/crio">Crio</a></li>
+        
+        <li><a href="/es/tags/development">Development</a></li>
+        
+        <li><a href="/es/tags/devsecops">Devsecops</a></li>
+        
+        <li><a href="/es/tags/dex">Dex</a></li>
+        
+        <li><a href="/es/tags/docker">Docker</a></li>
+        
+        <li><a href="/es/tags/docker-compose">Docker compose</a></li>
+        
+        <li><a href="/es/tags/encryption">Encryption</a></li>
+        
+        <li><a href="/es/tags/errbot">Errbot</a></li>
+        
+        <li><a href="/es/tags/git">Git</a></li>
+        
+        <li><a href="/es/tags/gitlab-ci">Gitlab ci</a></li>
+        
+        <li><a href="/es/tags/harbor">Harbor</a></li>
+        
+        <li><a href="/es/tags/iac">Iac</a></li>
+        
+        <li><a href="/es/tags/images">Images</a></li>
+        
+        <li><a href="/es/tags/infrastructure">Infrastructure</a></li>
+        
+        <li><a href="/es/tags/innovacion">Innovacion</a></li>
+        
+        <li><a href="/es/tags/java">Java</a></li>
+        
+        <li><a href="/es/tags/jornadas">Jornadas</a></li>
+        
+        <li><a href="/es/tags/kubernetes">Kubernetes</a></li>
+        
+        <li><a href="/es/tags/limits">Limits</a></li>
+        
+        <li><a href="/es/tags/monitoreo">Monitoreo</a></li>
+        
+        <li><a href="/es/tags/noticias">Noticias</a></li>
+        
+        <li><a href="/es/tags/okd">Okd</a></li>
+        
+        <li><a href="/es/tags/openjdk">Openjdk</a></li>
+        
+        <li><a href="/es/tags/openshift">Openshift</a></li>
+        
+        <li><a href="/es/tags/packer">Packer</a></li>
+        
+        <li><a href="/es/tags/permisos">Permisos</a></li>
+        
+        <li><a href="/es/tags/playbook">Playbook</a></li>
+        
+        <li><a href="/es/tags/python">Python</a></li>
+        
+        <li><a href="/es/tags/redhat">Redhat</a></li>
+        
+        <li><a href="/es/tags/registry-mirror">Registry mirror</a></li>
+        
+        <li><a href="/es/tags/restic">Restic</a></li>
+        
+        <li><a href="/es/tags/restore">Restore</a></li>
+        
+        <li><a href="/es/tags/sops">Sops</a></li>
+        
+        <li><a href="/es/tags/terraform">Terraform</a></li>
+        
+        <li><a href="/es/tags/traefik">Traefik</a></li>
+        
+        <li><a href="/es/tags/velero">Velero</a></li>
+        
+        <li><a href="/es/tags/version">Version</a></li>
+        
+        <li><a href="/es/tags/vmware">Vmware</a></li>
+        
+        <li><a href="/es/tags/vsphere">Vsphere</a></li>
+        
+        <li><a href="/es/tags/windows">Windows</a></li>
+        
+        <li><a href="/es/tags/workstation">Workstation</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

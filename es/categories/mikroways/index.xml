@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mikroways</title>
+    <link>/es/categories/mikroways/</link>
+    <description>Recent content on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 10 May 2023 10:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/categories/mikroways/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Limitando la memoria de aplicaciones java en ambientes containerizados</title>
+      <link>/es/blog/2023-05-10-java-cgroups/</link>
+      <pubDate>Wed, 10 May 2023 10:00:00 -0300</pubDate>
+      <guid>/es/blog/2023-05-10-java-cgroups/</guid>
+      <description>En este post analizaremos el comportamiento de OpenJDK en ambientes containerizados, haciendo foco en la utilización de memoria y presentaremos un conocido problema de la versión 1.</description>
+    </item>
+    <item>
+      <title>A la nube con escalas</title>
+      <link>/es/blog/2022-08-23-a-la-nube-con-escalas/</link>
+      <pubDate>Tue, 23 Aug 2022 10:26:58 -0300</pubDate>
+      <guid>/es/blog/2022-08-23-a-la-nube-con-escalas/</guid>
+      <description>¿Qué es realmente la nube? ¿Me puede ayudar en mi proyecto?</description>
+    </item>
+    <item>
+      <title>¡Certificamos Great Place to Work!</title>
+      <link>/es/blog/2022-08-22-certificamos-great-place-to-work/</link>
+      <pubDate>Mon, 22 Aug 2022 10:26:58 -0300</pubDate>
+      <guid>/es/blog/2022-08-22-certificamos-great-place-to-work/</guid>
+      <description>Con enorme alegría anunciamos que obtuvimos la certificación Great Place to Work, con un 100% del equipo afirmando que Mikroways es un excelente lugar para trabajar.</description>
+    </item>
+    <item>
+      <title>Mikroways es partner select de AWS</title>
+      <link>/es/blog/2021-10-04-consulting-partner-select-aws/</link>
+      <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
+      <guid>/es/blog/2021-10-04-consulting-partner-select-aws/</guid>
+      <description>Desde el día de hoy, Mikroways es partner select de consultoría de Amazon Web Services.</description>
+    </item>
+  </channel>
+</rss>

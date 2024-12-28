@@ -1,0 +1,14 @@
+<svg width="1920" height="651" viewBox="0 0 1920 651" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="1920" height="650.119" fill="url(#paint0_linear_21_378)"/>
+<rect width="1920" height="650" fill="url(#pattern0_21_378)" fill-opacity="0.5"/>
+<defs>
+<pattern id="pattern0_21_378" patternContentUnits="objectBoundingBox" width="0.0145499" height="0.0429781">
+<use xlink:href="#image0_21_378" transform="scale(0.000181874 0.000537227)"/>
+</pattern>
+<linearGradient id="paint0_linear_21_378" x1="973.913" y1="636.574" x2="985.513" y2="-35.0581" gradientUnits="userSpaceOnUse">
+<stop offset="0.166484" stop-color="#004991"/>
+<stop offset="1" stop-color="#00376D"/>
+</linearGradient>
+<image id="image0_21_378" width="80" height="80" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMTSURBVHgB7ZvhUdtAEIXfnsl/pQJEBTgdCJz/cQe4A5ICiBWc/IZUQAmpIOAOkg5CCTQQXfZkMmBs8Mi621sz+82ABuMxzGO9b/edAAzDMAzDMAzDeKVUdYHR7AQKcdgBHA0uyeMSClEvoDs+n3pCqL4C779+gDJ0C1jVpQfV/78k7z9CGXoFZPHIDW6WHvOoUM0qKEKtgCzeBV/K1W80YyhCpYCh7/FlrVBE7qR1ZSXoE3A0Gz/ue2so4NwEStAlYOh7HhebnkZEatxYlYD3plFufKIiM1EjIPe99abx3PMdVGwmBAW40ezUd9807nzz9wDz+g4ZyV+BYVj2qNEdNhPKPljnFZDHkfu+t9VYQnCnyExWAUNIgA59bw1FbjPJJuCjkKAXNMAUGcljItW3IbnmFyLBZvI2l5nIV2AbEjQ/EJOMZiIuINHgCv363uprZjQTUQHbkIB4i4hPNjORE/D4fLIhJOhFLjORMZGHcLREQthM3rGZ/IYgIhUoId7iB9EEwiQXsGtI0IccYWtSAduQAKIjhnjYmk7ARUggfpYrHbamEXDdiZoUwmFrEgGfPVGTQvDkLrqAL52oSSFpJnEFrOoq5bDcAbGwNZ6Ai753BSXwfixyZhJNQHIuJCwl9FBKmEkUARd9j4ZQhsR+3H8X5pCAQGreuk9JHbb2q8DQ90Ab7yTISmIz2V7AnidqUqQOW7cW0DkX+ksJ/SQNW7cSMENI0IuUZtLdRBbz3h/sGKnC1m4VmDMk6IujJOtlx7fw3thjN2nNJMF+vP0cyIfjQFNggEM0zQGvIvvwPow1Jb+qSmf28J9w/TlqRpnmUKn9Sw/CZsJLfcPXIC6CsCxwzpgLc//z7AgRyXZrx1L1wh1yfRScJidfB32DI8zP5oiEihssl1it3kOu3oJ/0WGM1uB98x0302gjmD4BX6IV903J1Vty9e5vWb1R72zdLQE3wWMWV28J5/kaPtZXr0fzBdfTGhHYw2tiXt/y59unD7ej11L17sQ/qRqGYRiGYRiGYRiGYRiGYRiGYRiGYcTgH6xpxkFKQS6fAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

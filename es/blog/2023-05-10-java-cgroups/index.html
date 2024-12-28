@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Limitando la memoria de aplicaciones java en ambientes containerizados</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Análisis del comportamiento de la JVM en ambientes containerizados">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Limitando la memoria de aplicaciones java en ambientes containerizados" />
+<meta property="og:description" content="Análisis del comportamiento de la JVM en ambientes containerizados" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/blog/2023-05-10-java-cgroups/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-05-10T10:00:00-03:00" />
+<meta property="article:modified_time" content="2023-05-10T10:00:00-03:00" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        
+        <div class="post-content">
+          
+          <div class="post-image-wrapper">
+            <img src="/images/blog/java-cgroups.webp" class="img-fluid" alt="Limitando la memoria de aplicaciones java en ambientes containerizados" />
+            <span class="blog-date">10 Mayo 2023</span>
+          </div>
+          <div class="post-header clearfix">
+            <h2 class="post-title">Limitando la memoria de aplicaciones java en ambientes containerizados</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">Publicado por Matias Gudin</span>
+              <span class="post-meta-cats">en <a
+                href="/es/categories/mikroways"> 
+                Mikroways</a> </span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>Tiempo de lectura: 9 minutos</span>
+            </div>
+          </div>
+          <div class="entry-content"><p>En este post analizaremos el comportamiento de <a href="https://openjdk.org/">OpenJDK</a>
+en ambientes containerizados, haciendo foco en la utilización de memoria y
+presentaremos un <em>conocido</em> problema de la versión 1.8. Para ello, utilizaremos
+un conjunto de pruebas para ilustrarlo y concluiremos mostrando algunas
+recomendaciones para mitigarlo.</p>
+<p>Antes de comenzar, repasaremos conceptos que serán de utilidad a lo largo
+del análisis.</p>
+<h1 id="java">Java</h1>
+<p>Java es un lenguaje orientado a objetos, compilado y <strong><code>multiplataforma</code></strong>.
+Hacemos énfasis en que es <strong><code>multiplataforma</code></strong> porque justamente se compila para
+luego ser interpretado por una maquina virtual de java (<strong><code>JVM</code></strong>) quien
+terminará ejecutando los binarios. Es esta abstracción la que permite que sea
+<strong><code>multiplataforma</code></strong> ya que basta con tener instalada dicha maquina para que
+podamos ejecutar nuestros programas en cualquier host.</p>
+<p>La <strong><code>JVM</code></strong> es configurable mediante parámetros. Entre otras cosas podemos
+configurar la cantidad de memoria asignada  mediante <strong><code>minRAMPercentage</code></strong> y
+<strong><code>maxRAMPercentage</code></strong>. Ambos establecen qué porcentaje de la memoria del sistema
+se le asignará a la <strong><code>JVM</code></strong>.</p>
+<blockquote>
+<p>Vale la pena desambiguar ambos parámetros ya que a simple
+vista pareciera que establecen valores máximos y mínimos de memoria que se le
+asignará a la <strong><code>JVM</code></strong>. En realidad, <strong><code>minRAMPercentage</code></strong> se utiliza en sistemas con poca
+memoria (menos de 200MB); mientas que <strong><code>maxRAMPercentage</code></strong> se utiliza en sistemas
+con mayor capacidad (a partir de 200MB). Para más información vea este
+<a href="https://www.baeldung.com/java-jvm-parameters-rampercentage">interesante articulo explicativo</a>.</p>
+</blockquote>
+<h1 id="cgroups">CGroups</h1>
+<p><strong><code>CGroups</code></strong> hace referencia a una funcionalidad del kernel de Linux
+llamada <code>Control Groups</code>.</p>
+<p>Nos permiten agrupar los procesos y controlar
+la asignación de recursos, como por ejemplo: tiempo de CPU, memoria,
+entrada/salida, entre otros. Se diseñó de forma tal que soporte diversos
+controladores para distintos tipos de recursos, y que los procesos sean agrupados
+jerárquicamente (como en un filesystem).</p>
+<h3 id="cgroups-v1-o-cgroups-v2">CGroups v1 o CGroups v2</h3>
+<p><strong><code>Cgroups v1</code></strong> aparece en el kernel de linux versión <strong>2.6.24</strong>. Con el tiempo
+se agregaron muchos controladores para distintos tipos de recursos sin
+coordinación previa entre ellos. Como consecuencia de ello, comenzaron a
+presentarse algunas inconsistencias entre los controladores que complicaban su
+uso.</p>
+<p>Es así como a partir de la versión <strong>3.10</strong> del kernel de Linux se comenzó a
+trabajar en una nueva implementación de CGroups (<strong><code>CGroups v2</code></strong>) para remediar
+estos problemas. La misma fue incluida en la versión <strong>4.5</strong> de manera oficial.</p>
+<p>Pese a que <strong><code>CGroups v2</code></strong> nace como reemplazo de <strong><code>CGroups v1</code></strong>, ambas
+versiones suelen coexistir y son compatibles entre sí. Con esto nos referimos a
+que la <strong>v2</strong> puede utilizar aquellos controladores de la <strong>v1</strong> que aun no hayan
+sido portados.</p>
+<h3 id="cgroups-y-contenedores">CGroups y contenedores</h3>
+<p>Los runtimes de contenedores (como Docker), hacen uso extensivo de los
+namespaces del kernel para que los contenedores corran como procesos aislados
+en el host, manteniendo total control sobre ellos.</p>
+<p>Otra de las funcionalidades que proveen es la de
+<a href="https://docs.docker.com/config/containers/resource_constraints/">limitar los recursos</a>
+que se le asignan a un contenedor. Es deseable que utilicemos límites
+cuando ejecutamos nuestras aplicaciones containerizadas, ya que así evitamos que
+un contenedor utilice más recursos de los asignados, previniendo
+leaks que podrían degradar o incluso poner en peligro al host donde corren otros
+contenedores.</p>
+<h1 id="el-problema">El problema</h1>
+<p>Con todo lo dicho hasta ahora, resulta importante configurar los recursos
+dados a una JVM que se ejecuta dentro de un contenedor. Nos centramos
+particularmente en la memoria, ya que es un recurso crítico en las aplicaciones
+Java.</p>
+<blockquote>
+<p>Para comprender mas en profundidad sobre la limitación de memoria en Docker, se
+recomienda leer la <a href="https://docs.docker.com/config/containers/resource_constraints/#memory">documentación oficial.</a></p>
+</blockquote>
+<p>La JVM admite configurar la memoria máxima a emplear, utilizando opciones que se
+envían a la JVM cuando corremos <code>java</code>. Ahora bien, estas opciones admiten
+establecerse con valores absolutos, en términos de cuántos bytes asignar a la
+máquina virtual, como también permiten trabajar en términos relativos a la
+memoria total del sistema, expresada en un porcentaje.</p>
+<p>El primer problema que surgió con la adopción avasallante de contenedores es que
+la versión de java 8 previa al <a href="https://www.oracle.com/java/technologies/javase/8u131-relnotes.html">update
+131</a>,
+<strong>no permitía limitar los recursos utilizando CGroupsv1</strong>. Es decir, al utilizar
+porcentajes se tomaba el total de memoria en el host, ignorando los límites
+impuestos al contenedor. Esta primera versión de la JVM, incluía soporte
+experimental de CGroupsv1. Recién en el <a href="https://www.oracle.com/java/technologies/javase/8u191-relnotes.html">update 191</a>
+se portó la funcionalidad de CGroupsv1 desde la versión 10 de la JVM. Luego, con el
+lanzamiento de CGroupsv2, sucedió exactamente el mismo problema, es decir,
+la JVM tomaba toda la memoria del host en vez de la limitada en el contenedor.</p>
+<p>Para ilustrar este problema realizamos un conjunto de pruebas que nos permitirán
+evidenciar y analizar qué sucede en base a los resultados obtenidos.</p>
+<h3 id="sobre-las-pruebas">Sobre las pruebas</h3>
+<p>Para realizar las pruebas creamos dos máquinas virtuales, una con con
+<strong><code>ubuntu/xenial(CGroupsv1)</code></strong> y otra con <strong><code>ubuntu/jammy(CGroupsv2)</code></strong>.</p>
+<blockquote>
+<p>Las pruebas pueden simplificarse si se utiliza
+<a href="https://www.vagrantup.com/">Vagrant</a>, con los boxes de
+<a href="https://app.vagrantup.com/ubuntu/boxes/xenial64">ubuntu/xenial</a> y
+<a href="https://app.vagrantup.com/ubuntu/boxes/jammy64">ubuntu/jammy</a>.</p>
+</blockquote>
+<p>Creamos también el siguiente script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>PROVIDERS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">openjdk:8-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">openjdk:17-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">openjdk:19-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">amazoncorretto:8-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">amazoncorretto:11-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">amazoncorretto:17-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">amazoncorretto:19-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">eclipse-temurin:8-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">eclipse-temurin:11-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">eclipse-temurin:17-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">eclipse-temurin:19-alpine
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>system_memory<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>free -h | grep Mem | xargs | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f2<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Imagen | limite_memoria |  Heap_Aplicada | Version_Java | Factor de memoria (%)&#34;</span> &gt; output
+</span></span><span style="display:flex;"><span>  memory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100m&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> provider in <span style="color:#e6db74">${</span>PROVIDERS<span style="color:#e6db74">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Running </span>$provider<span style="color:#e6db74"> with </span>$memory<span style="color:#e6db74"> memory&#34;</span>
+</span></span><span style="display:flex;"><span>    docker run --rm $provider java -XX:+PrintFlagsFinal -versión &amp;&gt; docker_output.log
+</span></span><span style="display:flex;"><span>    min_ram_percentage<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;MinRAMPercentage&#34;</span> docker_output.log | cut -d<span style="color:#f92672">=</span> -f2 | cut -d. -f1 | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    docker run --rm --memory $memory $provider java -XshowSettings -versión &amp;&gt; docker_output.log
+</span></span><span style="display:flex;"><span>    heap<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;Max. Heap Size&#34;</span> docker_output.log | cut -f2 -d: | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    java_version<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;java.runtime.versión&#34;</span> docker_output.log | cut -f2 -d<span style="color:#e6db74">&#39;=&#39;</span>  | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span>$provider<span style="color:#e6db74"> | </span>$memory<span style="color:#e6db74"> | </span>$heap<span style="color:#e6db74"> | </span>$java_version<span style="color:#e6db74"> | </span>$min_ram_percentage<span style="color:#e6db74"> &#34;</span> &gt;&gt; output
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>  memory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> provider in <span style="color:#e6db74">${</span>PROVIDERS<span style="color:#e6db74">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Running </span>$provider<span style="color:#e6db74"> with </span>$memory<span style="color:#e6db74"> memory&#34;</span>
+</span></span><span style="display:flex;"><span>    docker run --rm $provider java -XX:+PrintFlagsFinal -versión &amp;&gt; docker_output.log
+</span></span><span style="display:flex;"><span>    max_ram_percentage<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;MaxRAMPercentage&#34;</span> docker_output.log | cut -d<span style="color:#f92672">=</span> -f2 | cut -d. -f1 | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    docker run --rm --memory $memory $provider java -XshowSettings -versión &amp;&gt; docker_output.log
+</span></span><span style="display:flex;"><span>    heap<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;Max. Heap Size&#34;</span> docker_output.log | cut -f2 -d: | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    java_version<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#34;java.runtime.versión&#34;</span> docker_output.log | cut -f2 -d<span style="color:#e6db74">&#39;=&#39;</span>  | xargs<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span>$provider<span style="color:#e6db74"> | </span>$memory<span style="color:#e6db74"> | </span>$heap<span style="color:#e6db74"> | </span>$java_version<span style="color:#e6db74"> | </span>$max_ram_percentage<span style="color:#e6db74"> &#34;</span> &gt;&gt; output
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;System Memory </span>$system_memory<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>column -t output 
+</span></span></code></pre></div><p>Este script utiliza diferentes proveedores de java en diferentes versiones,
+ejecutando un contenedor con límites de memoria, para finalmente imprimir un
+cuadro comparativo de los diferentes setups y su comportamiento.</p>
+<h3 id="análisis-de-resultados">Análisis de resultados</h3>
+<p>A continuación transcribimos los resultados obtenidos.</p>
+<p>El cuadro comparativo cuenta con 5 columnas:</p>
+<ul>
+<li><code>Imagen</code></li>
+<li><code>Límite de memoria</code>: Es el límite que se le asigna al contenedor. Elegimos limitar
+en 100M y 500M respectivamente para probar tanto el parámetro
+<strong><code>minRamPercentage</code></strong> como <strong><code>maxRamPercentage</code></strong>.</li>
+<li><code>Memoria aplicada</code>: Memoria asignada al proceso java.</li>
+<li><code>Versión</code>: Versión utilizada en la imagen.</li>
+<li><code>Factor de memoria</code>: Porcentaje de la memoria disponible asignada por defecto
+a la JVM según el ambiente.</li>
+</ul>
+<h4 id="cgroups-v1">CGroups v1</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Imagen</th>
+<th style="text-align:center">Límite de Memoria</th>
+<th style="text-align:center">Memoria Aplicada</th>
+<th style="text-align:center">Versión</th>
+<th style="text-align:center">Factor de Memoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17-ea+14</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19-ea+5</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:11-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">11.0.19+7-LTS</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17.0.7+7-LTS</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19.0.2+7-FR</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:11-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">11.0.19+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17.0.7+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19.0.2+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17-ea+14</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19-ea+5</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:11-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">11.0.19+7-LTS</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17.0.7+7-LTS</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19.0.2+7-FR</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:11-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">11.0.19+7</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17.0.7+7</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19.0.2+7</td>
+<td style="text-align:center">25</td>
+</tr>
+</tbody>
+</table>
+<p>La memoria disponible del host es de <strong><code>992M</code></strong>.</p>
+<p>Al correr java en cualquier versión en un <strong>contenedor limitando su memoria a <code>100M</code></strong> el factor de memoria
+asignado por defecto es del <strong><code>50%</code></strong>. Vemos que los límites de memoria se respetan ya
+que teniendo <strong><code>100M</code></strong> se asigna alrededor de <strong><code>50M</code></strong>.</p>
+<p>En segunda instancia, vemos que al correr java en cualquier versión en un
+ambiente de <strong><code>500M</code></strong>, el factor de memoria asignado por defecto es del
+<strong><code>25%</code></strong>. Vemos que aquí también esto se cumple, ya que se asigna alrededor de
+<strong><code>125M</code></strong>.</p>
+<p>Entonces concluimos que <strong>java se comporta sin problemas en un ambiente con
+<code>CGroupsv1</code> en las versiones verificadas</strong>.</p>
+<h4 id="cgroups-v2">CGroups v2</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Imagen</th>
+<th style="text-align:center">Límite de Memoria</th>
+<th style="text-align:center">Memoria Aplicada</th>
+<th style="text-align:center">Versión</th>
+<th style="text-align:center">Factor de Memoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17-ea+14</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19-ea+5</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:11-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">11.0.19+7-LTS</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17.0.7+7-LTS</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19.0.2+7-FR</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:11-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">11.0.19+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:17-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">17.0.7+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:19-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">48.38M</td>
+<td style="text-align:center">19.0.2+7</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17-ea+14</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19-ea+5</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:11-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">11.0.19+7-LTS</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17.0.7+7-LTS</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19.0.2+7-FR</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:11-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">11.0.19+7</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:17-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">17.0.7+7</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:19-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">121.81M</td>
+<td style="text-align:center">19.0.2+7</td>
+<td style="text-align:center">25</td>
+</tr>
+</tbody>
+</table>
+<p>La memoria disponible del host es de <strong><code>969M</code></strong>.</p>
+<p>En nuestras pruebas con <strong><code>CGroups v2</code></strong> es donde comenzamos a observar
+inconsistencias.</p>
+<p>Eperaríamos los mismos resultados que en las pruebas anteriores. Sin embargo
+vemos que para la <strong><code>versión 8</code></strong> no se esta aplicando bien el limite de memoria.</p>
+<h5 id="aquí-un-extracto-de-las-inconsistencias-observadas">Aquí un extracto de las inconsistencias observadas:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Imagen</th>
+<th style="text-align:center">Límite de Memoria</th>
+<th style="text-align:center">Memoria Aplicada</th>
+<th style="text-align:center">Versión</th>
+<th style="text-align:center">Factor de Memoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:left">openjdk:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_212-b04</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">amazoncorretto:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:left">eclipse-temurin:8-alpine</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">235.88M</td>
+<td style="text-align:center">1.8.0_352-b08</td>
+<td style="text-align:center">25</td>
+</tr>
+</tbody>
+</table>
+<p>Viendo en detalle los resultados, observamos que para cualquier límite de memoria
+asignado (Ver columna 2) la memoria disponible es de alrededor de <strong><code>250M</code></strong>.
+Algo llamativo es que este valor es el <strong><code>25%</code></strong> de la memoria disponible del
+host.</p>
+<p>Lo que está sucediendo es que <strong>al no poseer soporte para utilizar los
+controladores de <code>CGroups v2</code>, la JVM no toma los límites impuestos al
+contenedor. Es más, considera la memoria total del host (969M) y como ésta es
+mayor a <code>200M</code> aplica el factor del <code>25%</code>, resultando en una asignación de
+alrededor de <code>250M</code></strong>.</p>
+<p>Es importante destacar entonces que las <strong>JVM con problemas son aquellas en las
+versiones 1.8 en los updates 212 y 352</strong>.</p>
+<h1 id="conclusiones">Conclusiones</h1>
+<p>Siempre que debamos correr una aplicación java dentro de un contenedor, debemos
+prestar especial atención no sólo a la versión de java utilizada sino también a
+la versión de cgroups que emplea el host donde va a ejecutarse.</p>
+<p>En ambientes con Kubernetes, el uso de límites de memoria es una práctica muy
+recomendada para evitar que el host quede fuera de servicio por algún proceso
+que haga un uso excesivo de recursos. Por ello, si empleamos límites que no
+son considerados por la JVM, probablemente nuestro contenedor se reinicie
+frecuentemente por emplear más memoria de la permitida.</p>
+<p>Habiendo visto todo esto, surge inmediatamente la pregunta: <strong><code>¿Cómo lidiamos  con esta limitación?</code></strong></p>
+<p>En principio, tenemos <strong><code>buenas noticias</code></strong>. El problema que mencionamos <a href="https://bugs.openjdk.org/browse/JDK-8230305">se
+encuentra identificado</a> y
+recientemente se lanzó un parche en la versión 8 de java de OpenJDK. Este parche
+es el <strong><code>8u372-b07</code></strong> que agrega soporte para <strong><code>CGroups v2</code></strong>.</p>
+<p>Entonces basta con asegurarnos que la versión que utiliza nuestra imagen sea
+mayor o igual a la mencionada previamente. Por otro lado, vale la pena aclarar
+que OpenJDK
+<a href="https://github.com/docker-library/openjdk/issues/505">ya no actualiza las imágenes de java 8</a>
+por lo que para poder utilizar este parche tendremos que utilizar alguna de sus
+alternativas como <a href="https://hub.docker.com/_/amazoncorretto">amazon-corretto</a> o
+<a href="https://hub.docker.com/_/eclipse-temurin">eclipse-temurin</a>, sólo por mencionar
+dos de las versiones mas populares según new relic.</p>
+<h4 id="referencias">Referencias</h4>
+<ul>
+<li><a href="https://openjdk.org/">OpenJDK official site</a></li>
+<li><a href="https://www.baeldung.com/java-jvm-parameters-rampercentage">minRamPercentage y maxRamPercentage</a></li>
+<li><a href="https://man7.org/linux/man-pages/man7/cgroups.7.html">Manpage cgroups</a></li>
+<li><a href="https://docs.docker.com/config/containers/resource_constraints/">Recursos en Docker</a></li>
+<li><a href="https://bugs.openjdk.org/browse/JDK-8230305">Bug tracker de openjdk issue cgroups</a></li>
+<li><a href="https://github.com/docker-library/openjdk/issues/505">Comunicado deprecación de imágenes OpenJDK 8 y 11</a></li>
+<li><a href="https://newrelic.com/resources/report/2022-state-of-java-ecosystem">2022 state of the java ecosystem. New relic</a></li>
+</ul>
+<h4 id="créditos">Créditos</h4>
+<p>La imagen utilizada en este post se encuentra bajo <a href="https://unsplash.com/license">licencia
+unsplash</a> y pertenece a
+<a href="https://unsplash.com/@dylhunter">Dylan Hunter</a>.</p>
+</div>
+
+          <div class="gap-30"></div>
+
+          
+          
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+  <div class="sidebar sidebar-right">
+    
+    <div class="widget widget-tab">
+      <h3 class="widget-title">Entradas recientes</h3>
+      <ul class="posts-list list-unstyled clearfix">
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">
+              <img alt="Jornada de Adopción Cloud para Banco Columbia en AWS" src="/images/blog/jornada-cloud-aws.webp">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">Jornada de Adopción Cloud para Banco Columbia en AWS</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">8 Mayo 2024</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-10-27-instalando-ansible/">
+              <img alt="Instalando ansible como dev... ¿O como ops?" src="/images/blog/snake-ansible.jpg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-10-27-instalando-ansible/">Instalando ansible como dev... ¿O como ops?</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">26 Octubre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-09-22-windows-containers/">
+              <img alt="Contenedores nativos de Microsoft Windows usando docker" src="/images/blog/whale-flying.jpeg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-09-22-windows-containers/">Contenedores nativos de Microsoft Windows usando docker</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">22 Septiembre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="widget widget-categories">
+      <h3 class="widget-title">Categorías del blog</h3>
+      <ul class="category-list clearfix">
+        <li><a href="/es/categories/devsecops">Devsecops</a><span class="posts-count"> (20)</span></li>
+        
+        <li><a href="/es/categories/mikroways">Mikroways</a><span class="posts-count"> (4)</span></li>
+        
+        <li><a href="/es/categories/transformacion-digital">Transformacion digital</a><span class="posts-count"> (1)</span></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+
+    
+    <div class="widget widget-tags">
+      <h3 class="widget-title">Etiquetas populares</h3>
+      <ul class="list-unstyled clearfix">
+        <li><a href="/es/tags/12factor">12factor</a></li>
+        
+        <li><a href="/es/tags/ansible">Ansible</a></li>
+        
+        <li><a href="/es/tags/automatizacion">Automatizacion</a></li>
+        
+        <li><a href="/es/tags/autoscaling">Autoscaling</a></li>
+        
+        <li><a href="/es/tags/aws">Aws</a></li>
+        
+        <li><a href="/es/tags/backup">Backup</a></li>
+        
+        <li><a href="/es/tags/backups">Backups</a></li>
+        
+        <li><a href="/es/tags/cache">Cache</a></li>
+        
+        <li><a href="/es/tags/capistrano">Capistrano</a></li>
+        
+        <li><a href="/es/tags/cgroups">Cgroups</a></li>
+        
+        <li><a href="/es/tags/chatbots">Chatbots</a></li>
+        
+        <li><a href="/es/tags/chatops">Chatops</a></li>
+        
+        <li><a href="/es/tags/cloud">Cloud</a></li>
+        
+        <li><a href="/es/tags/clusterapi">Clusterapi</a></li>
+        
+        <li><a href="/es/tags/containerd">Containerd</a></li>
+        
+        <li><a href="/es/tags/crio">Crio</a></li>
+        
+        <li><a href="/es/tags/development">Development</a></li>
+        
+        <li><a href="/es/tags/devsecops">Devsecops</a></li>
+        
+        <li><a href="/es/tags/dex">Dex</a></li>
+        
+        <li><a href="/es/tags/docker">Docker</a></li>
+        
+        <li><a href="/es/tags/docker-compose">Docker compose</a></li>
+        
+        <li><a href="/es/tags/encryption">Encryption</a></li>
+        
+        <li><a href="/es/tags/errbot">Errbot</a></li>
+        
+        <li><a href="/es/tags/git">Git</a></li>
+        
+        <li><a href="/es/tags/gitlab-ci">Gitlab ci</a></li>
+        
+        <li><a href="/es/tags/harbor">Harbor</a></li>
+        
+        <li><a href="/es/tags/iac">Iac</a></li>
+        
+        <li><a href="/es/tags/images">Images</a></li>
+        
+        <li><a href="/es/tags/infrastructure">Infrastructure</a></li>
+        
+        <li><a href="/es/tags/innovacion">Innovacion</a></li>
+        
+        <li><a href="/es/tags/java">Java</a></li>
+        
+        <li><a href="/es/tags/jornadas">Jornadas</a></li>
+        
+        <li><a href="/es/tags/kubernetes">Kubernetes</a></li>
+        
+        <li><a href="/es/tags/limits">Limits</a></li>
+        
+        <li><a href="/es/tags/monitoreo">Monitoreo</a></li>
+        
+        <li><a href="/es/tags/noticias">Noticias</a></li>
+        
+        <li><a href="/es/tags/okd">Okd</a></li>
+        
+        <li><a href="/es/tags/openjdk">Openjdk</a></li>
+        
+        <li><a href="/es/tags/openshift">Openshift</a></li>
+        
+        <li><a href="/es/tags/packer">Packer</a></li>
+        
+        <li><a href="/es/tags/permisos">Permisos</a></li>
+        
+        <li><a href="/es/tags/playbook">Playbook</a></li>
+        
+        <li><a href="/es/tags/python">Python</a></li>
+        
+        <li><a href="/es/tags/redhat">Redhat</a></li>
+        
+        <li><a href="/es/tags/registry-mirror">Registry mirror</a></li>
+        
+        <li><a href="/es/tags/restic">Restic</a></li>
+        
+        <li><a href="/es/tags/restore">Restore</a></li>
+        
+        <li><a href="/es/tags/sops">Sops</a></li>
+        
+        <li><a href="/es/tags/terraform">Terraform</a></li>
+        
+        <li><a href="/es/tags/traefik">Traefik</a></li>
+        
+        <li><a href="/es/tags/velero">Velero</a></li>
+        
+        <li><a href="/es/tags/version">Version</a></li>
+        
+        <li><a href="/es/tags/vmware">Vmware</a></li>
+        
+        <li><a href="/es/tags/vsphere">Vsphere</a></li>
+        
+        <li><a href="/es/tags/windows">Windows</a></li>
+        
+        <li><a href="/es/tags/workstation">Workstation</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

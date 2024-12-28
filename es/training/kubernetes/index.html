@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Fundamentos de Kubernetes</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Se trata de un curso introductorio, que combina teoría con laboratorios, y cuyo objetivo es que los alumnos puedan familiarizarse con la arquitectura de Kubernetes, la forma de interactuar con un cluster y cómo desplegar aplicaciones en esta plataforma.">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Fundamentos de Kubernetes" />
+<meta property="og:description" content="Se trata de un curso introductorio, que combina teoría con laboratorios, y cuyo objetivo es que los alumnos puedan familiarizarse con la arquitectura de Kubernetes, la forma de interactuar con un cluster y cómo desplegar aplicaciones en esta plataforma." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/training/kubernetes/" /><meta property="og:image" content="/images/categories/cloud.png.webp" /><meta property="article:section" content="training" />
+
+
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+          <i class="fa fa-globe" id="world-icon"></i><select class="m-2 border-0" id="select-language" onchange="location = this.value;">
+            
+            
+            
+            
+            
+            
+            
+            
+            <option id="en" value="/training/kubernetes/">En</option>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <option id="es" value="/es/training/kubernetes/" selected>Es
+            </option>
+            
+            
+            
+            
+          </select>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+
+<section id="training-item">
+  <div class="container">
+    
+    <div class="row justify-content-md-center">
+      
+      <div class="col-md-8 col-xs-12">
+        <h3 class="training-title">Fundamentos de Kubernetes</h3>
+        <p>Se trata de un curso introductorio, que combina teoría con laboratorios, y cuyo objetivo es que los alumnos puedan familiarizarse con la arquitectura de Kubernetes, la forma de interactuar con un cluster y cómo desplegar aplicaciones en esta plataforma.</p>
+        <div class="accordion" id="accordionExample">
+          
+          
+          <div class="card">
+            <div class="card-header" id="heading1">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn1" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  ¿A quién está destinado?
+                  <i class="fas fa-plus float-right icon" id="icon1"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+              <div class="card-body">
+                <ul>
+<li>Administradores de sistemas</li>
+<li>Arquitectos y desarrolladores de software</li>
+<li>DevOps y SREs</li>
+<li>Cualquier otro profesional que desee comprender la arquitectura y el funcionamiento de la plataforma.</li>
+</ul>
+
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="card-header" id="heading2">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn2" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                  ¿Qué se llevarán?
+                  <i class="fas fa-plus float-right icon" id="icon2"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Quienes realicen esta capacitación aprenderán:</p>
+<ul>
+<li>Sobre los componentes más importantes de Kubernetes y cómo se relacionan entre sí.</li>
+<li>A interactuar con el cluster de Kubernetes.</li>
+<li>A gestionar la persistencia para almacenar la información, a escalar aplicaciones y a aumentar su disponibilidad.</li>
+<li>A desplegar aplicaciones con y sin estado en un cluster de Kubernetes.</li>
+</ul>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="card-header" id="heading3">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn3" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                  Formato y duración
+                  <i class="fas fa-plus float-right icon" id="icon3"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>El curso cuenta con una parte teórica, en la que se introducen los conceptos, y una parte aplicada, donde los alumnos deben resolver diferentes problemas de forma práctica.</p>
+<p>La carga horaria total estimada es de 30 horas, distribuidas de la siguiente manera:</p>
+<ul>
+<li>12 horas para las clases teóricas.</li>
+<li>12 horas para la resolución de los ejercicios prácticos.</li>
+<li>Entre 4 y 6 horas para debatir sobre las problemáticas planteadas a través de los ejercicios prácticos.</li>
+</ul>
+
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="card-header" id="heading4">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left toggle-btn" id="btn4" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                  Requerimientos
+                  <i class="fas fa-plus float-right icon" id="icon4"></i>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Sin ser excluyentes, recomendamos:</p>
+<ul>
+<li>Conocimientos previos sobre sistemas operativos, contenedores y redes.</li>
+<li>Experiencia en administración de sistemas o desarrollo de software.</li>
+<li>Idealmente, haber tomado previamente las capacitaciones de <a href="/es/training/wfc">Workflow continuo de desarrollo a producción</a> y la de <a href="/es/training/docker">Fundamentos de Docker</a>.</li>
+</ul>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="training-desc">
+          <p><h2 id="temario">Temario</h2>
+<h3 id="contenido-teórico">Contenido Teórico</h3>
+<ul>
+<li>Introducción a K8S: antecedentes, CNCF.</li>
+<li>Arquitectura general y conceptos básicos de Kubernetes. Tecnologías
+subyacentes.
+<ul>
+<li>Master, Worker, etcd</li>
+<li>Diseño con HA</li>
+<li>Container runtimes</li>
+<li>Networking en Kubernetes</li>
+</ul>
+</li>
+<li>Alternativas de instalación de Kubernetes: on-premises, en la nube y en modo
+desarrollo.</li>
+<li>Interactuando con el cluster:
+<ul>
+<li>kubelet</li>
+<li>Modos imperativo y declarativo.</li>
+<li>kustomize</li>
+<li>Dashboard</li>
+</ul>
+</li>
+<li>Objetos de Kubernetes.
+<ul>
+<li>Objetos que existen, para qué sirven y cómo se relacionan entre sí.</li>
+<li>Namespaces, Labels, Pod, Deployment, ConfigMap, Secret, Volume, Service,
+StatefulSet, DaemonSet, Ingress, IngressController, Job,</li>
+<li>CronJob.</li>
+<li>Scheduling y ciclo de vida de pods.</li>
+<li>Gestión del almacenamiento.</li>
+</ul>
+</li>
+<li>Ejemplos.</li>
+</ul>
+<h3 id="contenido-práctico">Contenido Práctico</h3>
+<ul>
+<li>Actividad 1: contenedores. Docker y podman. Minukube y kind.</li>
+<li>Actividad 2: interactuando con kubernetes. Kubectl para interactuar con el
+cluster. Kustomize. Node selector.</li>
+<li>Actividad 3: deployment y configmap.</li>
+<li>Actividad 4: secrets, volúmenes y services.</li>
+<li>Actividad 5: statefulsets, daemonsets, jobs,
+cronjobs.</li>
+<li>Actividad 6: una aplicación completa. Introducción a Helm.</li>
+</ul>
+</p>
+          
+        </div>
+      </div>
+      <div class="col-md-12 text-center course-buttons">
+        <a href="/es/" class="btn btn-primary solid-wb">Quiero esto</a>
+      </div>
+  </div>
+</section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(".toggle-btn").click(function() {
+      $(this).find('i').toggleClass("fas fa-plus fas fa-minus");
+    })
+  </script>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

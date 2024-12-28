@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>12factor on Mikroways</title>
+    <link>/es/tags/12factor/</link>
+    <description>Recent content in 12factor on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 09 Sep 2022 15:37:12 -0300</lastBuildDate>
+    <atom:link href="/es/tags/12factor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué debo considerar para que mi aplicación sea &#39;apta nube&#39;?</title>
+      <link>/es/blog/2022-09-09-aplicacion-apta-nube/</link>
+      <pubDate>Fri, 09 Sep 2022 15:37:12 -0300</pubDate>
+      <guid>/es/blog/2022-09-09-aplicacion-apta-nube/</guid>
+      <description>Aprovechar al máximo el potencial que tiene la nube requiere un cambio en la forma de desarrollar o, al menos, cumplir una serie de pautas para maximizar el beneficio.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Success stories on Mikroways</title>
+    <link>/portfolio/</link>
+    <description>Recent content in Success stories on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jan 1970 00:00:06 +0000</lastBuildDate>
+    <atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital Transformation</title>
+      <link>/portfolio/banco-columbia/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:06 +0000</pubDate>
+      <guid>/portfolio/banco-columbia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment to the cloud</title>
+      <link>/portfolio/balanz/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:05 +0000</pubDate>
+      <guid>/portfolio/balanz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deploying DevOps</title>
+      <link>/portfolio/automatizacion-vt/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:04 +0000</pubDate>
+      <guid>/portfolio/automatizacion-vt/</guid>
+      <description>Forming an excellent team with Veritran, we jointly defined a semantic version for the platform and its components, establishing the dependencies that would simplify the compatibility management.</description>
+    </item>
+    <item>
+      <title>Observability</title>
+      <link>/portfolio/monitoreo-senasa/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:03 +0000</pubDate>
+      <guid>/portfolio/monitoreo-senasa/</guid>
+      <description>The agency had a Nagios-based monitoring system that generated too many alerts, mixing low-impact ones with critical ones that had to be dealt with immediately.</description>
+    </item>
+    <item>
+      <title>Cost reduction</title>
+      <link>/portfolio/circular-lab-costos/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:02 +0000</pubDate>
+      <guid>/portfolio/circular-lab-costos/</guid>
+      <description>After understanding the client&amp;rsquo;s needs, the following goals were set:</description>
+    </item>
+    <item>
+      <title>DevOps implementation</title>
+      <link>/portfolio/bluedraft-cicd/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
+      <guid>/portfolio/bluedraft-cicd/</guid>
+      <description>We began by providing training to introduce good practices and standardize important concepts.</description>
+    </item>
+  </channel>
+</rss>

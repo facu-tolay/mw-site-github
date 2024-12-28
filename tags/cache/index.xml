@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cache on Mikroways</title>
+    <link>/tags/cache/</link>
+    <description>Recent content in cache on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Aug 2023 01:37:55 -0300</lastBuildDate>
+    <atom:link href="/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harbor in OKD</title>
+      <link>/blog/2023-08-25-harbor-in-okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/blog/2023-08-25-harbor-in-okd/</guid>
+      <description>Previously we talked about how to use Harbor as image cache and how to configure CRI-O to use Harbor as cache.</description>
+    </item>
+    <item>
+      <title>Containerd with Harbor</title>
+      <link>/blog/2021-12-30-containerd-with-harbor/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-30-containerd-with-harbor/</guid>
+      <description>Previously we explained how to install a Harbor server and how to configure CRI-O to use it.</description>
+    </item>
+    <item>
+      <title>CRI-O with Harbor</title>
+      <link>/blog/2021-12-29-crio-with-harbor/</link>
+      <pubDate>Wed, 29 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-29-crio-with-harbor/</guid>
+      <description>In the previous post We saw how to install a Harbor server that works as a cache for container images.</description>
+    </item>
+    <item>
+      <title>Use Harbor as image cache repository</title>
+      <link>/blog/2021-12-23-use-harbor-as-image-cache/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-23-use-harbor-as-image-cache/</guid>
+      <description>It&amp;rsquo;s common to come across teams using, for example, GitLab runners that run pipelines very frequently.</description>
+    </item>
+  </channel>
+</rss>

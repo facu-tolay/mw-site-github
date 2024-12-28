@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ansible on Mikroways</title>
+    <link>/es/tags/ansible/</link>
+    <description>Recent content in ansible on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 26 Oct 2023 10:20:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalando ansible como dev... ¿O como ops?</title>
+      <link>/es/blog/2023-10-27-instalando-ansible/</link>
+      <pubDate>Thu, 26 Oct 2023 10:20:00 -0300</pubDate>
+      <guid>/es/blog/2023-10-27-instalando-ansible/</guid>
+      <description>Instalando ansible como dev&amp;hellip; ¿O como ops? Promovemos DevOps, y trabajamos como tales, pero muchas veces, en la primera lectura de la documentación propia de las herramientas necesarias para realizar nuestro trabajo, nos encontramos con explicaciones demasiado simplificadas.</description>
+    </item>
+    <item>
+      <title>Automatiza la instalación de tus workstations</title>
+      <link>/es/blog/2022-10-05-vm-setup/</link>
+      <pubDate>Mon, 03 Oct 2022 10:13:23 -0300</pubDate>
+      <guid>/es/blog/2022-10-05-vm-setup/</guid>
+      <description>¿Automatizar la instalación de estaciones de trabajo? ¡Claro que sí!</description>
+    </item>
+    <item>
+      <title>Infraestructura como código para aprovisionar Windows</title>
+      <link>/es/blog/2022-06-24-windows-iac/</link>
+      <pubDate>Fri, 24 Jun 2022 10:06:58 -0300</pubDate>
+      <guid>/es/blog/2022-06-24-windows-iac/</guid>
+      <description>La automatización nos permite ser más eficientes pero también nos evita que cometamos varios errores comunes, mejorando la calidad del software y de los servicios.</description>
+    </item>
+    <item>
+      <title>Instalar Kubernetes en VMware Vsphere</title>
+      <link>/es/blog/2021-11-03-kubernetes-con-clusterapi/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/es/blog/2021-11-03-kubernetes-con-clusterapi/</guid>
+      <description>En este post explicamos cómo se puede instalar Kubernetes en VMware Vsphere de forma automatizada, haciendo uso de ClusterAPI y otras herramientas.</description>
+    </item>
+  </channel>
+</rss>

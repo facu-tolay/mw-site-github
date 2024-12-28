@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>innovacion on Mikroways</title>
+    <link>/es/tags/innovacion/</link>
+    <description>Recent content in innovacion on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 08 May 2024 12:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/innovacion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jornada de Adopción Cloud para Banco Columbia en AWS</title>
+      <link>/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</link>
+      <pubDate>Wed, 08 May 2024 12:00:00 -0300</pubDate>
+      <guid>/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/</guid>
+      <description>Recientemente, tuvimos el honor de ser los anfitriones de una jornada inspiradora sobre las soluciones en la nube para nuestro cliente, Banco Columbia S.</description>
+    </item>
+  </channel>
+</rss>

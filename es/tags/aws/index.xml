@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Mikroways</title>
+    <link>/es/tags/aws/</link>
+    <description>Recent content in aws on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Mon, 04 Oct 2021 12:14:34 -0300</lastBuildDate>
+    <atom:link href="/es/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mikroways es partner select de AWS</title>
+      <link>/es/blog/2021-10-04-consulting-partner-select-aws/</link>
+      <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
+      <guid>/es/blog/2021-10-04-consulting-partner-select-aws/</guid>
+      <description>Desde el día de hoy, Mikroways es partner select de consultoría de Amazon Web Services.</description>
+    </item>
+  </channel>
+</rss>

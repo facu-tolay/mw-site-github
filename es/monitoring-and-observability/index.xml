@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoreo y observabilidad on Mikroways</title>
+    <link>/es/monitoring-and-observability/</link>
+    <description>Recent content in Monitoreo y observabilidad on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <atom:link href="/es/monitoring-and-observability/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

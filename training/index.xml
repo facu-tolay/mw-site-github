@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Capacitaciones on Mikroways</title>
+    <link>/training/</link>
+    <description>Recent content in Capacitaciones on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="/training/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fundamentos de Docker</title>
+      <link>/training/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/training/docker/</guid>
+      <description>Temario Contenido Teórico Introducción y antecedentes. ¿Qué es y por qué usarlo?</description>
+    </item>
+    <item>
+      <title>Fundamentos de Kubernetes</title>
+      <link>/training/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/training/kubernetes/</guid>
+      <description>Temario Contenido Teórico Introducción a K8S: antecedentes, CNCF. Arquitectura general y conceptos básicos de Kubernetes.</description>
+    </item>
+    <item>
+      <title>Workflow continuo de desarrollo a producción</title>
+      <link>/training/wfc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/training/wfc/</guid>
+      <description>Temario Contenido Teórico Importancia de utilizar estándares de codificación. Semántica del versionado para componentes y producto.</description>
+    </item>
+  </channel>
+</rss>

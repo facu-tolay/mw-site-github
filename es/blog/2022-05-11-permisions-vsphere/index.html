@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Gestionando permisos en vSphere</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Cómo crear los permisos necesarios para terraform / packer / k8s en vSphere">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Gestionando permisos en vSphere" />
+<meta property="og:description" content="Cómo crear los permisos necesarios para terraform / packer / k8s en vSphere" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/blog/2022-05-11-permisions-vsphere/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-05-11T10:00:00-03:00" />
+<meta property="article:modified_time" content="2022-05-11T10:00:00-03:00" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        
+        <div class="post-content">
+          
+          <div class="post-image-wrapper">
+            <img src="/images/blog/permission.webp" class="img-fluid" alt="Gestionando permisos en vSphere" />
+            <span class="blog-date">11 Mayo 2022</span>
+          </div>
+          <div class="post-header clearfix">
+            <h2 class="post-title">Gestionando permisos en vSphere</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">Publicado por Juan Pablo Sánchez Magariños</span>
+              <span class="post-meta-cats">en <a
+                href="/es/categories/devsecops"> 
+                DevSecOps</a> </span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>Tiempo de lectura: 6 minutos</span>
+            </div>
+          </div>
+          <div class="entry-content"><p>En esta oportunidad hablaremos sobre los privilegios necesarios para realizar la
+instalación de un cluster Kubernetes sobre una infraestructura vSphere,
+particularmente usando Packer, Terraform y Clusterapi (como se explicó en el
+post <a href="/es/blog/2021-11-03-kubernetes-con-clusterapi/">Instalar Kubernetes en VMware Vsphere</a>).</p>
+<p>Se deben tener en consideración diferentes permisos para: instalar un cluster de
+k8s, manejarlo con Terraform, usar Clusterapi con el provider de vSphere, usar
+Packer, e incluso el cloud provider de k8s.
+Por ello, mencionamos a continuación algunos usuarios o grupos propuestos. La
+forma de gestionar los  permisos será crear <strong>roles</strong> que se asocian a estos
+usuarios o grupos según sea necesario.</p>
+<h3 id="prerequisitos">Prerequisitos</h3>
+<p>A lo largo de este post utilizaremos la herramienta
+<a href="https://github.com/vmware/govmomi/tree/master/govc#govc">govc</a>.
+Si bien se puede realizar la gestión desde la UI del vcenter, es más fácil y
+rápido realizarla desde la terminal.</p>
+<p>Según vSphere CSI driver, se debe cumplir lo siguiente:</p>
+<ul>
+<li>Versión mínima de <strong>ESXi 6.7U3 o mayor</strong></li>
+<li>Las VMs a usar deben
+<strong>habilitar en los discos enableUUID</strong>. Esto es necesario para
+asegurar se asigne UUID únicos y consistentes a las vms. Para cambiarlo,
+puede usarse govc:
+<code>govc vm.change -vm'/&lt;datacenter-name&gt;/vm/&lt;vm-name1&gt;' -e=&quot;disk.enableUUID=1&quot;</code>
+<ul>
+<li>Como requisito para lo anterior <strong>el hw de la vm debe ser 15 o superior</strong>:
+para cambiarlo con govc:
+<code>govc vm.upgrade -version=15 -vm '/&lt;datacenter-name&gt;/vm/&lt;vm-name1&gt;'</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="usuariosgrupos">Usuarios/Grupos</h3>
+<p>En resumen, deben crearse 3 usuarios/grupos diferentes, a decir:</p>
+<ul>
+<li><strong>mw-packer:</strong> con permisos para poder operar con packer. Los templates
+deberían quedar a disposición por terraform y/o capv.</li>
+<li><strong>mw-terraform:</strong> debe poder generar vms a partir de templates en
+un cluster/folder.</li>
+<li><strong>mw-csi:</strong> cuenta con permisos necesarios para que el cloud provider pueda
+solicitar discos al datastore y attacharlo a las vms que sean nodos del
+cluster.
+<blockquote>
+<p>Hay otros privilegios relacionados a los tags de las vms.</p>
+</blockquote>
+</li>
+</ul>
+<p>Para crearlos con govc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  govc sso.user.create -p &lt;password&gt; &lt;nombre&gt;
+</span></span></code></pre></div><h4 id="opcionales">Opcionales</h4>
+<p>Los siguientes usuarios o roles no serán necesarios pero aportarían mayor
+granularidad:</p>
+<ul>
+<li><strong>mw-terraform-role:</strong> podría utilizarse para gestionar los roles
+aquí descriptos. Este rol debería unicamente crear o modificar roles.</li>
+<li><strong>mw-k8s-clusterapi:</strong> representará un mix de lo necesario por <em>mw-csi</em> y
+<em>mv-terraform</em>.</li>
+</ul>
+<h3 id="crear-los-roles">Crear los roles</h3>
+<p>Los siguientes roles serán grupos de permisos que se deberán crear. Para
+crearlos utilizando govc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  govc role.create &lt;nombre-rol&gt; &lt;lista-de-permisos&gt;
+</span></span></code></pre></div><p>También puede ser util agregar o quitar permisos a un rol existente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e"># Agregar permisos</span>
+</span></span><span style="display:flex;"><span>  govc role.update -a &lt;nombre-rol&gt; &lt;lista-de-permisos&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Quitar</span>
+</span></span><span style="display:flex;"><span>  govc role.update -r &lt;nombre-rol&gt; &lt;lista-de-permisos&gt;
+</span></span></code></pre></div><p>En la siguiente tabla se detallan las listas de privilegios para cada rol.
+También se agrega una comparativa con los nombres con los que figuran los
+privilegios en la UI, que no siempre coincide, por si no se está utilizando govc.</p>
+
+
+
+
+
+<table class="table table-striped table-bordered"><thead>
+<tr><th>Rol</th><th>Privilegios (consola)</th><th>Privilegios (UI)</th></tr>
+</thead>
+<tbody>
+<tr><td>k8s-datacenter</td>
+<td><pre>
+Cns.Searchable
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Cns</li>
+    <ul><li><input type="checkbox" onclick="return false;" checked />
+        <label>Searchable</label></li>
+    </ul></ul></td></tr>
+<tr><td>k8s-global-permissions</td>
+<td><pre>
+InventoryService.Tagging.AttachTag
+InventoryService.Tagging.CreateCategory
+InventoryService.Tagging.EditCategory
+InventoryService.Tagging.DeleteCategory
+InventoryService.Tagging.CreateTag
+InventoryService.Tagging.EditTag
+InventoryService.Tagging.DeleteTag
+Sessions.ValidateSession
+StorageProfile.View
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Profile-driven storage</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+            <label>Profile-driven storage view</label></li></ul>
+        <li>Sessions</li>
+        <ul><li><input type="checkbox" onclick="return false;" checked />
+            <label>Validate session</label></li></ul>
+        <li>vSphere Tagging</li>
+        <ul><li><input type="checkbox" onclick="return false;" checked />
+            <label>Assign or Unassign vSphere Tag</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Create vSphere Tag</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Create vSphere Tag Category</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Delete vSphere Tag</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Delete vSphere Tag Category</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Edit vSphere Tag</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Edit vSphere Tag Category</label></li></ul>
+        </ul></td></tr>
+<tr><td>k8s-manage-vm</td>
+<td><pre>
+VirtualMachine.Config.AddExistingDisk
+VirtualMachine.Config.AddNewDisk
+VirtualMachine.Config.AddRemoveDevice
+VirtualMachine.Config.AdvancedConfig
+VirtualMachine.Config.Annotation
+VirtualMachine.Config.CPUCount
+VirtualMachine.Config.ChangeTracking
+VirtualMachine.Config.DiskExtend
+VirtualMachine.Config.DiskLease
+VirtualMachine.Config.EditDevice
+VirtualMachine.Config.HostUSBDevice
+VirtualMachine.Config.ManagedBy
+VirtualMachine.Config.Memory
+VirtualMachine.Config.MksControl
+VirtualMachine.Config.QueryFTCompatibility
+VirtualMachine.Config.QueryUnownedFiles
+VirtualMachine.Config.RawDevice
+VirtualMachine.Config.ReloadFromPath
+VirtualMachine.Config.RemoveDisk
+VirtualMachine.Config.Rename
+VirtualMachine.Config.ResetGuestInfo
+VirtualMachine.Config.Resource
+VirtualMachine.Config.Settings
+VirtualMachine.Config.SwapPlacement
+VirtualMachine.Config.ToggleForkParent
+VirtualMachine.Config.Unlock
+VirtualMachine.Config.UpgradeVirtualHardware
+VirtualMachine.GuestOperations.Execute
+VirtualMachine.GuestOperations.Modify
+VirtualMachine.GuestOperations.ModifyAliases
+VirtualMachine.GuestOperations.Query
+VirtualMachine.GuestOperations.QueryAliases
+VirtualMachine.Hbr.ConfigureReplication
+VirtualMachine.Hbr.MonitorReplication
+VirtualMachine.Hbr.ReplicaManagement
+VirtualMachine.Interact.AnswerQuestion
+VirtualMachine.Interact.Backup
+VirtualMachine.Interact.ConsoleInteract
+VirtualMachine.Interact.CreateScreenshot
+VirtualMachine.Interact.CreateSecondary
+VirtualMachine.Interact.DefragmentAllDisks
+VirtualMachine.Interact.DeviceConnection
+VirtualMachine.Interact.DisableSecondary
+VirtualMachine.Interact.DnD
+VirtualMachine.Interact.EnableSecondary
+VirtualMachine.Interact.GuestControl
+VirtualMachine.Interact.MakePrimary
+VirtualMachine.Interact.Pause
+VirtualMachine.Interact.PowerOff
+VirtualMachine.Interact.PowerOn
+VirtualMachine.Interact.PutUsbScanCodes
+VirtualMachine.Interact.Record
+VirtualMachine.Interact.Replay
+VirtualMachine.Interact.Reset
+VirtualMachine.Interact.SESparseMaintenance
+VirtualMachine.Interact.SetCDMedia
+VirtualMachine.Interact.SetFloppyMedia
+VirtualMachine.Interact.Suspend
+VirtualMachine.Interact.TerminateFaultTolerantVM
+VirtualMachine.Interact.ToolsInstall
+VirtualMachine.Interact.TurnOffFaultTolerance
+VirtualMachine.Inventory.Create
+VirtualMachine.Inventory.CreateFromExisting
+VirtualMachine.Inventory.Delete
+VirtualMachine.Inventory.Move
+VirtualMachine.Inventory.Register
+VirtualMachine.Inventory.Unregister
+VirtualMachine.Namespace.Event
+VirtualMachine.Namespace.EventNotify
+VirtualMachine.Namespace.Management
+VirtualMachine.Namespace.ModifyContent
+VirtualMachine.Namespace.Query
+VirtualMachine.Namespace.ReadContent
+VirtualMachine.Provisioning.Clone
+VirtualMachine.Provisioning.CloneTemplate
+VirtualMachine.Provisioning.CreateTemplateFromVM
+VirtualMachine.Provisioning.Customize
+VirtualMachine.Provisioning.DeployTemplate
+VirtualMachine.Provisioning.DiskRandomAccess
+VirtualMachine.Provisioning.DiskRandomRead
+VirtualMachine.Provisioning.FileRandomAccess
+VirtualMachine.Provisioning.GetVmFiles
+VirtualMachine.Provisioning.MarkAsTemplate
+VirtualMachine.Provisioning.MarkAsVM
+VirtualMachine.Provisioning.ModifyCustSpecs
+VirtualMachine.Provisioning.PromoteDisks
+VirtualMachine.Provisioning.PutVmFiles
+VirtualMachine.Provisioning.ReadCustSpecs
+VirtualMachine.State.CreateSnapshot
+VirtualMachine.State.RemoveSnapshot
+VirtualMachine.State.RenameSnapshot
+VirtualMachine.State.RevertToSnapshot
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Virtual machine</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Select All</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-manage-volumes</td>
+<td><pre>
+Datastore.AllocateSpace
+Datastore.Browse
+Datastore.FileManagement
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Datastore</li>
+        <ul><li><input type="checkbox" onclick="return false;" checked />
+            <label>Allocate space</label></li>
+          <li><input type="checkbox" onclick="return false;" checked />
+            <label>Browse datastore</label></li>
+          <li><input type="checkbox" onclick="return false;" checked="">
+            <label>Low level file operations</label></li></ul>
+        <li>vSphere Tagging</li>
+          <ul><li><input type="checkbox" onclick="return false;" checked />
+                <label>Assign or Unassign vSphere Tag on Object</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-manage-net-nodes</td>
+<td><pre>
+Network.Assign
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Network</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Assign network</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-manage-cluster</td>
+<td><pre>
+Resource.AssignVMToPool
+VApp.Import
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Resource</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Assign virtual machine to resource pool</label></li></ul>
+    <li>vApp</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Import</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-file-management</td>
+<td><pre>
+Datastore.FileManagement
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Datastore</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Low level file operations</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-packer-host</td>
+<td><pre>
+Host.Config.SystemManagement
+Resource.AssignVMToPool
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Host</li>
+      <ul><li><input type="checkbox" onclick="return false;" />
+          <label>Configuration</label></li>
+          <ul><li><input type="checkbox" onclick="return false;" checked />
+              <label>System Management</label></li></ul>
+      </ul>
+    <li>Resource</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Assign virtual machine to resource pool</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-packer-vm</td>
+<td><pre>
+VApp.Export
+VirtualMachine.Config.AddExistingDisk
+VirtualMachine.Config.AddNewDisk
+VirtualMachine.Config.AddRemoveDevice
+VirtualMachine.Config.AdvancedConfig
+VirtualMachine.Config.Annotation
+VirtualMachine.Config.CPUCount
+VirtualMachine.Config.ChangeTracking
+VirtualMachine.Config.DiskExtend
+VirtualMachine.Config.DiskLease
+VirtualMachine.Config.EditDevice
+VirtualMachine.Config.HostUSBDevice
+VirtualMachine.Config.ManagedBy
+VirtualMachine.Config.Memory
+VirtualMachine.Config.MksControl
+VirtualMachine.Config.QueryFTCompatibility
+VirtualMachine.Config.QueryUnownedFiles
+VirtualMachine.Config.RawDevice
+VirtualMachine.Config.ReloadFromPath
+VirtualMachine.Config.RemoveDisk
+VirtualMachine.Config.Rename
+VirtualMachine.Config.ResetGuestInfo
+VirtualMachine.Config.Resource
+VirtualMachine.Config.Settings
+VirtualMachine.Config.SwapPlacement
+VirtualMachine.Config.ToggleForkParent
+VirtualMachine.Config.Unlock
+VirtualMachine.Config.UpgradeVirtualHardware
+VirtualMachine.Interact.AnswerQuestion
+VirtualMachine.Interact.Backup
+VirtualMachine.Interact.ConsoleInteract
+VirtualMachine.Interact.CreateScreenshot
+VirtualMachine.Interact.CreateSecondary
+VirtualMachine.Interact.DefragmentAllDisks
+VirtualMachine.Interact.DeviceConnection
+VirtualMachine.Interact.DisableSecondary
+VirtualMachine.Interact.DnD
+VirtualMachine.Interact.EnableSecondary
+VirtualMachine.Interact.GuestControl
+VirtualMachine.Interact.MakePrimary
+VirtualMachine.Interact.Pause
+VirtualMachine.Interact.PowerOff
+VirtualMachine.Interact.PowerOn
+VirtualMachine.Interact.PutUsbScanCodes
+VirtualMachine.Interact.Record
+VirtualMachine.Interact.Replay
+VirtualMachine.Interact.Reset
+VirtualMachine.Interact.SESparseMaintenance
+VirtualMachine.Interact.SetCDMedia
+VirtualMachine.Interact.SetFloppyMedia
+VirtualMachine.Interact.Suspend
+VirtualMachine.Interact.TerminateFaultTolerantVM
+VirtualMachine.Interact.ToolsInstall
+VirtualMachine.Interact.TurnOffFaultTolerance
+VirtualMachine.Inventory.Create
+VirtualMachine.Inventory.CreateFromExisting
+VirtualMachine.Inventory.Delete
+VirtualMachine.Inventory.Move
+VirtualMachine.Inventory.Register
+VirtualMachine.Inventory.Unregister
+VirtualMachine.Provisioning.Clone
+VirtualMachine.Provisioning.CloneTemplate
+VirtualMachine.Provisioning.CreateTemplateFromVM
+VirtualMachine.Provisioning.Customize
+VirtualMachine.Provisioning.DeployTemplate
+VirtualMachine.Provisioning.DiskRandomAccess
+VirtualMachine.Provisioning.DiskRandomRead
+VirtualMachine.Provisioning.FileRandomAccess
+VirtualMachine.Provisioning.GetVmFiles
+VirtualMachine.Provisioning.MarkAsTemplate
+VirtualMachine.Provisioning.MarkAsVM
+VirtualMachine.Provisioning.ModifyCustSpecs
+VirtualMachine.Provisioning.PromoteDisks
+VirtualMachine.Provisioning.PutVmFiles
+VirtualMachine.Provisioning.ReadCustSpecs
+VirtualMachine.State.CreateSnapshot
+VirtualMachine.State.RemoveSnapshot
+VirtualMachine.State.RenameSnapshot
+VirtualMachine.State.RevertToSnapshot
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>vApp</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Export</label></li></ul>
+    <li>Virtual machine</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Change Configuration</label></li>
+        <li><input type="checkbox" id="t" onclick="return false;" checked />
+          <label>Edit Inventory</label></li>
+        <li><input type="checkbox" onclick="return false;" checked />
+          <label>Interaction</label></li>
+        <li><input type="checkbox" onclick="return false;" checked />
+          <label>Provisioning</label></li>
+        <li><input type="checkbox" onclick="return false;" checked />
+          <label> Snapshot management</label></li>
+        <li><input type="checkbox" onclick="return false;" checked />
+          <label>vSphere Replication</label></li></ul>
+    </ul></td></tr>
+<tr><td>k8s-cns-host</td>
+<td><pre>
+Host.Config.Storage
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Host</li>
+      <ul><li><input type="checkbox" onclick="return false;" />
+          <label>Configuration</label></li>
+          <ul><li><input type="checkbox" onclick="return false;" checked />
+                <label>Storage partition configuration</label></li></ul>
+      </ul>
+   </ul></td></tr>
+<tr><td>k8s-cns-vm</td>
+<td><pre>
+VirtualMachine.Config.AddExistingDisk
+VirtualMachine.Config.AddRemoveDevice
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Virtual machine</li>
+      <ul><li><input type="checkbox" onclick="return false;" />
+          <label>Change Configuration</label></li>
+          <ul><li><input type="checkbox" onclick="return false;" checked />
+              <label>Add existing disk</label></li>
+            <li><input type="checkbox" onclick="return false;" checked />
+              <label>Add or remove device</label></li></ul>
+      </ul>
+    </ul></td></tr>
+<tr><td>k8s-cns-vsphere</td>
+<td><pre>
+Cns.Searchable
+StorageProfile.View
+</pre></td>
+<td style="white-space:nowrap;"><ul><li>Cns</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Searchable</label></li></ul>
+    <li>Profile-driven storage</li>
+      <ul><li><input type="checkbox" onclick="return false;" checked />
+          <label>Profile-driven storage view</label></li></ul>
+    </ul></td></tr>
+<tr><td>Read-only</td>
+<td><pre>
+System.Anonymous
+System.Read
+System.View
+</pre></td>
+    <td>Este rol ya está definido por defecto</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="asignar-roles-a-usuarios-y-entidades">Asignar roles a usuarios y entidades</h3>
+<p>Una vez creado los roles es necesario asignarlos a cada objeto.</p>
+<p>
+
+
+
+
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th style="text-align:left">Objeto</th>
+<th style="text-align:center">Usuario/Grupo</th>
+<th style="text-align:center">Rol</th>
+<th style="text-align:center">Propagación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">vSphere (raíz)</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">k8s-cns-vsphere</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">vSphere (raíz)</td>
+<td style="text-align:center"><code>mw-terraform</code></td>
+<td style="text-align:center">k8s-global-permissions</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Datacenter</td>
+<td style="text-align:center"><code>mw-terraform</code></td>
+<td style="text-align:center">k8s-datacenter</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Datacenter</td>
+<td style="text-align:center"><code>mw-packer</code></td>
+<td style="text-align:center">k8s-file-management</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Datacenter</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">Read-only</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Datastore</td>
+<td style="text-align:center"><code>mw-terraform</code> y <code>mw-packer</code></td>
+<td style="text-align:center">k8s-manage-volumes</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Datastore (csi)</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">k8s-file-management</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Cluster</td>
+<td style="text-align:center"><code>mw-packer</code></td>
+<td style="text-align:center">k8s-manage-cluster</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Cluster</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">k8s-cns-host</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Cluster y Hosts o Resource Groups</td>
+<td style="text-align:center"><code>mw-terraform</code></td>
+<td style="text-align:center">k8s-manage-cluster</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Host (*)</td>
+<td style="text-align:center"><code>mw-packer</code></td>
+<td style="text-align:center">k8s-packer-host</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Hosts</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">Read-only</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">VM Folder</td>
+<td style="text-align:center"><code>mw-terraform</code></td>
+<td style="text-align:center">k8s-manage-vm</td>
+<td style="text-align:center"><strong>Sí</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">VM Folder</td>
+<td style="text-align:center"><code>mw-packer</code></td>
+<td style="text-align:center">k8s-packer-vm</td>
+<td style="text-align:center"><strong>Sí</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">VM Folder</td>
+<td style="text-align:center"><code>mw-csi</code></td>
+<td style="text-align:center">k8s-cns-vm</td>
+<td style="text-align:center"><strong>Sí</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">vSphere Port Group o Network y Distributed Switch</td>
+<td style="text-align:center"><code>mw-terraform</code> y <code>mw-packer</code></td>
+<td style="text-align:center">k8s-manage-net-nodes</td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+
+(*) Se debe designar un host que luego se usará para
+convertir templates en vm&rsquo;s mediante la variable <code>$VSPHERE_PREPRODUCTION_HOST</code>.</p>
+<p>De nuevo esto puede realizarse haciendo &ldquo;click derecho&rdquo; en los distintos objetos
+en la UI, o bien con govc, con el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  govc permissions.set -principal &lt;nombre-usuario&gt;@vsphere.local <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      -role &lt;nombre-rol&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      -propagate<span style="color:#f92672">=[</span>true | false<span style="color:#f92672">]</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      &lt;path-a-la-entidad&gt;
+</span></span></code></pre></div><p>Algunos ejemplos de la tabla:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  govc permissions.set -principal mw-csi@vsphere.local <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      -role k8s-cns-vsphere <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      -propagate<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                      /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  govc permissions.set -principal mw-terraform@vsphere.local <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -role k8s-manage-vm
+</span></span><span style="display:flex;"><span>                    -propagate<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>                    /&lt;datacenter-name&gt;/vm/&lt;folder-name&gt;
+</span></span></code></pre></div><p>Para revisar la dirección completa de cada entidad se puede utilizar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  govc find . -type &lt;tipo&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Donde &lt;tipo&gt; es:
+</span></span><span style="display:flex;"><span>  c    ClusterComputeResource
+</span></span><span style="display:flex;"><span>  d    Datacenter
+</span></span><span style="display:flex;"><span>  f    Folder
+</span></span><span style="display:flex;"><span>  g    DistributedVirtualPortgroup
+</span></span><span style="display:flex;"><span>  h    HostSystem
+</span></span><span style="display:flex;"><span>  m    VirtualMachine
+</span></span><span style="display:flex;"><span>  n    Network
+</span></span><span style="display:flex;"><span>  p    ResourcePool
+</span></span><span style="display:flex;"><span>  s    Datastore
+</span></span><span style="display:flex;"><span>  w    DistributedVirtualSwitch
+</span></span></code></pre></div><h3 id="verificación">Verificación</h3>
+<p>Para ver los roles y permisos aplicados se puede utilizar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e"># Listar roles</span>
+</span></span><span style="display:flex;"><span>  govc role.ls | grep k8s-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Listar privilegios de un rol</span>
+</span></span><span style="display:flex;"><span>  govc role.ls &lt;nombre-rol&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Mostrar donde se ha aplicado el rol y para que usuarios</span>
+</span></span><span style="display:flex;"><span>  govc role.usage &lt;nombre-rol&gt;
+</span></span></code></pre></div><p><strong>Contamos con un script que automatiza la tarea de verificación</strong> que utiliza
+los comandos mencionados previamente junto con archivos de definiciones y
+permite corroborar que todos los privilegios han sido asignados correctamente.
+El mismo se encuentra en un
+<a href="https://gitlab.com/mikroways/tools/mw-vsphere-permission-checker"><strong>repositorio privado de Mikroways</strong></a>,
+cuyo acceso será facilitado oportunamente.</p>
+<h4 id="fuentes-de-referencia">Fuentes de referencia</h4>
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/issues/500#issuecomment-586637497">Roles propuestos por
+capv</a>
+<ul>
+<li><em>El link de arriba es un seguimiento de un issue en GitHub donde se linea a
+un
+<a href="https://hackmd.io/n-jBbLVkSsG_Dbm-eFTpIg#User-requirements-to-allow-for-CAPV-Controllers-to-work-in-a-vSphere-environment">gist</a>
+con un resumen hecho por alguien de la comunidad.</em></li>
+</ul>
+</li>
+<li><a href="https://docs.openshift.com/container-platform/4.7/installing/installing_vsphere/installing-vsphere-installer-provisioned-customizations.html#installation-vsphere-installer-infra-requirements_installing-vsphere-installer-provisioned-customizations">OKD vsphere
+permissions</a></li>
+<li><a href="https://vsphere-csi-driver.sigs.k8s.io/driver-deployment/prerequisites.html#compatible_vsphere_esxi_versions">Roles según vSphere CSI
+driver</a></li>
+</ul>
+</div>
+
+          <div class="gap-30"></div>
+
+          
+          
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+  <div class="sidebar sidebar-right">
+    
+    <div class="widget widget-tab">
+      <h3 class="widget-title">Entradas recientes</h3>
+      <ul class="posts-list list-unstyled clearfix">
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">
+              <img alt="Jornada de Adopción Cloud para Banco Columbia en AWS" src="/images/blog/jornada-cloud-aws.webp">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">Jornada de Adopción Cloud para Banco Columbia en AWS</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">8 Mayo 2024</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-10-27-instalando-ansible/">
+              <img alt="Instalando ansible como dev... ¿O como ops?" src="/images/blog/snake-ansible.jpg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-10-27-instalando-ansible/">Instalando ansible como dev... ¿O como ops?</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">26 Octubre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-09-22-windows-containers/">
+              <img alt="Contenedores nativos de Microsoft Windows usando docker" src="/images/blog/whale-flying.jpeg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-09-22-windows-containers/">Contenedores nativos de Microsoft Windows usando docker</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">22 Septiembre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="widget widget-categories">
+      <h3 class="widget-title">Categorías del blog</h3>
+      <ul class="category-list clearfix">
+        <li><a href="/es/categories/devsecops">Devsecops</a><span class="posts-count"> (20)</span></li>
+        
+        <li><a href="/es/categories/mikroways">Mikroways</a><span class="posts-count"> (4)</span></li>
+        
+        <li><a href="/es/categories/transformacion-digital">Transformacion digital</a><span class="posts-count"> (1)</span></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+
+    
+    <div class="widget widget-tags">
+      <h3 class="widget-title">Etiquetas populares</h3>
+      <ul class="list-unstyled clearfix">
+        <li><a href="/es/tags/12factor">12factor</a></li>
+        
+        <li><a href="/es/tags/ansible">Ansible</a></li>
+        
+        <li><a href="/es/tags/automatizacion">Automatizacion</a></li>
+        
+        <li><a href="/es/tags/autoscaling">Autoscaling</a></li>
+        
+        <li><a href="/es/tags/aws">Aws</a></li>
+        
+        <li><a href="/es/tags/backup">Backup</a></li>
+        
+        <li><a href="/es/tags/backups">Backups</a></li>
+        
+        <li><a href="/es/tags/cache">Cache</a></li>
+        
+        <li><a href="/es/tags/capistrano">Capistrano</a></li>
+        
+        <li><a href="/es/tags/cgroups">Cgroups</a></li>
+        
+        <li><a href="/es/tags/chatbots">Chatbots</a></li>
+        
+        <li><a href="/es/tags/chatops">Chatops</a></li>
+        
+        <li><a href="/es/tags/cloud">Cloud</a></li>
+        
+        <li><a href="/es/tags/clusterapi">Clusterapi</a></li>
+        
+        <li><a href="/es/tags/containerd">Containerd</a></li>
+        
+        <li><a href="/es/tags/crio">Crio</a></li>
+        
+        <li><a href="/es/tags/development">Development</a></li>
+        
+        <li><a href="/es/tags/devsecops">Devsecops</a></li>
+        
+        <li><a href="/es/tags/dex">Dex</a></li>
+        
+        <li><a href="/es/tags/docker">Docker</a></li>
+        
+        <li><a href="/es/tags/docker-compose">Docker compose</a></li>
+        
+        <li><a href="/es/tags/encryption">Encryption</a></li>
+        
+        <li><a href="/es/tags/errbot">Errbot</a></li>
+        
+        <li><a href="/es/tags/git">Git</a></li>
+        
+        <li><a href="/es/tags/gitlab-ci">Gitlab ci</a></li>
+        
+        <li><a href="/es/tags/harbor">Harbor</a></li>
+        
+        <li><a href="/es/tags/iac">Iac</a></li>
+        
+        <li><a href="/es/tags/images">Images</a></li>
+        
+        <li><a href="/es/tags/infrastructure">Infrastructure</a></li>
+        
+        <li><a href="/es/tags/innovacion">Innovacion</a></li>
+        
+        <li><a href="/es/tags/java">Java</a></li>
+        
+        <li><a href="/es/tags/jornadas">Jornadas</a></li>
+        
+        <li><a href="/es/tags/kubernetes">Kubernetes</a></li>
+        
+        <li><a href="/es/tags/limits">Limits</a></li>
+        
+        <li><a href="/es/tags/monitoreo">Monitoreo</a></li>
+        
+        <li><a href="/es/tags/noticias">Noticias</a></li>
+        
+        <li><a href="/es/tags/okd">Okd</a></li>
+        
+        <li><a href="/es/tags/openjdk">Openjdk</a></li>
+        
+        <li><a href="/es/tags/openshift">Openshift</a></li>
+        
+        <li><a href="/es/tags/packer">Packer</a></li>
+        
+        <li><a href="/es/tags/permisos">Permisos</a></li>
+        
+        <li><a href="/es/tags/playbook">Playbook</a></li>
+        
+        <li><a href="/es/tags/python">Python</a></li>
+        
+        <li><a href="/es/tags/redhat">Redhat</a></li>
+        
+        <li><a href="/es/tags/registry-mirror">Registry mirror</a></li>
+        
+        <li><a href="/es/tags/restic">Restic</a></li>
+        
+        <li><a href="/es/tags/restore">Restore</a></li>
+        
+        <li><a href="/es/tags/sops">Sops</a></li>
+        
+        <li><a href="/es/tags/terraform">Terraform</a></li>
+        
+        <li><a href="/es/tags/traefik">Traefik</a></li>
+        
+        <li><a href="/es/tags/velero">Velero</a></li>
+        
+        <li><a href="/es/tags/version">Version</a></li>
+        
+        <li><a href="/es/tags/vmware">Vmware</a></li>
+        
+        <li><a href="/es/tags/vsphere">Vsphere</a></li>
+        
+        <li><a href="/es/tags/windows">Windows</a></li>
+        
+        <li><a href="/es/tags/workstation">Workstation</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

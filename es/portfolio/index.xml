@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Casos de éxito on Mikroways</title>
+    <link>/es/portfolio/</link>
+    <description>Recent content in Casos de éxito on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 01 Jan 1970 00:00:06 +0000</lastBuildDate>
+    <atom:link href="/es/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transformación digital</title>
+      <link>/es/portfolio/banco-columbia/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:06 +0000</pubDate>
+      <guid>/es/portfolio/banco-columbia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Despliegue en la nube</title>
+      <link>/es/portfolio/balanz/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:05 +0000</pubDate>
+      <guid>/es/portfolio/balanz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implementación de DevOps</title>
+      <link>/es/portfolio/automatizacion-vt/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:04 +0000</pubDate>
+      <guid>/es/portfolio/automatizacion-vt/</guid>
+      <description>Formando un excelente equipo de trabajo con Veritran, definimos en conjunto un versionado semántico para la plataforma y sus componentes, estableciendo las dependencias que permitieran simplificar la gestión de las compatibilidades.</description>
+    </item>
+    <item>
+      <title>Observabilidad en Senasa</title>
+      <link>/es/portfolio/monitoreo-senasa/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:03 +0000</pubDate>
+      <guid>/es/portfolio/monitoreo-senasa/</guid>
+      <description>El organismo contaba con un sistema de monitoreo basado en Nagios que generaba demasiadas alertas, mezclando las de bajo impacto con las críticas, que debían ser tratadas de manera inmediata.</description>
+    </item>
+    <item>
+      <title>Reducción de costos</title>
+      <link>/es/portfolio/circular-lab-costos/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:02 +0000</pubDate>
+      <guid>/es/portfolio/circular-lab-costos/</guid>
+      <description>Después de comprender las necesidades del cliente, se plantearon los siguientes objetivos:</description>
+    </item>
+    <item>
+      <title>DevOps para Bluedraft</title>
+      <link>/es/portfolio/bluedraft-cicd/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:01 +0000</pubDate>
+      <guid>/es/portfolio/bluedraft-cicd/</guid>
+      <description>Comenzamos brindando una capacitación para introducir buenas prácticas y estandarizar conceptos importantes.</description>
+    </item>
+  </channel>
+</rss>

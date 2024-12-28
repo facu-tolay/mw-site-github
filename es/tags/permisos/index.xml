@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>permisos on Mikroways</title>
+    <link>/es/tags/permisos/</link>
+    <description>Recent content in permisos on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 11 May 2022 10:00:00 -0300</lastBuildDate>
+    <atom:link href="/es/tags/permisos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gestionando permisos en vSphere</title>
+      <link>/es/blog/2022-05-11-permisions-vsphere/</link>
+      <pubDate>Wed, 11 May 2022 10:00:00 -0300</pubDate>
+      <guid>/es/blog/2022-05-11-permisions-vsphere/</guid>
+      <description>En esta oportunidad hablaremos sobre los privilegios necesarios para realizar la instalación de un cluster Kubernetes sobre una infraestructura vSphere, particularmente usando Packer, Terraform y Clusterapi (como se explicó en el post Instalar Kubernetes en VMware Vsphere).</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Work with us! on Mikroways</title>
+    <link>/work-with-us/</link>
+    <description>Recent content in Work with us! on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="/work-with-us/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps Engineer Junior</title>
+      <link>/work-with-us/devops-engineer-junior/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/work-with-us/devops-engineer-junior/</guid>
+      <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
+    </item>
+    <item>
+      <title>DevOps Engineer Semi-senior</title>
+      <link>/work-with-us/devops-engineer-ssr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/work-with-us/devops-engineer-ssr/</guid>
+      <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
+    </item>
+    <item>
+      <title>DevOps Engineer Trainee</title>
+      <link>/work-with-us/devops-engineer-trainee/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/work-with-us/devops-engineer-trainee/</guid>
+      <description>Join the team at Mikroways responsible for delivering the service to our customers.</description>
+    </item>
+  </channel>
+</rss>

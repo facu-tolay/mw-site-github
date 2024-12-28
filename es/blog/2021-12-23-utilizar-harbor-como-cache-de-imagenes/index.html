@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>Utilizar Harbor como cache de imágenes</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Cómo y dónde instalar harbor para usarlo como cache de imágenes">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="Utilizar Harbor como cache de imágenes" />
+<meta property="og:description" content="Cómo y dónde instalar harbor para usarlo como cache de imágenes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/blog/2021-12-23-utilizar-harbor-como-cache-de-imagenes/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-12-23T11:47:55-03:00" />
+<meta property="article:modified_time" content="2021-12-23T11:47:55-03:00" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        
+        <div class="post-content">
+          
+          <div class="post-image-wrapper">
+            <img src="/images/blog/harbor.webp" class="img-fluid" alt="Utilizar Harbor como cache de imágenes" />
+            <span class="blog-date">23 Diciembre 2021</span>
+          </div>
+          <div class="post-header clearfix">
+            <h2 class="post-title">Utilizar Harbor como cache de imágenes</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">Publicado por Juan Pablo Sánchez Magariños</span>
+              <span class="post-meta-cats">en <a
+                href="/es/categories/devsecops"> 
+                DevSecOps</a> </span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>Tiempo de lectura: 7 minutos</span>
+            </div>
+          </div>
+          <div class="entry-content"><p>Es común encontrarse con equipos que utilizan, por ejemplo, runners de GitLab y
+ejecutan pipelines con mucha frecuencia. De esta manera descargan diferentes
+imágenes de contenedores, pero puede suceder que alcancen el
+<a href="https://www.docker.com/pricing">limite de pull de imágenes</a>.</p>
+<p>Ahí es donde entra en juego <a href="https://goharbor.io/">Harbor</a>, una herramienta de
+código abierto que, entre muchas otras cosas, permite almacenar imágenes de
+contenedores en una <em>registry</em>. Así la primera vez que se descargue una imagen
+de alguna otra registry, por ejemplo <a href="https://hub.docker.com/">Docker Hub</a>, se
+almacenará en la registry de Harbor y luego, cuando se requiera de la misma, se
+utilizará desde allí en lugar de descargarla nuevamente.</p>
+<h3 id="instalación">Instalación</h3>
+<p>Una decisión que surge en esta situación es <em>dónde</em> instalar Harbor. En este
+caso, contamos con un cluster de k8s donde se podría instalar fácilmente,
+existen <a href="https://github.com/goharbor/harbor-helm">charts</a>
+que simplifican enormemente el proceso.</p>
+<p>Pero, particularmente, nuestro cluster utiliza como almacenamiento un <em>bucket</em> (Amazon
+S3) y, por lo tanto, resultaría muy costoso almacenar allí imágenes de
+contenedores.</p>
+<p>Por otro lado, ¿qué sucede ante una caída de los servicios del cluster? Si no
+están disponibles los servicios del cluster, no sería accesible la registry de
+Harbor. Y, si no funciona Harbor, podría no ser posible descargar imágenes y por
+lo tanto no se podrían ejecutar los contenedores que a fin de cuentas <em>son</em> el
+cluster.</p>
+<p>Entonces, si no funciona el cluster, no hay Harbor, y si no hay harbor no hay
+cluster. Estamos ante una posible situación de <em>deadlock</em>, o en criollo, un
+<em>problema del huevo y la gallina</em>.</p>
+<p>Es por eso que resolvimos instalarlo <strong>fuera del cluster</strong> existente, de manera
+convencional, para lo que fué necesario crear uan máquina virtual que cumpla con
+los <a href="https://goharbor.io/docs/2.4.0/install-config/installation-prereqs/">requisitos de Harbor</a></p>
+<p>Una vez que se dispone de la plataforma, se puede instalar el servidor de
+harbor, siguiendo los pasos de la
+<a href="https://goharbor.io/docs/2.4.0/install-config/">documentación Oficial</a>.</p>
+<p>En resumen se debe renombrar el archivo <code>harbor.yaml.tmpl</code> a <code>harbor.yaml</code> y
+configurar los valores que allí se encuentran. Principalmente se debe comentar
+la configuración <code>https</code>, cambiar el puerto <code>http</code> (mas adelante veremos por
+qué), elegir contraseñas para harbor y para la base de datos, establecer la url
+y donde se guardarán los datos (imágenes) indicando el path en <code>data_volume</code>.
+Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hostname</span>: <span style="color:#ae81ff">harbor-cache.example.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># https port for harbor, default is 443</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># port: 6443</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">external_url</span>: <span style="color:#ae81ff">harbor-cache.example.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_admin_password</span>: <span style="color:#ae81ff">Harbor12345</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">database</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">root123</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data_volume</span>: <span style="color:#ae81ff">/data</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Notas</strong>:</p>
+<ul>
+<li>
+<p>A tener en cuenta, Harbor asume que se ejecutará como <code>root</code>  el servicio,
+lo cual es muy desaconsejable. Admite un usuario no privilegiado llamado
+<code>harbor</code>, pero <strong>es muy importante</strong> que el mismo tenga un <code>UID = 10000</code>,
+dado que este valor se encuentra <em>hardcodeado</em> en la configuración de los
+servicios. También es necesario cambiar el ownership de algunos de estos
+archivos:</p>
+<ul>
+<li><code>common/config/core/env</code></li>
+<li><code>common/config/registryctl/env</code></li>
+<li><code>common/config/db/env</code></li>
+<li><code>common/config/jobservice/env</code></li>
+</ul>
+</li>
+<li>
+<p>Es posible versionar esta instalación utilizando <em>gitops</em>, dado que
+al finalizar los pasos antes mencionados, se dispone de un archivo <code>docker-compose.yml</code>
+que es todo lo que necesitamos para el despliegue. Versionando este archivo en
+git, podremos mantener una copia de seguridad de la instalación.</p>
+</li>
+<li>
+<p>También es posible utilizar <a href="https://www.ansible.com/">Ansible</a> para automatizar
+toda la configuración de la VM donde se hosteará el servidor de harbor, incluyendo
+la descarga del repositorio con la configuración de harbor.</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="configuración-de-harbor">Configuración de Harbor</h3>
+<p>Algunas configuraciones no pueden realizarse automáticamente. Es por eso que una
+vez que esté corriendo el servicio de harbor se debe acceder a la UI para
+realizar algunas configuraciones de forma manual.</p>
+<h4 id="registries">Registries</h4>
+<p>Nombraremos algunas de las registries más utilizadas para luego utilizarlas en
+los <em>proyectos</em> como <em>proxy-caché</em>:</p>
+<table>
+<thead>
+<tr>
+<th>provider</th>
+<th>name</th>
+<th>endpointUrl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Hub</td>
+<td>docker_hub</td>
+<td><code>https://hub.docker.com</code></td>
+</tr>
+<tr>
+<td>Docker Registry</td>
+<td>gcr.io</td>
+<td><code>https://gcr.io</code></td>
+</tr>
+<tr>
+<td>Docker Registry</td>
+<td>k8s.gcr.io</td>
+<td><code>https://k8s.gcr.io</code></td>
+</tr>
+<tr>
+<td>Docker Registry</td>
+<td>quay.io</td>
+<td><code>https://quay.io</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="proyectos">Proyectos</h4>
+<p>En los proyectos de Harbor, se pueden crear registries, y asociarlas a un
+proxy-caché definido previamente. Por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th>projectName</th>
+<th>accessLevel</th>
+<th>storageQuota</th>
+<th>proxyCache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proxy.docker.io</td>
+<td>Public</td>
+<td>-1</td>
+<td><code>docker_hub-https://hub.docker.com</code></td>
+</tr>
+<tr>
+<td>proxy.gcr.io</td>
+<td>Public</td>
+<td>-1</td>
+<td><code>gcr.io-https://gcr.io</code></td>
+</tr>
+<tr>
+<td>proxy.k8s.gcr.io</td>
+<td>Public</td>
+<td>-1</td>
+<td><code>k8s.gcr.io-https://k8s.gcr.io</code></td>
+</tr>
+<tr>
+<td>proxy.quay.io</td>
+<td>Public</td>
+<td>-1</td>
+<td><code>quay.io-https://quay.io</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="autenticación-con-ad-via-dex">Autenticación con AD (via dex)</h4>
+<p>Se pueden configurar varios métodos de autenticación desde el menú Configuración
+en la UI de Harbor. En este caso, se utilizará AD mediante
+<a href="https://dexidp.io/">dex</a>,
+un servicio que se encuentra actualmente en el cluster. Primero se agrega un
+cliente en la configuración de dex:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">staticClients</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">id</span>: <span style="color:#ae81ff">harbor-cache-oidc-dex</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Harbor Cache</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">redirectURIs</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">https://harbor-cache.example.com/c/oidc/callback</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">secret</span>: <span style="color:#ae81ff">&lt;generar-secret&gt;</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><blockquote>
+<p>Esta configuración corresponde a un archivo de valores utilizado con
+<a href="https://github.com/roboll/helmfile">helmfile</a>,
+una forma de desplegar charts de Helm, particularmente el
+<a href="https://github.com/dexidp/helm-charts/tree/master/charts/dex">chart de dex</a>.
+El secret se puede generar aleatoreamente con
+<code>openssl rand -base64 20</code></p>
+</blockquote>
+<p>Luego en la UI, agregar la configuración acorde:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth Mode</td>
+<td><code>OIDC</code></td>
+</tr>
+<tr>
+<td>OIDC Provider Name</td>
+<td><code>dex</code></td>
+</tr>
+<tr>
+<td>OIDC Endpoint</td>
+<td><code>https://dex.example.com</code></td>
+</tr>
+<tr>
+<td>OIDC Client ID</td>
+<td><code>harbor-cache-oidc-dex</code></td>
+</tr>
+<tr>
+<td>OIDC Client Secret</td>
+<td><code>&lt;secret-generado-anteriormente&gt;</code></td>
+</tr>
+<tr>
+<td>Group Claim Name</td>
+<td><code>groups</code></td>
+</tr>
+<tr>
+<td>OIDC Admin Group</td>
+<td><code>cluster_admins</code></td>
+</tr>
+<tr>
+<td>OIDC Scope</td>
+<td><code>openid,profile,email,groups</code></td>
+</tr>
+<tr>
+<td>Verify Certificate</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Automatic onboarding</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Username Claim</td>
+<td>______</td>
+</tr>
+</tbody>
+</table>
+<p>De esta forma los usuarios pertenecientes al grupo <code>cluster_admins</code>
+obtendrán permisos de administrador.</p>
+<h3 id="certificados">Certificados</h3>
+<p>En el caso de haber utilizado un certificado autofirmado habrá que configurar
+todos los clientes que quieran interactuar con nuestro registry de la siguiente
+manera (asumiendo que utilizan docker):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span># Bajar certificado
+</span></span><span style="display:flex;"><span>sudo openssl s_client -showcerts -connect harbor-cache.example.com:443 &lt; /dev/null | sed -ne &#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39; &gt; ca.crt
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Ubicarlo en la configuración de docker
+</span></span><span style="display:flex;"><span>sudo mkdir -p /etc/docker/certs.d/harbor-cache.example.com/
+</span></span><span style="display:flex;"><span>sudo mv ca.crt /etc/docker/certs.d/harbor-cache.example.com/ca.crt
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Reiniciar docker
+</span></span><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl restart docker
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Loguearse a la registry
+</span></span><span style="display:flex;"><span>docker login harbor-cache.example.com -u admin -p Harbor12345 
+</span></span></code></pre></div><p>También habría que declarar el certificado y la key en la sección <code>https</code> del
+archivo <code>harbor.yaml</code></p>
+<p>Una mejor opción es utilizar <a href="https://traefik.io/">Traefik</a> para para lo cual
+se puede agregar un servicio en el <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">traefik</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">traefik:${VERSION}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">traefik</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">${RESTART}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: 
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">api.insecure=true </span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">providers.docker=true </span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">providers.docker.exposedbydefault=false </span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">log.level=${LOG}</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">entrypoints.http.address=:80 </span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">entrypoints.https.address=:443</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.dnschallenge=true</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.dnschallenge.provider=${PROVIDER}</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.dnschallenge.delayBeforeCheck=0</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.dnschallenge.resolvers=${RESOLVER}</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.email=${EMAIL}</span>
+</span></span><span style="display:flex;"><span>      - --<span style="color:#ae81ff">certificatesresolvers.${PROVIDER}.acme.storage=/certs/acme.json</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>: 
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">TZ</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AWS_ACCESS_KEY_ID</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AWS_REGION</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AWS_SECRET_ACCESS_KEY</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AWS_HOSTED_ZONE_ID</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Do not expose Traefik Dashboard</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># - &#34;8089:8080&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">traefik_certs:/certs</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">harbor</span>
+</span></span></code></pre></div><p>Además, se debe agregar las siguientes <em>labels</em> en el servicio <code>proxy</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">proxy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.enable=true&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># default route over https</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor.rule=Host(`harbor-cache.example.com`)&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor.entrypoints=https&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor.tls.certresolver=${PROVIDER}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># HTTP to HTTPS</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor-redirs.rule=hostregexp(`{host:.+}`)&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor-redirs.entrypoints=http&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.harbor-redirs.middlewares=redirect-to-https&#34;</span>
+</span></span></code></pre></div><p>Es una buena idea manejar todas estas variables de entorno utilizando
+<a href="https://direnv.net/">Direnv</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span><span style="color:#75715e"># Global</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>TZ<span style="color:#f92672">=</span>America/Argentina <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>RESTART<span style="color:#f92672">=</span>unless-stopped <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Traefik</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>VERSION<span style="color:#f92672">=</span>v2.5 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>LOG<span style="color:#f92672">=</span>INFO <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ACME DNS-01 challenge</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>PROVIDER<span style="color:#f92672">=</span>route53 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>RESOLVER<span style="color:#f92672">=</span>8.8.8.8:53 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>EMAIL<span style="color:#f92672">=</span>juan.sanchez@mikroways.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AWS Route53</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span>AK.... <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>AWS_REGION<span style="color:#f92672">=</span>us-east-1 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span>5HC.... <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>AWS_HOSTED_ZONE_ID<span style="color:#f92672">=</span>Z3... <span style="color:#ae81ff">\
+</span></span></span></code></pre></div><p>Los valores de estas variables se obtienen al tramitar el certificado de
+<a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>.</p>
+<h3 id="iniciar-o-detener-el-servicio">Iniciar o detener el servicio</h3>
+<p>Si accedemos por ssh a la instancia donde hemos instalado Harbor, podemos
+realizar las siguientes acciones básicas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span># Acceder a la carpeta raíz de harbor
+</span></span><span style="display:flex;"><span>harbor@ar-harbor-01:~$ cd /opt/harbor/
+</span></span><span style="display:flex;"><span>direnv: error /opt/harbor/.envrc is blocked. Run `direnv allow` to approve its content
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Habilitar direnv para cargar las variables de entorno
+</span></span><span style="display:flex;"><span>harbor@ar-harbor-01:/opt/harbor$ direnv allow
+</span></span><span style="display:flex;"><span>direnv: loading /opt/harbor/.envrc
+</span></span><span style="display:flex;"><span>direnv: export +AWS_ACCESS_KEY_ID +AWS_HOSTED_ZONE_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY +EMAIL +LOG +PROVIDER +RESOLVER +RESTART +TZ +VERSION ~PATH
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Iniciar los servicios con docker-compose
+</span></span><span style="display:flex;"><span>harbor@ar-harbor-01:/opt/harbor$ docker-compose up -d
+</span></span><span style="display:flex;"><span>Creating volume &#34;harbor_traefik_certs&#34; with default driver
+</span></span><span style="display:flex;"><span>Recreating traefik     ... done
+</span></span><span style="display:flex;"><span>Starting harbor-log ... done
+</span></span><span style="display:flex;"><span>Starting harbor-db     ... done
+</span></span><span style="display:flex;"><span>Starting redis         ... done
+</span></span><span style="display:flex;"><span>Starting registry      ... done
+</span></span><span style="display:flex;"><span>Starting harbor-portal ... done
+</span></span><span style="display:flex;"><span>Starting registryctl   ... done
+</span></span><span style="display:flex;"><span>Starting harbor-core   ... done
+</span></span><span style="display:flex;"><span>Starting nginx             ... done
+</span></span><span style="display:flex;"><span>Starting harbor-jobservice ... done
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># Verificar el estado de los contenedores
+</span></span><span style="display:flex;"><span>harbor@ar-harbor-01:/opt/harbor$ docker-compose ps
+</span></span><span style="display:flex;"><span>      Name                     Command                  State                                 Ports
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>harbor-core         /harbor/entrypoint.sh            Up (healthy)
+</span></span><span style="display:flex;"><span>harbor-db           /docker-entrypoint.sh 96 13      Up (healthy)
+</span></span><span style="display:flex;"><span>harbor-jobservice   /harbor/entrypoint.sh            Up (healthy)
+</span></span><span style="display:flex;"><span>harbor-log          /bin/sh -c /usr/local/bin/ ...   Up (healthy)   127.0.0.1:1514-&gt;10514/tcp
+</span></span><span style="display:flex;"><span>harbor-portal       nginx -g daemon off;             Up (healthy)
+</span></span><span style="display:flex;"><span>nginx               nginx -g daemon off;             Up (healthy)   0.0.0.0:8080-&gt;8080/tcp,:::8080-&gt;8080/tcp
+</span></span><span style="display:flex;"><span>redis               redis-server /etc/redis.conf     Up (healthy)
+</span></span><span style="display:flex;"><span>registry            /home/harbor/entrypoint.sh       Up (healthy)
+</span></span><span style="display:flex;"><span>registryctl         /home/harbor/start.sh            Up (healthy)
+</span></span><span style="display:flex;"><span>traefik             /entrypoint.sh --api.insec ...   Up             0.0.0.0:443-&gt;443/tcp,:::443-&gt;443/tcp,
+</span></span><span style="display:flex;"><span>                                                                    0.0.0.0:80-&gt;80/tcp,:::80-&gt;80/tcp
+</span></span><span style="display:flex;"><span># Detener el servicio
+</span></span><span style="display:flex;"><span>docker-compose down
+</span></span></code></pre></div><blockquote>
+<p><strong>Nota:</strong> si se apaga el servicio utilizando la opción <code>-v</code> o <code>--volumes</code>, se
+eliminaran los volúmenes, por lo que se borrarán también los certificados
+generados, habrá que regenerarlos y esto puede ocasionar problemas si se hace
+varias veces seguidas.</p>
+<p>Sin embargo, se puede limpiar el espacio utilizado luego de haber reiniciado
+los servicios. Para ello, MIENTRAS esté corriendo el servicio correr el
+comando <code>docker system prune --volumes</code>.
+Este comando elimina los contenedores detenidos junto con las imágenes, redes
+y volúmenes asociados a estos. Si nuestros servicios se encuentran corriendo
+no se eliminará nada importante.</p>
+</blockquote>
+<p>Resta configurar el cluster existente para que utilice el cache de imágenes.
+Esto será diferente según el
+<a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/"><em>container runtime</em></a>
+que se utilice, lo cual veremos en el
+<a href="/es/blog/2021-12-29-crio-con-harbor/">siguiente artículo</a>.</p>
+</div>
+
+          <div class="gap-30"></div>
+
+          
+          
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+  <div class="sidebar sidebar-right">
+    
+    <div class="widget widget-tab">
+      <h3 class="widget-title">Entradas recientes</h3>
+      <ul class="posts-list list-unstyled clearfix">
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">
+              <img alt="Jornada de Adopción Cloud para Banco Columbia en AWS" src="/images/blog/jornada-cloud-aws.webp">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">Jornada de Adopción Cloud para Banco Columbia en AWS</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">8 Mayo 2024</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-10-27-instalando-ansible/">
+              <img alt="Instalando ansible como dev... ¿O como ops?" src="/images/blog/snake-ansible.jpg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-10-27-instalando-ansible/">Instalando ansible como dev... ¿O como ops?</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">26 Octubre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-09-22-windows-containers/">
+              <img alt="Contenedores nativos de Microsoft Windows usando docker" src="/images/blog/whale-flying.jpeg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-09-22-windows-containers/">Contenedores nativos de Microsoft Windows usando docker</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">22 Septiembre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="widget widget-categories">
+      <h3 class="widget-title">Categorías del blog</h3>
+      <ul class="category-list clearfix">
+        <li><a href="/es/categories/devsecops">Devsecops</a><span class="posts-count"> (20)</span></li>
+        
+        <li><a href="/es/categories/mikroways">Mikroways</a><span class="posts-count"> (4)</span></li>
+        
+        <li><a href="/es/categories/transformacion-digital">Transformacion digital</a><span class="posts-count"> (1)</span></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+
+    
+    <div class="widget widget-tags">
+      <h3 class="widget-title">Etiquetas populares</h3>
+      <ul class="list-unstyled clearfix">
+        <li><a href="/es/tags/12factor">12factor</a></li>
+        
+        <li><a href="/es/tags/ansible">Ansible</a></li>
+        
+        <li><a href="/es/tags/automatizacion">Automatizacion</a></li>
+        
+        <li><a href="/es/tags/autoscaling">Autoscaling</a></li>
+        
+        <li><a href="/es/tags/aws">Aws</a></li>
+        
+        <li><a href="/es/tags/backup">Backup</a></li>
+        
+        <li><a href="/es/tags/backups">Backups</a></li>
+        
+        <li><a href="/es/tags/cache">Cache</a></li>
+        
+        <li><a href="/es/tags/capistrano">Capistrano</a></li>
+        
+        <li><a href="/es/tags/cgroups">Cgroups</a></li>
+        
+        <li><a href="/es/tags/chatbots">Chatbots</a></li>
+        
+        <li><a href="/es/tags/chatops">Chatops</a></li>
+        
+        <li><a href="/es/tags/cloud">Cloud</a></li>
+        
+        <li><a href="/es/tags/clusterapi">Clusterapi</a></li>
+        
+        <li><a href="/es/tags/containerd">Containerd</a></li>
+        
+        <li><a href="/es/tags/crio">Crio</a></li>
+        
+        <li><a href="/es/tags/development">Development</a></li>
+        
+        <li><a href="/es/tags/devsecops">Devsecops</a></li>
+        
+        <li><a href="/es/tags/dex">Dex</a></li>
+        
+        <li><a href="/es/tags/docker">Docker</a></li>
+        
+        <li><a href="/es/tags/docker-compose">Docker compose</a></li>
+        
+        <li><a href="/es/tags/encryption">Encryption</a></li>
+        
+        <li><a href="/es/tags/errbot">Errbot</a></li>
+        
+        <li><a href="/es/tags/git">Git</a></li>
+        
+        <li><a href="/es/tags/gitlab-ci">Gitlab ci</a></li>
+        
+        <li><a href="/es/tags/harbor">Harbor</a></li>
+        
+        <li><a href="/es/tags/iac">Iac</a></li>
+        
+        <li><a href="/es/tags/images">Images</a></li>
+        
+        <li><a href="/es/tags/infrastructure">Infrastructure</a></li>
+        
+        <li><a href="/es/tags/innovacion">Innovacion</a></li>
+        
+        <li><a href="/es/tags/java">Java</a></li>
+        
+        <li><a href="/es/tags/jornadas">Jornadas</a></li>
+        
+        <li><a href="/es/tags/kubernetes">Kubernetes</a></li>
+        
+        <li><a href="/es/tags/limits">Limits</a></li>
+        
+        <li><a href="/es/tags/monitoreo">Monitoreo</a></li>
+        
+        <li><a href="/es/tags/noticias">Noticias</a></li>
+        
+        <li><a href="/es/tags/okd">Okd</a></li>
+        
+        <li><a href="/es/tags/openjdk">Openjdk</a></li>
+        
+        <li><a href="/es/tags/openshift">Openshift</a></li>
+        
+        <li><a href="/es/tags/packer">Packer</a></li>
+        
+        <li><a href="/es/tags/permisos">Permisos</a></li>
+        
+        <li><a href="/es/tags/playbook">Playbook</a></li>
+        
+        <li><a href="/es/tags/python">Python</a></li>
+        
+        <li><a href="/es/tags/redhat">Redhat</a></li>
+        
+        <li><a href="/es/tags/registry-mirror">Registry mirror</a></li>
+        
+        <li><a href="/es/tags/restic">Restic</a></li>
+        
+        <li><a href="/es/tags/restore">Restore</a></li>
+        
+        <li><a href="/es/tags/sops">Sops</a></li>
+        
+        <li><a href="/es/tags/terraform">Terraform</a></li>
+        
+        <li><a href="/es/tags/traefik">Traefik</a></li>
+        
+        <li><a href="/es/tags/velero">Velero</a></li>
+        
+        <li><a href="/es/tags/version">Version</a></li>
+        
+        <li><a href="/es/tags/vmware">Vmware</a></li>
+        
+        <li><a href="/es/tags/vsphere">Vsphere</a></li>
+        
+        <li><a href="/es/tags/windows">Windows</a></li>
+        
+        <li><a href="/es/tags/workstation">Workstation</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

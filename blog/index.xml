@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Mikroways</title>
+    <link>/blog/</link>
+    <description>Recent content in Blog on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Aug 2023 20:30:55 -0300</lastBuildDate>
+    <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data encryption in IaC: Using SOPS with Terraform</title>
+      <link>/blog/2023-08-30-terraform-with-sops/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/blog/2023-08-30-terraform-with-sops/</guid>
+      <description>Data Encryption in IaC: Using SOPS with Terraform In the realm of Infrastructure as Code (IaC), the secure management of sensitive information is crucial.</description>
+    </item>
+    <item>
+      <title>Harbor in OKD</title>
+      <link>/blog/2023-08-25-harbor-in-okd/</link>
+      <pubDate>Fri, 25 Aug 2023 01:37:55 -0300</pubDate>
+      <guid>/blog/2023-08-25-harbor-in-okd/</guid>
+      <description>Previously we talked about how to use Harbor as image cache and how to configure CRI-O to use Harbor as cache.</description>
+    </item>
+    <item>
+      <title>GitLab Continuous Integration with Capistrano</title>
+      <link>/blog/2022-02-11-gitlab-ci-with-capistrano/</link>
+      <pubDate>Fri, 11 Feb 2022 09:52:58 -0300</pubDate>
+      <guid>/blog/2022-02-11-gitlab-ci-with-capistrano/</guid>
+      <description>In the previous post we saw how to automate a deployment using Capistrano.</description>
+    </item>
+    <item>
+      <title>Task automation using Capistrano</title>
+      <link>/blog/2022-01-28-task-automation-using-capistrano/</link>
+      <pubDate>Fri, 28 Jan 2022 11:06:24 -0300</pubDate>
+      <guid>/blog/2022-01-28-task-automation-using-capistrano/</guid>
+      <description>Capistrano is a tool to automate tasks on remote servers, such as automate audits of any number of machines, the definition of workflows over SSH, among others.</description>
+    </item>
+    <item>
+      <title>Containerd with Harbor</title>
+      <link>/blog/2021-12-30-containerd-with-harbor/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-30-containerd-with-harbor/</guid>
+      <description>Previously we explained how to install a Harbor server and how to configure CRI-O to use it.</description>
+    </item>
+    <item>
+      <title>CRI-O with Harbor</title>
+      <link>/blog/2021-12-29-crio-with-harbor/</link>
+      <pubDate>Wed, 29 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-29-crio-with-harbor/</guid>
+      <description>In the previous post We saw how to install a Harbor server that works as a cache for container images.</description>
+    </item>
+    <item>
+      <title>Use Harbor as image cache repository</title>
+      <link>/blog/2021-12-23-use-harbor-as-image-cache/</link>
+      <pubDate>Thu, 23 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/blog/2021-12-23-use-harbor-as-image-cache/</guid>
+      <description>It&amp;rsquo;s common to come across teams using, for example, GitLab runners that run pipelines very frequently.</description>
+    </item>
+    <item>
+      <title>Install Kubernetes on VMware Vsphere</title>
+      <link>/blog/2021-11-03-kubernetes-clusterapi/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/blog/2021-11-03-kubernetes-clusterapi/</guid>
+      <description>In this post we explain how to automate the installation of Kubernetes on VMware Vsphere using ClusterAPI, among other tools.</description>
+    </item>
+    <item>
+      <title>Mikroways becomes AWS select partner</title>
+      <link>/blog/2021-10-04-consulting-partner-select-aws/</link>
+      <pubDate>Mon, 04 Oct 2021 12:14:34 -0300</pubDate>
+      <guid>/blog/2021-10-04-consulting-partner-select-aws/</guid>
+      <description>Starting today, Mikroways is select consulting partner of Amazon Web Services.</description>
+    </item>
+  </channel>
+</rss>

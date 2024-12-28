@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workstation on Mikroways</title>
+    <link>/es/tags/workstation/</link>
+    <description>Recent content in workstation on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Mon, 03 Oct 2022 10:13:23 -0300</lastBuildDate>
+    <atom:link href="/es/tags/workstation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatiza la instalación de tus workstations</title>
+      <link>/es/blog/2022-10-05-vm-setup/</link>
+      <pubDate>Mon, 03 Oct 2022 10:13:23 -0300</pubDate>
+      <guid>/es/blog/2022-10-05-vm-setup/</guid>
+      <description>¿Automatizar la instalación de estaciones de trabajo? ¡Claro que sí!</description>
+    </item>
+  </channel>
+</rss>

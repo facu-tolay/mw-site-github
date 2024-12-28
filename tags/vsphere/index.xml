@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vsphere on Mikroways</title>
+    <link>/tags/vsphere/</link>
+    <description>Recent content in vsphere on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Nov 2021 12:14:34 -0300</lastBuildDate>
+    <atom:link href="/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Kubernetes on VMware Vsphere</title>
+      <link>/blog/2021-11-03-kubernetes-clusterapi/</link>
+      <pubDate>Mon, 01 Nov 2021 12:14:34 -0300</pubDate>
+      <guid>/blog/2021-11-03-kubernetes-clusterapi/</guid>
+      <description>In this post we explain how to automate the installation of Kubernetes on VMware Vsphere using ClusterAPI, among other tools.</description>
+    </item>
+  </channel>
+</rss>

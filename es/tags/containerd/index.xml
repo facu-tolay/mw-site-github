@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>containerd on Mikroways</title>
+    <link>/es/tags/containerd/</link>
+    <description>Recent content in containerd on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 30 Dec 2021 11:47:55 -0300</lastBuildDate>
+    <atom:link href="/es/tags/containerd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Containerd con Harbor</title>
+      <link>/es/blog/2021-12-30-containerd-con-harbor/</link>
+      <pubDate>Thu, 30 Dec 2021 11:47:55 -0300</pubDate>
+      <guid>/es/blog/2021-12-30-containerd-con-harbor/</guid>
+      <description>Anteriormente explicamos como instalar un servidor de Harbor y como configurar CRI-O para que lo utilice.</description>
+    </item>
+  </channel>
+</rss>

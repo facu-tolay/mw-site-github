@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es-ar"><head>
+  <meta charset="utf-8">
+  <title>ChatOps utilizando Errbot</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Desarrollo de herramientas ChatOps">
+  <meta name="author" content="Mikroways">
+  <meta name="generator" content="Hugo 0.122.0">
+
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" async>
+  
+  <link rel="stylesheet" href="/plugins/animate.css" async>
+  
+  <link rel="stylesheet" href="/plugins/prettyPhoto.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.carousel.css" async>
+  
+  <link rel="stylesheet" href="/plugins/owl/owl.theme.css" async>
+  
+  <link rel="stylesheet" href="/plugins/flex-slider/flexslider.css" async>
+  
+  <link rel="stylesheet" href="/css/timeline.css" async>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen" async>
+
+  
+	<link id="style-switch" href="/presets/preset3.css" media="screen" rel="stylesheet" type="text/css" async>
+
+  
+  <link rel="stylesheet" href="/css/custom.css" async>
+  
+  <link rel="stylesheet" href="/css/asciinema-player.css" async>
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZL29LZV');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47781870-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="ChatOps utilizando Errbot" />
+<meta property="og:description" content="Desarrollo de herramientas ChatOps" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/blog/2022-06-01-chatbots/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-06-01T11:56:58-03:00" />
+<meta property="article:modified_time" content="2022-06-01T11:56:58-03:00" />
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45476202.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  
+  
+  
+  <!-- Start of Linkedin Embed Code -->
+  <script type="text/javascript">
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push("6063204");
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6063204&fmt=gif" >
+  </noscript>
+  <!-- End of Linkedin Embed Code -->
+  
+
+  
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZL29LZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="body-inner">
+
+
+<header id="header" class="fixed-top header" role="banner">
+  <div class="container-fluid top-navigation-bar">
+    <a class="navbar-brand navbar-bg d-xs-block d-lg-none" href="/es/">
+      <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand navbar-bg d-none d-lg-block" href="/es/">
+        <img id="logo" class="align-middle" src="/images/logo.webp" alt="Mikroways"/>
+      </a>
+      <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center" id="mobile_nav">
+        <ul class="navbar-nav mr-auto float-md-right">
+        </ul>
+        <ul class="navbar-nav navbar-light">
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="services">
+                  
+                  <a class="dropdown-item active" id="platform" href="/es/platform-engineering" aria-selected="true">
+                    <span>
+                      <h5>Cloud &amp; Platform Engineering</h5>
+                      <p>Diseñar, construir y mantener plataformas tecnológicas escalables y confiables.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="transformation" href="/es/digital-transformation" aria-selected="true">
+                    <span>
+                      <h5>Transformación digital</h5>
+                      <p>Apalancarse en la tecnología para innovar, optimizar procesos y mejorar la experiencia de los clientes.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="profservices" href="/es/professional-services" aria-selected="true">
+                    <span>
+                      <h5>Servicios profesionales</h5>
+                      <p>Soluciones para optimizar el uso de la tecnología y resolver desafíos de negocio.</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="cybersecurity" href="/es/cybersecurity" aria-selected="true">
+                    <span>
+                      <h5>Ciberseguridad</h5>
+                      <p>Expertos en proteger activos digitales, mitigando riesgos y asegurando la protección de datos contra ciberataques.</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="services">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-platform" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/platform-engineering.webp">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Cloud &amp; Platform Engineering</h3>
+                        <p>Nos enfocamos en implementar y mantener Plataformas de Desarrollo Interno (IDP), que le dan al equipo de desarrollo la capacidad de autoservicio, lo que optimiza los costos, simplifica la gestión y genera un aumento significativo en la confiabilidad operativa.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-transformation" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-dt.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Transformación digital</h3>
+                        <p>Lideramos la adopción de tecnologías innovadoras y optimizamos procesos para mejorar la eficiencia y competitividad de su empresa. Desde la identificación de oportunidades hasta la gestión continua, trabajamos en estrecha colaboración para diseñar estrategias alineadas con sus objetivos. Especializados en la optimización de procesos, aprovechamos herramientas avanzadas para maximizar la productividad y acelerar el time-to-market.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-profservices" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-ps.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Servicios profesionales</h3>
+                        <p>Desde Mikroways buscamos no sólo ofrecer asesoramiento, sino convertimos en su socio estratégico, comprometidos a largo plazo con el éxito de su compañía. Para ello, adoptamos un enfoque proactivo que permita impulsar mejoras continuas y aumentar la eficiencia en su negocio. A través de evaluaciones y análisis regulares, identificamos oportunidades de optimización y maximizamos el rendimiento operativo.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-cybersecurity" role="tabpanel">
+                    
+                    <div class="row">
+                      <div class="col-md-3 megamenu-item-img">
+                        <img src="/images/services/home-cybersecurity.svg">
+                      </div>
+                      <div class="col-md-9">
+                        <h3>Ciberseguridad</h3>
+                        <p>Ofrecemos soluciones de seguridad de vanguardia. Como especialistas en consultoría de TI, destacamos en proporcionar protección integral para su infraestructura, garantizando la confidencialidad y la integridad de sus datos en un mundo digital en constante evolución.</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/about">Empresa</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/portfolio">Casos de éxito</a></li>
+          
+          
+          
+          <li class="nav-item dropdown megamenu-li">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carreras</a>
+            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+              <div class="row">
+                <div class="col-lg-5 dropdown-item megamenu-element" id="careers">
+                  
+                  <a class="dropdown-item active" id="culture" href="/es/our-culture" aria-selected="true">
+                    <span>
+                      <h5>Cultura</h5>
+                      <p>Discover what it feels like be part of Mikroways</p>
+                    </span>
+                  </a>
+                  
+                  <a class="dropdown-item " id="work-with-us" href="/es/work-with-us" aria-selected="true">
+                    <span>
+                      <h5>Trabaja con nosotros</h5>
+                      <p>Come work with us!</p>
+                    </span>
+                  </a>
+                  
+                </div>
+                <div class="d-none d-lg-block col-lg-7 mb-4 border-left megamenu-desktop" id="careers">
+                  <div class="tab-content" id="v-pills-tabContent">
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft show active" id="item-culture" role="tabpanel">
+                    
+                    <h3>Cultura</h3>
+                    <p>Discover our culture and how we team up to make wonderful solutions for our customers!</p>
+                    
+                  </div>
+                  
+                  <div class="megamenu-item-tab tab-pane animated fadeInLeft " id="item-work-with-us" role="tabpanel">
+                    
+                    <h3>Trabaja con nosotros</h3>
+                    <p>Come work with us at Mikroways and elevate your career!</p>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/blog">Blog</a></li>
+          
+          
+          
+          <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+          
+          
+          
+        </ul>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="main-container">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        
+        <div class="post-content">
+          
+          <div class="post-image-wrapper">
+            <img src="/images/blog/errbot.webp" class="img-fluid" alt="ChatOps utilizando Errbot" />
+            <span class="blog-date">1 Junio 2022</span>
+          </div>
+          <div class="post-header clearfix">
+            <h2 class="post-title">ChatOps utilizando Errbot</h2>
+            <div class="post-meta">
+              <span class="post-meta-author">Publicado por Manuel Chichi</span>
+              <span class="post-meta-cats">en <a
+                href="/es/categories/devsecops"> 
+                Devsecops</a> </span>
+            </div>
+            <div class="post-meta post-meta-reading-time">
+              <span>Tiempo de lectura: 7 minutos</span>
+            </div>
+          </div>
+          <div class="entry-content"><p>Hace un tiempo, uno de nuestros clientes nos contactó por una necesidad
+recurrente: <strong><em>obtener copias de las bases de datos de sus sistemas
+para que el equipo de desarrollo y QA puedan analizar datos</em></strong>.
+El problema, es que el acceso a estas bases de datos está restringido y los
+usuarios no acceden a servidores en producción.</p>
+<p>Fue así como propusimos el desarrollo de un <strong>robot</strong> que se encargue de
+realizar las tareas en nombre de aquellos usuarios <strong>permitidos</strong> para
+solicitar estos pedidos. La forma más simple de hacerlo, fue pensar en cómo nos
+solicitaban los pedidos al personal de Mikroways y replicar el comportamiento de
+personas con un robot. Como la herramienta de comunicación con el cliente es
+<a href="https://slack.com/">Slack</a>, procedimos en configurar un <strong>ChatBot</strong> que atienda
+pedidos en un canal al que <strong>solamente determinados usuarios pertenecen</strong>.</p>
+<p>Hay que recalcar que esta tendencia, también conocida como <strong><em>ChatOps</em></strong>,
+presenta una mejora sustancial a los procesos manuales ya que permite a los
+usuarios finales ejecutar tareas repetitivas de manera desatendida y con la
+seguridad de no cometer errores.</p>
+<p>Siendo así, en este post realizaremos un breve aporte respecto al uso de robots
+de chat para la automatización de tareas relacionadas a la operación de
+herramientas de software. Por lo cual seguiremos dos ejemplos, uno básico que
+muestra las estructuras principales de la herramienta utilizada y otro donde se
+ejemplifica un hipotético caso real.</p>
+<h2 id="errbot">Errbot</h2>
+<p><a href="https://errbot.readthedocs.io/">Errbot</a> es un ChatBot desarrollado en
+Python, creado para conectar servicios de chats llamados <strong>Backends</strong>, con
+distintos plugins Python llamados <strong>BotPlugins</strong>. Su instalación se puede
+realizar siguiendo la <a href="https://errbot.readthedocs.io/en/latest/user_guide/setup.html#installation">documentacion oficial</a>.
+En este tutorial haremos uso de la imagen oficial de Docker para las pruebas. Por
+eso sera necesario contar con <a href="https://docs.docker.com/engine/install/">Docker</a>
+instalado previamente.</p>
+<blockquote>
+<p><strong>Nota:</strong> Los archivos que necesitaremos en este tutorial serán creados sobre
+la carpeta <code>/tmp/errbot/</code> para organizar el trabajo.</p>
+</blockquote>
+<h3 id="botplugins">BotPlugins</h3>
+<p>Para comprender el funcionamiento de los BotPlugins se suele recurrir a mostrar
+ejemplos. De esta forma, para comenzar, vamos a crear un plugin de HelloWorld.
+El primer paso entonces será el de crear la carpeta en donde se alojará nuestro
+plugin:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /tmp/errbot/plugins/hello/
+</span></span></code></pre></div><p>Como paso siguiente debemos ejecutar el comando para crear un archivo cuyo
+contenido es un simple BotPlugin de ejemplo que llamaremos <em>helloworld.py</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cat <span style="color:#f92672">&lt;&lt;</span>EOT <span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>errbot<span style="color:#f92672">/</span>plugins<span style="color:#f92672">/</span>hello<span style="color:#f92672">/</span>helloworld<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> errbot <span style="color:#f92672">import</span> BotPlugin, botcmd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span>(BotPlugin):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Example &#39;Hello, world!&#39; plugin for Errbot.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@botcmd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>(self, msg, args):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Say hello to the world.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello, world!&#34;</span>
+</span></span><span style="display:flex;"><span>EOT
+</span></span></code></pre></div><p>Se puede observar que este plugin agrega la posibilidad de ejecutar el comando
+<code>!hello</code> (debido al <a href="https://pythonguide.readthedocs.io/en/latest/python/decorator.html">decorator</a>
+sobre la función)
+en nuestro Backend y como resultado devolverá el mensaje <code>&quot;Hello, world!&quot;</code> al
+ser invocado. Además, el comando <code>!help</code> devolverá la ayuda que se corresponde
+con el <a href="https://peps.python.org/pep-0257/">docstring</a> diciendo: <em>Say hello to
+the world</em>.</p>
+<p>Los plugins demás deben estar acompañados de un archivo <em>.plug</em> que contiene los
+metadatos del plugin. Con el siguiente bloque de código crearemos el archivo que
+contiene la estructura de metadatos del plugin llamado <em>helloworld.plug</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">cat &lt;&lt;EOT &gt; /tmp/errbot/plugins/hello/helloworld.plug</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Core]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">HelloWorld</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Module</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">helloworld</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Python]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Documentation]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Example &#34;Hello, world!&#34; plugin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">EOT</span>
+</span></span></code></pre></div><p>Así tendremos nuestro primer plugin llamado <code>helloworld</code> creado.</p>
+<h3 id="backends">Backends</h3>
+<p>Los Backends son interfaces definidas en el nucleo de Errbot que implementan un
+conjunto de comandos para poder comunicarse con diferentes servicios de chat.
+Algunos ejemplos de éstos son <a href="https://discord.com/">Discord</a>,
+<a href="https://slack.com/">Slack</a>, <a href="https://telegram.org/">Telegram</a>, entre otros.
+Además debemos tener en cuenta los Backends desarrollados por la comunidad,
+por ejemplo el de
+<a href="https://github.com/errbotio/err-backend-slackv3">SlackV3</a> e inclusive
+<a href="https://github.com/errbotio/err-backend-mattermost">Mattermost</a>.
+La ventaja que tiene esta herramienta es que los incorpora transparentemente,
+es decir, si en algún momento se necesita cambiar de un Backend a otro se puede
+realizar sin mayores cambios en los plugin que hemos desarrollado. De todas
+formas, no necesariamente implementaran todas las funciones de la interfaz. Por
+ejemplo, el backend de Discord oficial no tiene implementada la función de envió
+de archivos. Esto puede verificarse desde la implementacion de cada backend.</p>
+<p>Para seguir con el tutorial del plugin HelloWorld crearemos el archivo
+<em>config.py</em> que contiene la configuración de Errbot e indicaremos un backend a
+utilizar. Para esto podremos ejecutar el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cat <span style="color:#f92672">&lt;&lt;</span>EOT <span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>errbot<span style="color:#f92672">/</span>config<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BACKEND <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Text&#34;</span>
+</span></span><span style="display:flex;"><span>BOT_IDENTITY <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;@errbot&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>STORAGE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Memory&#34;</span>
+</span></span><span style="display:flex;"><span>BOT_DATA_DIR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/tmp/&#34;</span>
+</span></span><span style="display:flex;"><span>BOT_LOG_FILE <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>BOT_LOG_LEVEL <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>INFO
+</span></span><span style="display:flex;"><span>BOT_EXTRA_PLUGIN_DIR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plugins/&#34;</span>
+</span></span><span style="display:flex;"><span>BOT_ADMINS <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;@localhost&#34;</span>,)
+</span></span><span style="display:flex;"><span>EOT
+</span></span></code></pre></div><p>Esta configuración, elige como backend <code>Text</code> el cual es muy útil para entornos de
+prueba ya que inicia Errbot en modo consola.</p>
+<p>Finalmente tendremos que ejecutar el servicio desde nuestra consola con el comando
+que observaremos a continuación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Creara una consola en el servicio de Errbot y nos permite ejecutar comandos</span>
+</span></span><span style="display:flex;"><span>docker run -it --rm -v /tmp/errbot/:/home/errbot/ errbotio/errbot
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para ver la lista de comandos disponibles</span>
+</span></span><span style="display:flex;"><span>!help
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para ejecutar el comando del plugin</span>
+</span></span><span style="display:flex;"><span>!hello
+</span></span></code></pre></div><h2 id="solución-propuesta">Solución propuesta</h2>
+<p>Para solucionar el problema mencionado en la introducción, crearemos
+un nuevo plugin llamado <strong>dumps</strong> que utiliza la libreria
+<a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> para invocar
+procesos en el host. La intención es utilizar herramientas externas como
+mysqldump y gzip para hacer los resguardos de la base y luego comprimirlos.</p>
+<h3 id="nuevo-plugin">Nuevo plugin</h3>
+<p>De esta forma, procedemos con la creación del plugin considerando únicamente
+el motor MySQL o Mariadb, realizando un dump y luego mostrando el resultado del
+comando <code>mysqldump</code> en la consola. Entonces, primero debemos crear la carpeta
+donde se alojará nuestro plugin:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /tmp/errbot/plugins/dumps/
+</span></span></code></pre></div><p>A continuación creamos el archivo <em>dumps.py</em>. Podemos ejecutar el siguiente
+comando para crearlo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cat <span style="color:#f92672">&lt;&lt;</span>EOT <span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>errbot<span style="color:#f92672">/</span>plugins<span style="color:#f92672">/</span>dumps<span style="color:#f92672">/</span>dumps<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Importamos las librerias necesarias</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pipes
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> errbot <span style="color:#f92672">import</span> BotPlugin, arg_botcmd, botcmd, ValidationException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dumps</span>(BotPlugin):
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Creamos el comando dumpdb al cual se le pasa un argumento</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Este argumento es el nombre de la base de datos</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@arg_botcmd</span>(<span style="color:#e6db74">&#39;database&#39;</span>, type<span style="color:#f92672">=</span>str)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dumpdb</span>(self, msg, database<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Realiza el dump de de la db especificada.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># En este string se genera el comando que se ejecuta</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Hay que recalcar que mysqldump debe estar instalado en el host</span>
+</span></span><span style="display:flex;"><span>    dumpcmd <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;mysqldump&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;-h&#34;</span>,<span style="color:#e6db74">&#34;mariadb&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;-u&#34;</span>,<span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;-p&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;password&#34;</span>,
+</span></span><span style="display:flex;"><span>              database]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ejecutamos el comando de mysqldump</span>
+</span></span><span style="display:flex;"><span>    dump <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(dumpcmd,
+</span></span><span style="display:flex;"><span>                      stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE,
+</span></span><span style="display:flex;"><span>                      stderr<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
+</span></span><span style="display:flex;"><span>    out, err <span style="color:#f92672">=</span> dump<span style="color:#f92672">.</span>communicate()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Devolvemos el resultado</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> out<span style="color:#f92672">.</span>decode() <span style="color:#f92672">+</span> err<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>EOT
+</span></span></code></pre></div><p>Y siguiendo tenemos su correspondiente <em>dumps.plug</em>. Podemos ejecutar el comando
+para crearlo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">cat &lt;&lt;EOT &gt; /tmp/errbot/plugins/dumps/dumps.plug</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Core]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Dumps</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Module</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dumps</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Documentation]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">A errbot plugin for mysql dumps.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Python]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">EOT</span>
+</span></span></code></pre></div><p>Con ambos archivos tendremos nuestro plugin <code>dumps</code> armado.</p>
+<h3 id="configuración">Configuración</h3>
+<p>El siguiente paso es configurar Errbot teniendo en cuenta el Backend que
+utilizaremos. La documentación oficial nos provee un archivo de configuración de
+ejemplo en este
+<a href="https://errbot.readthedocs.io/en/latest/_downloads/916eb63d4956a3766e910343d73f9da7/config-template.py">enlace</a>.
+Debemos observar con atención que en cada Backend las identidades que necesitan
+configurarse son distintas.</p>
+<p>Para seguir el ejemplo, podremos utilizar el archivo de configuración que ya
+hemos creado, aunque se sugiere verificar la documentación para trabajar con
+otros Backends y agregar la funcionalidad de <code>send_stream_request</code> para dejar
+los resguardos en un servicio de mensajería (por ejemplo con SlackV3).</p>
+<p>Para finalizar, podremos ejecutar los siguiente comandos para verificar que el
+nuevo plugin que hemos armado funciona correctamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Creamos una nueva red Docker donde se hara la prueba</span>
+</span></span><span style="display:flex;"><span>docker network create errbot-test
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iniciamos la base de datos Mariadb en un contenedor</span>
+</span></span><span style="display:flex;"><span>docker run --detach --network errbot-test --name mariadb -e MARIADB_USER<span style="color:#f92672">=</span>user <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e MARIADB_PASSWORD<span style="color:#f92672">=</span>password -e MARIADB_ROOT_PASSWORD<span style="color:#f92672">=</span>password2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e MARIADB_DATABASE<span style="color:#f92672">=</span>test  mariadb:latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iniciarmos Errbot y deja la consola activa para interactuar</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Nota: la imagen se modifico para agregarle el binario de mysqldump</span>
+</span></span><span style="display:flex;"><span>docker run -it --network errbot-test --name errbot --rm <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /tmp/errbot/:/home/errbot/ manuelchichi/errbot-mysqldump:1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ejecutamos el comando en la consola del contenedor</span>
+</span></span><span style="display:flex;"><span>!dumpdb test
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Podemos ver el backup arrojado como texto plano por la herramienta</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Una vez finalizado podremos ejecutar los siguiente comandos para limpiar la</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># prueba</span>
+</span></span><span style="display:flex;"><span>docker stop mariadb
+</span></span><span style="display:flex;"><span>docker rm mariadb
+</span></span><span style="display:flex;"><span>docker network rm errbot-test
+</span></span><span style="display:flex;"><span>rm -rf /tmp/errbot
+</span></span></code></pre></div><p>El siguiente video muestra cómo es la interacción con el bot:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/PyDOvW2ALaY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="conclusiones">Conclusiones</h2>
+<p>La solución que se propuso demostró gran satisfacción del lado del cliente ya que
+se automatizo una tarea que era muy frecuente y que muchas veces ralentizaba el
+trabajo de un área de desarrollo completa. De nuestro lado, saco el trabajo
+adicional ocasionado por tener que realizar estas tareas en situaciones
+especificas.</p>
+<p>Como experiencia nos hemos llevado la sorpresa de que configurar la herramienta
+es una tarea sencilla, que tiene mucha versatilidad y que podría ser de gran
+utilidad en equipos de DevOps. De nuestro lado, estamos ansiosos de identificar
+otros escenarios en los cuales puedan ofrecerse este tipo de soluciones.</p>
+</div>
+
+          <div class="gap-30"></div>
+
+          
+          
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+  <div class="sidebar sidebar-right">
+    
+    <div class="widget widget-tab">
+      <h3 class="widget-title">Entradas recientes</h3>
+      <ul class="posts-list list-unstyled clearfix">
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">
+              <img alt="Jornada de Adopción Cloud para Banco Columbia en AWS" src="/images/blog/jornada-cloud-aws.webp">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2024-05-08-banco-columbia-y-mikroways-en-aws/">Jornada de Adopción Cloud para Banco Columbia en AWS</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">8 Mayo 2024</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-10-27-instalando-ansible/">
+              <img alt="Instalando ansible como dev... ¿O como ops?" src="/images/blog/snake-ansible.jpg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-10-27-instalando-ansible/">Instalando ansible como dev... ¿O como ops?</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">26 Octubre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+        <li>
+          <div class="posts-thumb float-left">
+            <a href="/es/blog/2023-09-22-windows-containers/">
+              <img alt="Contenedores nativos de Microsoft Windows usando docker" src="/images/blog/whale-flying.jpeg">
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="entry-title"><a href="/es/blog/2023-09-22-windows-containers/">Contenedores nativos de Microsoft Windows usando docker</a></h4>
+            <p class="post-meta">
+            <span class="post-meta-date">22 Septiembre 2023</span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="widget widget-categories">
+      <h3 class="widget-title">Categorías del blog</h3>
+      <ul class="category-list clearfix">
+        <li><a href="/es/categories/devsecops">Devsecops</a><span class="posts-count"> (20)</span></li>
+        
+        <li><a href="/es/categories/mikroways">Mikroways</a><span class="posts-count"> (4)</span></li>
+        
+        <li><a href="/es/categories/transformacion-digital">Transformacion digital</a><span class="posts-count"> (1)</span></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+
+    
+    <div class="widget widget-tags">
+      <h3 class="widget-title">Etiquetas populares</h3>
+      <ul class="list-unstyled clearfix">
+        <li><a href="/es/tags/12factor">12factor</a></li>
+        
+        <li><a href="/es/tags/ansible">Ansible</a></li>
+        
+        <li><a href="/es/tags/automatizacion">Automatizacion</a></li>
+        
+        <li><a href="/es/tags/autoscaling">Autoscaling</a></li>
+        
+        <li><a href="/es/tags/aws">Aws</a></li>
+        
+        <li><a href="/es/tags/backup">Backup</a></li>
+        
+        <li><a href="/es/tags/backups">Backups</a></li>
+        
+        <li><a href="/es/tags/cache">Cache</a></li>
+        
+        <li><a href="/es/tags/capistrano">Capistrano</a></li>
+        
+        <li><a href="/es/tags/cgroups">Cgroups</a></li>
+        
+        <li><a href="/es/tags/chatbots">Chatbots</a></li>
+        
+        <li><a href="/es/tags/chatops">Chatops</a></li>
+        
+        <li><a href="/es/tags/cloud">Cloud</a></li>
+        
+        <li><a href="/es/tags/clusterapi">Clusterapi</a></li>
+        
+        <li><a href="/es/tags/containerd">Containerd</a></li>
+        
+        <li><a href="/es/tags/crio">Crio</a></li>
+        
+        <li><a href="/es/tags/development">Development</a></li>
+        
+        <li><a href="/es/tags/devsecops">Devsecops</a></li>
+        
+        <li><a href="/es/tags/dex">Dex</a></li>
+        
+        <li><a href="/es/tags/docker">Docker</a></li>
+        
+        <li><a href="/es/tags/docker-compose">Docker compose</a></li>
+        
+        <li><a href="/es/tags/encryption">Encryption</a></li>
+        
+        <li><a href="/es/tags/errbot">Errbot</a></li>
+        
+        <li><a href="/es/tags/git">Git</a></li>
+        
+        <li><a href="/es/tags/gitlab-ci">Gitlab ci</a></li>
+        
+        <li><a href="/es/tags/harbor">Harbor</a></li>
+        
+        <li><a href="/es/tags/iac">Iac</a></li>
+        
+        <li><a href="/es/tags/images">Images</a></li>
+        
+        <li><a href="/es/tags/infrastructure">Infrastructure</a></li>
+        
+        <li><a href="/es/tags/innovacion">Innovacion</a></li>
+        
+        <li><a href="/es/tags/java">Java</a></li>
+        
+        <li><a href="/es/tags/jornadas">Jornadas</a></li>
+        
+        <li><a href="/es/tags/kubernetes">Kubernetes</a></li>
+        
+        <li><a href="/es/tags/limits">Limits</a></li>
+        
+        <li><a href="/es/tags/monitoreo">Monitoreo</a></li>
+        
+        <li><a href="/es/tags/noticias">Noticias</a></li>
+        
+        <li><a href="/es/tags/okd">Okd</a></li>
+        
+        <li><a href="/es/tags/openjdk">Openjdk</a></li>
+        
+        <li><a href="/es/tags/openshift">Openshift</a></li>
+        
+        <li><a href="/es/tags/packer">Packer</a></li>
+        
+        <li><a href="/es/tags/permisos">Permisos</a></li>
+        
+        <li><a href="/es/tags/playbook">Playbook</a></li>
+        
+        <li><a href="/es/tags/python">Python</a></li>
+        
+        <li><a href="/es/tags/redhat">Redhat</a></li>
+        
+        <li><a href="/es/tags/registry-mirror">Registry mirror</a></li>
+        
+        <li><a href="/es/tags/restic">Restic</a></li>
+        
+        <li><a href="/es/tags/restore">Restore</a></li>
+        
+        <li><a href="/es/tags/sops">Sops</a></li>
+        
+        <li><a href="/es/tags/terraform">Terraform</a></li>
+        
+        <li><a href="/es/tags/traefik">Traefik</a></li>
+        
+        <li><a href="/es/tags/velero">Velero</a></li>
+        
+        <li><a href="/es/tags/version">Version</a></li>
+        
+        <li><a href="/es/tags/vmware">Vmware</a></li>
+        
+        <li><a href="/es/tags/vsphere">Vsphere</a></li>
+        
+        <li><a href="/es/tags/windows">Windows</a></li>
+        
+        <li><a href="/es/tags/workstation">Workstation</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-1 col-sm-12 footer-widget">
+      </div>
+      
+      
+      
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Servicios</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/platform-engineering">Cloud &amp; Platform Engineering</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/digital-transformation">Transformación digital</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/professional-services">Servicios profesionales</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/cybersecurity">Ciberseguridad</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/about">Empresa</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/portfolio">Casos de éxito</a>
+        </div>
+        
+        
+      </div>
+
+      <div class="col-md-3 col-sm-12 footer-widget">
+        
+        <div class="col-md-12 footer-menu-top">
+          <a >Carreras</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/our-culture">Cultura</a>
+        </div>
+        
+        <div class="col-md-12 footer-menu-child">
+          <a href="/es/work-with-us">Trabaja con nosotros</a>
+        </div>
+        
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/blog">Blog</a>
+        </div>
+        
+        
+        <div class="col-md-12 footer-menu-top">
+          <a href="/es/contact">Contacto</a>
+        </div>
+        
+        
+      </div>
+      
+
+      <div class="col-md-5 col-sm-12 footer-widget about">
+        <h3 class="footer-title">Acerca de Mikroways</h3>
+        <p>Somos especialistas en servicios de IT productivos y nuestra misión es construir puentes, usando la tecnología adecuada, que les permitan a nuestros clientes conquistar y materializar sus ideas.</p>
+        <p class="contact"><i class="fa fa-home info"></i><a target="_blank" href="">Av. del Libertador 7208, Buenos Aires, Argentina</a></p>
+        <p class="contact"><i class="fa fa-phone info"></i><a target="_blank" href="tel:&#43;542214473084">+54 (221) 447-3084</a></p>
+        <p class="contact"><i class="fa fa-whatsapp info"></i><a target="_blank" href="https://wa.me/&#43;5492216800267">+54 9 (221) 680-0267</a></p>
+        <p class="contact"><i class="fa fa-envelope info"></i><a target="_blank"href="mailto:contacto@mikroways.net"><a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<section id="copyright" class="copyright">
+  <div class="container-fluid">
+    <div class="row footer-bottom">
+      <div class="col-xs-12 col-sm-6 footer-bottom copyright">
+        <div class="copyright-info">Copyright© 2024 Mikroways®</div>
+      </div>
+      <div class="col-xs-12 col-sm-6 footer-bottom social">
+        
+        <a target="_blank" href="https://www.linkedin.com/company/mikroways/">
+          <span class="social"><i class="fa fa-linkedin"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://www.youtube.com/user/Mikroways">
+          <span class="social"><i class="fa fa-youtube"></i></span>
+        </a>
+        
+        <a target="_blank" href="https://github.com/orgs/Mikroways/repositories">
+          <span class="social"><i class="fa fa-github"></i></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+  </div>
+  
+</section>
+
+
+</div>
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/style-switcher.js"></script>
+
+<script src="/plugins/owl/owl.carousel.js"></script>
+
+<script src="/plugins/jquery.prettyPhoto.js"></script>
+
+<script src="/plugins/flex-slider/jquery.flexslider.js"></script>
+
+<script src="/plugins/isotope.js"></script>
+
+<script src="/plugins/ini.isotope.js"></script>
+
+<script src="/plugins/wow.min.js"></script>
+
+<script src="/plugins/jquery.easing.1.3.js"></script>
+
+<script src="/plugins/jquery.counterup.min.js"></script>
+
+<script src="/plugins/waypoints.min.js"></script>
+
+<script src="/js/contactformlambda.js"></script>
+
+<script src="https://kit.fontawesome.com/b4a4fb980a.js"></script>
+
+<script src="/js/asciinema-player.js"></script>
+
+<script src="/js/megamenu.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+</body>
+
+</html>
+

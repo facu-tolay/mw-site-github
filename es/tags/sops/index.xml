@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sops on Mikroways</title>
+    <link>/es/tags/sops/</link>
+    <description>Recent content in sops on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 30 Aug 2023 20:30:55 -0300</lastBuildDate>
+    <atom:link href="/es/tags/sops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cifrado de datos en IaC: Usando SOPS con Terraform</title>
+      <link>/es/blog/2023-08-30-terraform-con-sops/</link>
+      <pubDate>Wed, 30 Aug 2023 20:30:55 -0300</pubDate>
+      <guid>/es/blog/2023-08-30-terraform-con-sops/</guid>
+      <description>Cifrado de datos en IaC: Usando SOPS con Terraform En el ámbito de la infraestructura como código (IaC), la gestión segura de la información sensible es crucial.</description>
+    </item>
+  </channel>
+</rss>

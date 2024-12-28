@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>velero on Mikroways</title>
+    <link>/es/tags/velero/</link>
+    <description>Recent content in velero on Mikroways</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 21 Sep 2022 12:13:23 -0300</lastBuildDate>
+    <atom:link href="/es/tags/velero/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recalculando los backups en tiempos de nube</title>
+      <link>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</link>
+      <pubDate>Wed, 21 Sep 2022 12:13:23 -0300</pubDate>
+      <guid>/es/blog/2022-09-21-recalculando-los-backups-en-tiempo-de-nube/</guid>
+      <description>Sabemos la importancia de tener backups de nuestra información y los gestionamos en el día a día pero, ¿cómo se hacen backups de forma correcta en un contexto de nube?</description>
+    </item>
+    <item>
+      <title>Backups y Restores con velero</title>
+      <link>/es/blog/2022-02-23-flujo-de-trabajo-con-velero/</link>
+      <pubDate>Wed, 23 Feb 2022 11:56:58 -0300</pubDate>
+      <guid>/es/blog/2022-02-23-flujo-de-trabajo-con-velero/</guid>
+      <description>En el post anterior instalamos velero en un cluster sobre vSphere.</description>
+    </item>
+    <item>
+      <title>Instalando velero en kubernetes sobre vSphere</title>
+      <link>/es/blog/2022-02-04-instalando-velero-en-cluster-k8s/</link>
+      <pubDate>Fri, 04 Feb 2022 11:56:58 -0300</pubDate>
+      <guid>/es/blog/2022-02-04-instalando-velero-en-cluster-k8s/</guid>
+      <description>Velero que es una herramienta open source que nos permite realizar backups de objetos kubernetes en conjunto con snapshots de los volúmenes que estos utilizan.</description>
+    </item>
+  </channel>
+</rss>
